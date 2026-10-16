@@ -104,5 +104,3 @@ The simulation uses ports 2100–2102 and an exclusive simulation lock. The brid
 ## Attribution, availability, and rights
 
 See `CITATION.cff` for the unpublished accompanying work. A publication DOI can be added after publication. The repository does not include a repository-wide reuse license; public access alone does not grant an MIT or other software license. Third-party commercial software and journal full texts are excluded.
-
-OpenAI Codex and ChatGPT assisted in preparing computational code and organizing this research archive. The archived scientific methods and outputs are identified by their source hashes. The corresponding manuscript contains the authors' AI-use disclosure.
