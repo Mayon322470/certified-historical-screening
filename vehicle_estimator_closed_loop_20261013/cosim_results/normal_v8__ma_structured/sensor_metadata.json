@@ -1,0 +1,24 @@
+{
+  "seed": 20261013301,
+  "bias_mps": 0.3,
+  "s0_m": 1.570856426274421e-07,
+  "landmarks": [
+    {
+      "s": 12.000000157085642,
+      "lateral": 3.0
+    },
+    {
+      "s": 26.000000157085644,
+      "lateral": -4.0
+    },
+    {
+      "s": 46.000000157085644,
+      "lateral": 5.0
+    }
+  ],
+  "odom_error_bound_m": 0.02,
+  "speed_error_bound_mps": 0.01,
+  "range_error_bound_m": 0.04,
+  "numerical_range_padding_m": 1e-06,
+  "sensor_role": "Ideal digitally corrupted CARLA lane geometry and native speed; not rendered perception"
+}

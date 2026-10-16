@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "runs": {
+    "holdout_main": {
+      "records": 864,
+      "cases": 48,
+      "methods": 6,
+      "pairs": 11,
+      "records_sha256": "ade8b1f6c81ecdb9ec85d8c4dd127c3ce14a651ea64a26f57fab96ac3499a369",
+      "report_sha256": "6f50c15bcb09ea4fe75609f90d204609520ae52d9870e6bae2b842ea9a162461",
+      "per_case_sha256": "6539e398a9ccda0889936087a5e226c910f6c19ad1b7b92bdf77f3c9a2e50e2d"
+    },
+    "holdout_ablation": {
+      "records": 96,
+      "cases": 48,
+      "methods": 2,
+      "pairs": 1,
+      "records_sha256": "e871a2db7f867e7f91296a2f4cc958c384806d9abc61520d6a6fa126d1f58d48",
+      "report_sha256": "b09b395cabb3e594d24d61a865191276ee7d91d67130a36e5b6c090c37a01fe5",
+      "per_case_sha256": "497ed36ce18dd1120b2b2559535f19a94c7bdecec19bb268f759169cd5077aee"
+    }
+  },
+  "checks": {
+    "scalar_or_structure_comparisons": 8117,
+    "bootstrap_intervals_recomputed": 737
+  },
+  "numpy_version": "2.3.5",
+  "contradictory_certificates_across_supplied_runs": 0,
+  "scope": "Independent raw-record reduction, all method/pair/stratified arithmetic, eligibility, late/error retention and 10000-draw fixed-suite bootstrap endpoints; no producer analysis import.",
+  "limitations": "Same documented NumPy RNG family is required to reproduce seeded bootstrap draws; intervals remain descriptive fixed-suite resampling, not population inference.",
+  "checker_sha256": "a83bb93e8bd31ce9ce0c7cdadd84375960b9f5eec77826345df2219895e6ca92"
+}

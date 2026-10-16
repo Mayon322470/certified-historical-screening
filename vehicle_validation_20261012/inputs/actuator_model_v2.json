@@ -1,0 +1,278 @@
+{
+  "status": "FROZEN_TRAINING_ONLY_EMPIRICAL_STATIC_MAP",
+  "feature_order": [
+    "1",
+    "v/20",
+    "(v/20)^2",
+    "throttle",
+    "throttle^2",
+    "throttle*v/20",
+    "front_pressure_MPa"
+  ],
+  "models_by_gear": {
+    "1": {
+      "coefficients": [
+        0.1894240518535203,
+        -4.2201048720561225,
+        -1.9537959652230077,
+        16.74689169313635,
+        -19.525203071827402,
+        13.953167694747675,
+        -1.0332345379247094
+      ],
+      "rows": 1104,
+      "fit_rmse": 0.4253975994066593,
+      "max_abs_fit_residual": 1.7483229721831814,
+      "speed_support_mps": [
+        3.0038088303482313,
+        8.6487486641522
+      ]
+    },
+    "2": {
+      "coefficients": [
+        -0.5153022373325896,
+        -0.1894040568511648,
+        0.5110906699878981,
+        15.458198987509764,
+        -7.899212463931328,
+        -7.196160213953552,
+        -1.1948123334337926
+      ],
+      "rows": 1627,
+      "fit_rmse": 0.30510083177907604,
+      "max_abs_fit_residual": 1.4120489165923495,
+      "speed_support_mps": [
+        5.845170193785928,
+        14.183624174206312
+      ]
+    },
+    "3": {
+      "coefficients": [
+        1.5312185088068546,
+        -7.999999999999999,
+        7.951765511668868,
+        15.406575688303233,
+        -6.556399747188982,
+        -10.204832913334133,
+        -1.2402507300095127
+      ],
+      "rows": 1656,
+      "fit_rmse": 0.19635604569544587,
+      "max_abs_fit_residual": 0.7732840104757512,
+      "speed_support_mps": [
+        8.583286909918783,
+        16.55285057449639
+      ]
+    },
+    "4": {
+      "coefficients": [
+        2.332167507447314,
+        -7.999999999999981,
+        5.568488469765358,
+        11.387349326780875,
+        -4.407790662970893,
+        -5.77714470689395,
+        -1.2528102366326752
+      ],
+      "rows": 1724,
+      "fit_rmse": 0.1313594349207737,
+      "max_abs_fit_residual": 0.3143087927302528,
+      "speed_support_mps": [
+        12.118600888310173,
+        21.13241072085274
+      ]
+    }
+  },
+  "training_sources": [
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v4_coast\\samples.csv",
+      "sha256": "2d1211c15536f25d229754ff64efb6604d5ddbf0bb63fbfa83cbb00b74c3eb64"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v4_throttle05\\samples.csv",
+      "sha256": "4caf21d2f7a13475e69f0c991e78f1f1d07c5b168cc33142e9c6e782e969d0bf"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v4_throttle10\\samples.csv",
+      "sha256": "e470740b6f1fcd98172ffef32542e0a6c1624847105b99f6b476fceeff0d52d6"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v4_throttle20\\samples.csv",
+      "sha256": "c093a35839bd467ff9c3cd048116f13e4e8778d3ed45ce72f4b1df93bbe4d288"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v4_throttle35\\samples.csv",
+      "sha256": "c866812a43f26a32ab75aba6f8f2a842b6d2661c8d2f5c0322514b49ec4b9b54"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v4_throttle50\\samples.csv",
+      "sha256": "960d1c6a9707264b7451f0d5ec8bc9626ac9043c22483e958d1737cbe45fe3ca"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v4_brake0.5\\samples.csv",
+      "sha256": "27795160282b4f0ac1e9c9a879eb31e7ffa991f028f6f85938d576b60c769657"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v4_brake1\\samples.csv",
+      "sha256": "1e094c801fecbedec40c9842c7b4cece7e036c94fef2a5372688ea5bc5b25e85"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v4_brake2\\samples.csv",
+      "sha256": "626264f79297b7752365782bb7ce74314deceb02dac21a6842a6fe602eac102b"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v4_brake3\\samples.csv",
+      "sha256": "dbcc75ca64f300129340f26a4154e862eb769686d8ff79bc9951f94f3a618d9b"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v8_coast\\samples.csv",
+      "sha256": "4d66ab1e0119a9ee8f0b3f0c010fa7470c26d49658eabd7f77c521fb940c4a7a"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v8_throttle05\\samples.csv",
+      "sha256": "9f9cd1d6b6f78d31b80bd0e549c6c24960a3c03f1d0f0acfda8c97c6b3ad4858"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v8_throttle10\\samples.csv",
+      "sha256": "dd31d81cbdef8c04fe4bed48c50a37e8ff81cf9ee08c2e415fe14d08d38455d4"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v8_throttle20\\samples.csv",
+      "sha256": "df2517e287f6a0f38ae82bb07ffa93e43a629503a94b424aab3ea1e03dcc369c"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v8_throttle35\\samples.csv",
+      "sha256": "f5f7d8396597256041ea2014ce00c556cb22934ffb33a94ec50f20f44e0dd179"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v8_throttle50\\samples.csv",
+      "sha256": "1b55886c0ca890d6610612abfd498805177d14512599f8ec8509d1744617609d"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v8_brake0.5\\samples.csv",
+      "sha256": "1b3b5920d03e97ee00ce8a3756a8f4f84a9307f1e3f7aa667ea9949b87e20fb4"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v8_brake1\\samples.csv",
+      "sha256": "d5a9b1fbb8b8d58ff90c501003778433e2966fbdd69f8f7821e01b14c1fee856"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v8_brake2\\samples.csv",
+      "sha256": "22a4cbb2b902df561b28d5ee131e1998ac975430239c21bde1099bb468bce323"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v8_brake3\\samples.csv",
+      "sha256": "0935c212ca77ac9fc87b79648e1b83607dfc1a49196685b05e50d06d78ede3ef"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v12_coast\\samples.csv",
+      "sha256": "ccc20a2e8eb6cf68bd585741e1870b68cadb10890683a98b30e1afe7441ee239"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v12_throttle05\\samples.csv",
+      "sha256": "917f8bd4602c0c8f7d4c5aa9cc2f9a904e82ce8171b3298619a022566874f3f8"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v12_throttle10\\samples.csv",
+      "sha256": "92c52a62c87c566f5ae548094013e355246c3cf81577a0a458c204b4eb2539d8"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v12_throttle20\\samples.csv",
+      "sha256": "1ada6b0c50d4d46237f19e39c4a966fb599114fd6de6beadd99c75aa48ad4a93"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v12_throttle35\\samples.csv",
+      "sha256": "578aa295fbbe17faf5825ef217e8b4802d2d13385f6fa77a4fbec60bbf43bbcc"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v12_throttle50\\samples.csv",
+      "sha256": "76add9a1e8f28cb6a33aaf8a76f5ade7e64b4b05cd331db08db7406cd3fcfdee"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v12_brake0.5\\samples.csv",
+      "sha256": "6a32bf99f17e03ac24f642ab0c83c8153f4df454b17db36a97d86832333aee2a"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v12_brake1\\samples.csv",
+      "sha256": "d26d6c1d740897784162bd51c4479a91ddb199b554bcbdd4449fb140d9c66bd8"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v12_brake2\\samples.csv",
+      "sha256": "f2ceac035408935a739e8c26d65d80fbfeca7a53135cba0667668d9aa29cf4e8"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v12_brake3\\samples.csv",
+      "sha256": "54754769913e415f10642f2d9127324150eb952f73507687ac80f4d1828281b9"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v18_coast\\samples.csv",
+      "sha256": "e7e672ee5c6c50a1cbfd0aa5ffeeaf2b769074dd14d3c16393276c12ba55efa9"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v18_throttle05\\samples.csv",
+      "sha256": "a994b7fee7f9afa055cc6fb70a935e0d567ab21ecde27d7f019bd0975fa29fdd"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v18_throttle10\\samples.csv",
+      "sha256": "224dc776a396cd5e12a1c7572f08a40a916fe52e287eee118e5db7f4d42341ed"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v18_throttle20\\samples.csv",
+      "sha256": "7c1a5ed7fe6a47fe11c04634b46830688052c01bf45655faa99ead6f76c028a7"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v18_throttle35\\samples.csv",
+      "sha256": "87c8e234347f0e36b2f1f28942ffda16df32b9f2bb0c3a95947812bece1f7ff1"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v18_throttle50\\samples.csv",
+      "sha256": "5779d40db7f16c4b017241b3f82d34f2e95eee1e6481d31f54ac2f038b0c3383"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v18_brake0.5\\samples.csv",
+      "sha256": "252089c1aa00006445ddaf5f0e36161c021fa490c700eac7375b5e011f3a9857"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v18_brake1\\samples.csv",
+      "sha256": "c4aa818847b8e7ba1bb2e37434d61dcdd0d9a33cca3532e6de55d80caeca29ae"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v18_brake2\\samples.csv",
+      "sha256": "5936eada17e476ddcc34c5254a7372ef6d5a7fba356654b48a53812eb9107d1e"
+    },
+    {
+      "file": "E:\\codex_project\\CarlaCarSimValidation\\runs\\dynamic_calibration_v2\\v18_brake3\\samples.csv",
+      "sha256": "e7bd9853f6f05f5565650edd5573fd250e5c6c4fe20ebeb04f7b97093fb7943a"
+    }
+  ],
+  "row_selection_counts": {
+    "total_native_samples": 200040,
+    "static_fit_macro_rows": 6111,
+    "excluded_macro_rows": 3929
+  },
+  "physics_unchanged": true,
+  "calibration_model_fit_rows_excluded_only_for_static_fit_not_deleted": true,
+  "native_brake_time_constant_s": 0.06,
+  "measured_63percent_pressure_delay_s": 0.0595,
+  "reference_compensation_tau_s": 0.06,
+  "input_limits": {
+    "throttle_fraction": [
+      0,
+      0.5
+    ],
+    "brake_mpa": [
+      0,
+      3
+    ]
+  },
+  "declared_empirical_domain": {
+    "speed_mps": [
+      3,
+      22
+    ],
+    "gear_shift_free_age_s": 0.3,
+    "steering_deg": 0
+  },
+  "proof": false,
+  "notes": "Fit may be inaccurate during shift/start/stop; actual run metrics retain those rows. Never change physical model parameters or certificate flags."
+}

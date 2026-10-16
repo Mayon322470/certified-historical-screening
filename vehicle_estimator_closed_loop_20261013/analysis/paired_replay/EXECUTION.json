@@ -1,0 +1,14 @@
+{
+  "status": "COMPLETED_ALL_PREREGISTERED_REPLAY_RUNS",
+  "started_utc": "2026-10-13T05:23:17.506516+00:00",
+  "plan_sha256": "2580b4a3569a5b3025dcb088ab23135b50a0f18e4a7bddf138b8dda580734c09",
+  "analysis_source_sha256": "cf90bd29e39690dacab6af38ef77e32c984557cd5f5cbdbe4c85465f703102d3",
+  "queries": 6,
+  "planned_runs": 90,
+  "completed_runs": 90,
+  "original_closed_loop_trajectories": false,
+  "populations_or_confidence_inference": false,
+  "finished_utc": "2026-10-13T05:23:20.751919+00:00",
+  "runs_sha256": "420eeed0ecf8f540c93709aa578363be3c41040d77654ddd14af4782d99bd1ce",
+  "query_source_sha256": "d1e0b88d973ba1cf9c5d270096874f0a0bf525e121d0cf0a64d0267823737913"
+}

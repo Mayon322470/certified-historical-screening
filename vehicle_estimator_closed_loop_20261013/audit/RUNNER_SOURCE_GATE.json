@@ -1,0 +1,30 @@
+{
+  "status": "PASS_INDEPENDENT_PRE_FREEZE_INTERFACE_GATE",
+  "checks": 37,
+  "source_sha256": {
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\integration\\run_estimator_closed_loop.py": "19a0f227c0cb8e2e480ce63429f225d7e66c8c77a159dee8f396e0c015b0e3ac",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\source\\sensor_estimators.py": "86e0431327452d48d077008341a5cd77878196bf50428752d3ab44f1a64e94a2",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\inputs\\PROTOCOL_DRAFT.json": "d9623a2dbb1c6ca3dfd27f7bbf7e727ea235e0808e38889ad1ff7138e7daa150",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\audit_runner_source_gate.py": "27b075d5b30aacd9a18cc4a832d8d51c353fed564868f29121e066dae91c28be"
+  },
+  "planned_cases": 20,
+  "same_scene_parameters_across_methods": true,
+  "estimate_call_arguments": [
+    [
+      "case['method']",
+      "rows",
+      "plan['prior']",
+      "deadline"
+    ]
+  ],
+  "qualitative_source_review": [
+    "Live clearance and native truth only update audit/diagnostic logs; command veto uses packet-derived state bounds.",
+    "Initial s0/stopline and invariant body radius are declared fixed calibration; true initial speed and b do not enter estimator arguments.",
+    "Common quick is prior-only and identical for all five methods.",
+    "Three histories use fixed latest-packet indexing; drop keeps original latest stamp and fails age before estimation.",
+    "Normal request follows the public timeline; veto schedules brake at fixed 0.1s window end. Guard reserves next decision plus response; this is a modeled deadline watchdog, not a concurrent real-time implementation.",
+    "All 20 planned cases execute without result-driven selection/retry; partial failures remain in execution records.",
+    "Quadratic observation kernel has independent rational point/deletion tests. CarSim waiting/braking membership still requires new sampled logs."
+  ],
+  "scope": "Source and frozen-protocol preparation only. No simulator, new trajectory, sampled membership or all-domain proof."
+}

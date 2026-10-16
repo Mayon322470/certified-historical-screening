@@ -1,0 +1,20 @@
+{
+  "status": "AUDIT_DESIGN_ONLY_AND_16_EXACT_LOGIC_CHECKS",
+  "source_sha256": {
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\implementation\\comparison_core.py": "76568d2f810096182b261410b781fdbcd005ef2644713113535c2535645834ce",
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\implementation\\certified_core.py": "71fbd06c63d736b3c2c3f872a19bd9805a9915e06aec8928c80f7f6c8ca820bd",
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\implementation\\quick_baseline.py": "ad609b57a8a149c9dc81abe4a56685ed7c4a16b2f809824fab0d4e9a3009cf70",
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\implementation\\run_comparison.py": "bd64446f4c330077b2084d9bbbbda1e690d55bd3223177a433a7e81a2bcaf399",
+    "E:\\codex_project\\TheFirstOne\\research_ma2026_comparison_20261012\\implementation\\comparison_core.py": "9da5441db4e24e1494fc1e042b8dadb789ac3e6b75496e3f21e5489ee3b70094",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\INDEPENDENT_VALIDATION_PLAN_CN.txt": "9c793dc37326a2df335dee9f314862a99fa9bf827a636d82031bcd3194092f20",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\contract_smoke.py": "aefecf36a7634d957c7f5f34cf890f74e933ec8c3b6f03fb1e5d4e240afc85d2",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\CONTRACT_SMOKE_RESULTS.json": "638fc2881a05f1a55db27f1993216263975d2297b5bd81f29fd8bef20261b80e"
+  },
+  "old_api_scope": "Source read only; old batch certificates or timed runs not repeated.",
+  "production_verifier_completed": false,
+  "new_formal_inputs_generated_or_read": false,
+  "benchmark_timing_run": false,
+  "simulator_called": false,
+  "write_scope": "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit",
+  "next_gate": "Read final shared-response contract and adapter, then small <=7 fixture proof/mutation checks before method/protocol freeze. Formal inputs generated only after freeze; offline certificate audit only after timing ends."
+}

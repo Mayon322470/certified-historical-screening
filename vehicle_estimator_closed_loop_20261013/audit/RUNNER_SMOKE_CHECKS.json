@@ -1,0 +1,40 @@
+{
+  "status": "PASS_PURE_FAKE_BACKEND_RUNNER_CHECKS",
+  "runner_source_sha256": "59b662c79d5c03bef79d32127e087c81217f76ab4f39d3ab21aea41881ed9a4d",
+  "smoke_source_sha256": "87dfc0d84c3526525434ae60a9d841d4ba49010898b98bbee2af9f3f11de0af3",
+  "native_solver_started": false,
+  "carla_started": false,
+  "checks": [
+    {
+      "case": "quick",
+      "status": "PASS",
+      "expected_status": "QUICK_PRIOR_ACCEPT",
+      "expected_emergency_s": null
+    },
+    {
+      "case": "query",
+      "status": "PASS",
+      "expected_status": "ACCEPT_NORMAL",
+      "expected_emergency_s": null
+    },
+    {
+      "case": "stale",
+      "status": "PASS",
+      "expected_status": "STALE_OBSERVATION",
+      "expected_emergency_s": 0.2
+    },
+    {
+      "case": "late",
+      "status": "PASS",
+      "expected_status": "FORCED_COMPUTE_TIMEOUT",
+      "expected_emergency_s": 0.2
+    },
+    {
+      "case": "unknown",
+      "status": "PASS",
+      "expected_status": "ESTIMATOR_UNKNOWN",
+      "expected_emergency_s": 0.1
+    }
+  ],
+  "fake_logs_discarded": true
+}

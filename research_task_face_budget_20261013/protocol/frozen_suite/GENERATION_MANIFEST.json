@@ -1,0 +1,25 @@
+{
+  "version": "taskface-cubic-paired-v1",
+  "seed": 20261013137,
+  "base_templates": 16,
+  "public_cases": 32,
+  "epsilon_values": [
+    "1/1000",
+    "1/100"
+  ],
+  "formal_cases_generated": 32,
+  "generator_sha256": "082684c101544948e20a385ceef556d00402438ce91821d81435e0261eb23dc8",
+  "protocol_sha256": "7a081aaa2ccd6ee94ea5f5a68171a761de4f3096b4f6ca8b2c2eaf1ea6f066ee",
+  "status": "GENERATED_ALL_PREDECLARED_CASES",
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "method_freeze_path": "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\protocol\\METHODS_FROZEN.json",
+  "method_freeze_sha256": "5ef26b9f7cd1e54a82c4c811cc486e2ac8002d2b61940ff59462a5bc450a121b",
+  "output_hashes": {
+    "public_cases_32.json": "bd84c381a517c6ff74d16db15cfa9fb3e99bc75b086f8a8298364e23c38b3ca3",
+    "private_generation_witnesses.json": "1e5931d638c0aaf61bf7f052a5528b1e3d8b58df9eeab4e9bb336f27ed544290",
+    "evaluation_groups.json": "d40ffce3d81c7e5a0add71c8ac45642b84835e9d267db0dd13d436797de29c1d"
+  },
+  "formal_solver_called": false,
+  "redraws": 0,
+  "physical_membership_claimed": false
+}

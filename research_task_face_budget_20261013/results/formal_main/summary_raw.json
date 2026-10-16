@@ -1,0 +1,57 @@
+{
+  "ma_rank1": {
+    "statuses": {
+      "CERTIFIED_SAFE": 24,
+      "CERTIFIED_UNSAFE": 60,
+      "UNKNOWN": 12
+    },
+    "elapsed_total": 72.04715980216861,
+    "within_budget": 84,
+    "late_certificates": 0,
+    "errors": 0
+  },
+  "ma_rank1_structured": {
+    "statuses": {
+      "CERTIFIED_UNSAFE": 60,
+      "UNKNOWN": 12,
+      "CERTIFIED_SAFE": 24
+    },
+    "elapsed_total": 70.05213099811226,
+    "within_budget": 84,
+    "late_certificates": 0,
+    "errors": 0
+  },
+  "zhao1_rank1": {
+    "statuses": {
+      "CERTIFIED_UNSAFE": 60,
+      "CERTIFIED_SAFE": 24,
+      "UNKNOWN": 12
+    },
+    "elapsed_total": 78.2618726962246,
+    "within_budget": 84,
+    "late_certificates": 0,
+    "errors": 0
+  },
+  "zhao2t3_rank1": {
+    "statuses": {
+      "CERTIFIED_UNSAFE": 54,
+      "CERTIFIED_SAFE": 24,
+      "UNKNOWN": 18
+    },
+    "elapsed_total": 131.21288750134408,
+    "within_budget": 78,
+    "late_certificates": 0,
+    "errors": 0
+  },
+  "zhao2t3_rank1_structured": {
+    "statuses": {
+      "CERTIFIED_SAFE": 24,
+      "CERTIFIED_UNSAFE": 57,
+      "UNKNOWN": 15
+    },
+    "elapsed_total": 94.91237169783562,
+    "within_budget": 81,
+    "late_certificates": 0,
+    "errors": 0
+  }
+}

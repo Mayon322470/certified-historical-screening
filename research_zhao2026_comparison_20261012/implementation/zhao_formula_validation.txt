@@ -1,0 +1,12 @@
+Zhao2026 Carleman-SME: formula identity regression PASS.
+Implemented nu=1, nu=2, nu=2 plus Theorem3; full output lifts 5 and 21.
+Checked Lemma4 r^2 center, initial independent generators, exact A coefficients,
+isotropic per-degree Eq38-40 remainder, Eq25/26/33/34 prediction/update,
+Eq42 F-radius gain normal equations, and Eq47/49/50 Theorem3 correction.
+Eight gain perturbations per polynomial run confirm the numerical F-radius minimum.
+Theorem3 r-gain is nonzero and physical F-radius decreases in the regression.
+Six real-history parameter-retention tests cover ordinary and point priors.
+Full-lift LP membership samples are diagnostics, not the mathematical enclosure proof.
+This is a fully reconstructible polynomial formula regression, NOT a paper Example2 Monte Carlo reproduction.
+Process noise=0, zero initial auxiliary radii and ideal one-sensor communication are explicit boundary adaptations.
+No simulator, installation, old-file mutation, or performance benchmark was performed.

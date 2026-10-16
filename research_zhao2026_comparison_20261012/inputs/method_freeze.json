@@ -1,0 +1,60 @@
+{
+  "version": "zhao2026-formal-v1",
+  "timestamp_utc": "2026-10-12T13:40:09.454894+00:00",
+  "main_methods": [
+    "ma_strip",
+    "ma_strip_structured",
+    "zhao1",
+    "zhao2",
+    "zhao2t3",
+    "zhao2t3_structured"
+  ],
+  "ablation_methods": [
+    "zhao2t3_sturm",
+    "zhao2t3_sparse"
+  ],
+  "main_repetitions": 3,
+  "ablation_repetitions": 1,
+  "grids": [
+    8,
+    32,
+    128,
+    512
+  ],
+  "time_grids": [
+    32,
+    64,
+    128,
+    256
+  ],
+  "budget_seconds": 5,
+  "quick_gate": true,
+  "hessian_pieces": 1,
+  "numerical_threads": 1,
+  "job_order_seed": 712913,
+  "bootstrap_seed": 20261012947,
+  "development_data": [
+    "development_43.json",
+    "development_ma48.json"
+  ],
+  "analysis_protocol": "analysis/FORMAL_COMPARISON_PROTOCOL_CN.txt",
+  "file_sha256": {
+    "analysis/FORMAL_COMPARISON_PROTOCOL_CN.txt": "4e394b7ac136b42fef970febfeb6ac9a37f5c08a31882150c82a3fd1c83dbdae",
+    "analysis/NEW_HOLDOUT_PROTOCOL_CN.txt": "d1efc844c44e7ea2b0140e0a7420616cde1f5c2c4d0a6811dcdd756a079f34cc",
+    "implementation/certified_core.py": "71fbd06c63d736b3c2c3f872a19bd9805a9915e06aec8928c80f7f6c8ca820bd",
+    "implementation/comparison_core.py": "76568d2f810096182b261410b781fdbcd005ef2644713113535c2535645834ce",
+    "implementation/generate_new_holdout.py": "2959998d22b4a057be155dffa88b60041aa534ad2c966d5b2241d58a6c7a1876",
+    "implementation/history_derivatives.py": "205d21ae0df0dfdd3104eb44f668334d85febec540a966083623ee796d7ee1a9",
+    "implementation/ma_scalar_certified.py": "4dd331b0dc5ade15adf814e0740d8be8286fe955ceb1a79ec8edd3a204ddcd9a",
+    "implementation/ma_zfo.py": "51e7bcc08a54caa4c753a19813c7edfe01e20f1795cdfe7325df9e19e43737ae",
+    "implementation/polynomial_contract.py": "67611c3ecc222c6d722382ec7841d7a56dbc1b959c43e7093c071d5c6b2b371e",
+    "implementation/quick_baseline.py": "ad609b57a8a149c9dc81abe4a56685ed7c4a16b2f809824fab0d4e9a3009cf70",
+    "implementation/refined_core.py": "ea2129a0a5d6090094b27d06aceef7fca06cac5fd1416fa7e5039676936bfa3c",
+    "implementation/run_comparison.py": "bd64446f4c330077b2084d9bbbbda1e690d55bd3223177a433a7e81a2bcaf399",
+    "implementation/sparse_faces.py": "b6f55b68c7f632b52d05ff095000fdf22ab78f81b549e1f586d99d09a61dc1e7",
+    "implementation/taylor_faces.py": "a6082203407888fced6c0405b656aeeaa1a03f70aa0cf0b5e437390be49ea49e",
+    "implementation/validate_zhao_carleman.py": "fadc68fdbc8f1ad3277294b3b902c0f0d6951bef0954b44b303920f7df7263b9",
+    "implementation/zhao_carleman.py": "06aa33c162910b959b1f254309fcfc4df016a677988f26934c6ec5625576e28a",
+    "inputs/generation_protocol.json": "35268a0397af30670eee87d633ff32f4d6ce7131a019cb753dcb23365114b155"
+  }
+}

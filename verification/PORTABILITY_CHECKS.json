@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "date": "2026-10-16",
+  "new_experiments_or_timings_run": false,
+  "tests": [
+    {
+      "name": "All original exact-model frozen files retained",
+      "files": 17,
+      "result": "PASS"
+    },
+    {
+      "name": "All original common-response frozen files retained",
+      "files": 25,
+      "result": "PASS"
+    },
+    {
+      "name": "Fresh model workspace preparation and exact-model runner import",
+      "result": "PASS",
+      "estimator_called": false
+    },
+    {
+      "name": "Fresh common-response runner import and frozen-source identity gate",
+      "result": "PASS",
+      "estimator_called": false
+    },
+    {
+      "name": "Portable identical-query replay source identity and input-selection gate",
+      "source_files": 18,
+      "same_archived_queries": 6,
+      "result": "PASS",
+      "estimator_called": false,
+      "simulator_started": false
+    }
+  ],
+  "portability": {
+    "model_runners": "relative paths preserved; clean result-free copy tested",
+    "vehicle_query_replay": "new output redirection wrapper; original source unchanged",
+    "vehicle_online": "original Windows machine paths preserved; licensed external software and local adaptation required"
+  },
+  "payload_edits": "No mathematical implementation or input bytes changed; only reversible archive compression and contiguous chunking."
+}

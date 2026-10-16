@@ -1,0 +1,140 @@
+固定同一τ的认证比较：共享normalized cubic响应预算接口
+日期：2026-10-13；新theory目录。旧包只读；无模拟器、无holdout、无新候选网格。
+
+推荐最小实现
+
+保留旧名义模型 x_dot=v、v_dot=a、a_dot=(u−a)/τ，τ∈原positive prior在
+全任务中固定，u为原模型声明的piecewise held input。不要把旧u默认为实际
+CarSim闭环PI的未来throttle，也不把其budget解释成已认证车辆误差。
+名义全时轨迹记p_τ(t)，由同一initial和全部已施加/计划input因果计算。
+
+另预声明响应类
+  Y_(τ,β)(t)=p_τ(t)+βψ(t)，β∈[−b,b]，
+  ψ(t)=((t/L)^3,3t²/L³,6t/L³)，L=T_past+H>0，0≤t≤L。
+β单位为m，b取冻结的非负epsilon_x；未来背景rho=0。
+同一τ、同一β贯穿所有history/future，t用任务绝对时钟；query不重置ψ。
+ψ(0)=0且ψ_x'=ψ_v、ψ_v'=ψ_a，所以initial三个物理误差均为零。
+有限时域内|dx|≤b、|dv|≤3b/L、|da|≤6b/L²。
+起步实现仅一个末historypacket的x/v/a三行，数学函数允许共同多row；
+尚未据此完成多时间historypacket的benchmark接线。
+
+这是一个完整、预声明的条件动态类，非仅经验点误差：实际a满足
+  a_actual_dot=(u−a_actual)/τ+(6β/L³)(1+t/τ)。
+所以rho=0只表示旧background disturbance关闭，不表示总model discrepancy
+为零。βψ与其引出的jerk是新响应类的一部分；不能声称由旧rho budget推出。
+任意允许τ/β确实定义一条数学轨迹，但CarSim是否属于此类没有资格证据。
+
+不建β网格：给定τ的nominal值时，β可从原packet线性消元。一维τ estimators
+可继续使用expandedpacket或共享rank1noise；必要couplingface依旧是τ的一维
+函数。真实允许对象含τ与nuisance β，解析消元不等于β不存在，也不新造物理θ。
+
+历史packet、outer与inner
+
+第i行原packet为[L_i,U_i]，shape系数ψ_i，名义point或cell的certified interval
+为[p_i^−,p_i^+]。先取βprior=[−b,b]。
+独立膨胀packet给名义必要区间
+  [L_i−max_(β)βψ_i,U_i−min_(β)βψ_i]。
+对ψ_i≥0即[L_i−bψ_i,U_i+bψ_i]。三个独立区间丢掉共享β，故通过不是witness。
+
+whole τ cell 的共同β必要outer为各行下列区间与prior的交：
+  [(L_i−p_i^+)/ψ_i,(U_i−p_i^−)/ψ_i]，ψ_i>0。
+若这个outer为空，确证该whole τ cell无允许共同β，可删除。若非空，仍可能
+没有一个共同τ使各行nominal值同时实现；名义区间也会丢τ相关性。
+
+一个τ point的充分inner则为
+  [(L_i−p_i^−)/ψ_i,(U_i−p_i^+)/ψ_i]，ψ_i>0，
+再与同一βprior相交。任取其β（例如中点），每行完整nominal真值enclosure+
+βψ都在原packet内，可独立重放验证。inner为空只说明该enclosure没有证明
+witness，不证明历史不一致。point必须独立选择，不能偷偷调用hidden generatingτ/β。
+ψ_i=0时outer要求nominal与packet相交，inner要求整个nominal区间包含于packet；
+不得除零。generic helper还支持负ψ，区间除法按符号交换上下端点。
+
+过去与未来响应不得各选β。未来从名义p_τ(T)推进，再在T+s加βψ(T+s)，
+不能先把βψ(T)当actual初态推进后又加完整βψ(T+s)，那会doublecount。
+同一未来held plan也不能换成后验真实gear/a/低层input，旧理论的u类先明确。
+
+未来position tube与四类结论
+
+whole cell的certified nominal position upper为U_nom(s)。ψ_x(T+s)≥0时
+  U_actual(s)=U_nom(s)+β_outer^+ ψ_x(T+s)
+是允许类的node upper。β与τ分别max会放松相关性，但仍是sound outer。
+β_outer^+也可能为负，不应无条件改成零。outer upper超limit不证明UNSAFE。
+
+UNSAFE需要明确一个τ point、一个同β，通过全部原historypacket重放；该点的
+nominal future lower加βψ_x(T+s)若严格大于原limit，就是声明类真实存在反例。
+没有这组共同witness，expandedpacket内某τ的nominal违例不能当actual反例。
+图内/声明模型类反例不等于真实未知车辆在该情景必然unsafe。
+
+SAFE需要所有prior cell完整处理后，对所有保留允许τ/β给future连续上界≤limit，
+并有独立共同history非空witness，避免把尚未证实非空的必要外集合误作可实现
+安全集合。存在witness且所有允许轨迹安全，是本轮非空SAFE语义。
+INCONSISTENT需要完整覆盖prior且全部被sound必要规则证明排除。
+inner检查失败、浮点LP失败、resource timeout不证明空；保留时返回UNKNOWN。
+存在严格有效UNSAFE witness可以提前停，剩余cell无法消除已存在的反例。
+
+连续position allowance：必须区分nominal与actual
+
+对旧positive τ、rho=0的nominal flow，a_nom在query a_nom与held input范围
+之间；故Q_nom=max(|expanded nominal a lower|,|expanded nominal a upper|,
+maxfuture|u|)足够。实际curvature还包含βψ_a，所以共同公共界为
+  Q_actual=Q_nom+6b/L²，allowance=Q_actual (H/nt)²/8。
+node上界已加βψ，不表示可以只沿用nominal allowance。β_outer^+<0时响应
+上曲线为concave cubic，可能两端node upper都安全却中间更高。
+测试给精确例：L=1、β=−1、nominal x=7t/4−3/4，在t=.5和1的actual x都0，
+t=.75 actual x=9/64>0；nominal curvature=0却actual |x''|≤6。
+公共actual allowance为3/16，覆盖该interior；只用nominal allowance=0会误判。
+
+Q_actual依赖声明连续类和完整u记录，不由sampled empirical a max推出。
+limit若时变或state-dependent，需要其自身continuous face/bridge条件，不能
+照搬constant位置上限。此处没有车辆资格、一般CBF、备份或递归可行性证明。
+
+共享预算及强Ma/Zhao基线
+
+所有方法获得同一τprior、原packet、ψ、b、未来plan、continuousallowance，
+使用同一future/witness backend和原time/cell budgets。不能结构法保留共享β，
+baseline却只被提供膨胀后的独立对角盒信息。
+起步单末packet的测量noise generator给Zhao
+  V=[diag(sensor halfwidth),bψ(T)]。
+Ma signed Taylor余项与浮点/interval rounding必须正确center和enclose，
+Eq18 scalar gain objective是
+  R|1−N C|+Σ_j s_j|N_j|+b|Nψ|。
+s_j>0时它coercive piecewise-affine；三个Nj=0、Nψ=0、NC=1的arrangement
+independent三平面交点加origin足够exact枚举一个全局optimum。singular或矛盾
+交点跳过。余项的signed mid应进入prediction center，halfwidth进s；非对称
+βprior需center β再以halfwidth生成，而不能仍按±b处理。
+all-linear strips中C_j q+ψ_j β∈[low_j,high_j]，q=1/τ的FM投影是显式
+共用加强，不冒称原paper所有步骤已有。未来仍需原packet的point witness。
+多个时间packet若未来扩展，应给同一个全stack β列，或明确哪些baseline
+只取安全outer relaxation；不能每个时刻独立新建β后声称保留了共享记忆。
+
+结构筛除的可计算候选及潜在增量
+
+ψ_i、ψ_j>0时共同β可行的pairwise必要face为
+  ψ_j(L_i−p_i(τ))−ψ_i(U_j−p_j(τ))≤0。
+priorβ上下界另外给expanded单row faces。任何face在whole cell有严格正lower
+certificate即可先删除，不需昂贵Ma/Zhao lift。t=0零shape行单独处理。
+对旧history map，q²>0可将这些face化成degree≤2 polynomial-in-q系数乘
+exp(−held_duration*q)的稀疏组合；必须证整个cell的符号，而非sample点。
+outward Taylor/monotone/sparse证书成本、fallback和所有oracle calls都要计入。
+
+预算膨胀、cubic传播、FM消元、rank1noise、support及qh²/8均是经典方法。
+本轮可检验增量是：同一response类和强基线下，结构必要face在贵contractor
+之前可复现减少工作/提高固定资源下的安全判别。无需所有工况/指标完美，
+但应保留不改善/额外开销的结果，不把参数/预算变化归为结构优势。
+若无严格收益，应诚实报告此有限域下没有改进；不涨预算、改门槛或把预算
+传播换名为新理论。数学接口本身不构成novelty证据。
+
+接口与验证
+
+shared_response.py为root直接import：kind='normalized_global_cubic_v1'，
+case.response含epsilon_x、L；校验L=sum(past)+H>0、epsilon≥0、rho=0。
+profile/expanded_packet/beta_outer/beta_inner/future_upper/
+response_curvature_bound使用Fraction pairs；continuous_allowance给actual界。
+response_budget_math.py另给generic HistoryRow、FM pair及point witness replay。
+float输入拒绝，避免普通float值冒充outward nominal证书。
+
+validate_response_budget_math.py的9项测试通过；包括单个旧96bit outward
+exponential nominal τ point（只读复用）、原packet+同β的独立history/future
+witness、expanded各行通过却β矛盾、outer非空却无共同τ、ψ0 inner/outer区别、
+FM严格排除、upper超过limit却没有unsafe witness、负β的连续bridge反例。
+没有新τ/β grid、没有生成benchmark套件、没有读holdout或跑模拟器。

@@ -1,0 +1,12 @@
+{
+  "id": "normal_v10__zhao2t3_structured",
+  "mode": "normal",
+  "speed_mps": 10.0,
+  "initial_front_clearance_m": 55.0,
+  "bias": -0.3,
+  "seed": 20261013302,
+  "scene_id": "normal_v10",
+  "method": "zhao2t3_structured",
+  "plan_sha256": "2580b4a3569a5b3025dcb088ab23135b50a0f18e4a7bddf138b8dda580734c09",
+  "created_utc": "2026-10-13T05:16:06.817164+00:00"
+}

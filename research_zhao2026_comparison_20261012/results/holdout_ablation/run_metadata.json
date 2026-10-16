@@ -1,0 +1,56 @@
+{
+  "arguments": {
+    "inputs": "holdout_48.json",
+    "tag": "holdout_ablation",
+    "grids": "8,32,128,512",
+    "nt": 32,
+    "nt_schedule": "32,64,128,256",
+    "hessian_pieces": 1,
+    "budget": 5.0,
+    "reps": 1,
+    "quick": true,
+    "methods": "zhao2t3_sturm,zhao2t3_sparse"
+  },
+  "input_sha256": "bfd1fe58dfa49e24e21d7e01f2be8ee758757bcf96d7170a63bf0380534f9d66",
+  "python": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+  "logical_cpus": 16,
+  "numerical_threads": 1,
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "mkl",
+      "num_threads": 1,
+      "prefix": "mkl_rt",
+      "filepath": "E:\\Applications\\Anaconda\\anaconda\\Library\\bin\\mkl_rt.2.dll",
+      "version": "2023.1-Product",
+      "threading_layer": "intel"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libiomp",
+      "filepath": "E:\\Applications\\Anaconda\\anaconda\\Library\\bin\\libiomp5md.dll",
+      "version": null
+    }
+  ],
+  "timestamp": "2026-10-12 22:08:56 +0800",
+  "implementation_sha256": {
+    "certified_core.py": "71fbd06c63d736b3c2c3f872a19bd9805a9915e06aec8928c80f7f6c8ca820bd",
+    "comparison_core.py": "76568d2f810096182b261410b781fdbcd005ef2644713113535c2535645834ce",
+    "generate_new_holdout.py": "2959998d22b4a057be155dffa88b60041aa534ad2c966d5b2241d58a6c7a1876",
+    "history_derivatives.py": "205d21ae0df0dfdd3104eb44f668334d85febec540a966083623ee796d7ee1a9",
+    "ma_scalar_certified.py": "4dd331b0dc5ade15adf814e0740d8be8286fe955ceb1a79ec8edd3a204ddcd9a",
+    "ma_zfo.py": "51e7bcc08a54caa4c753a19813c7edfe01e20f1795cdfe7325df9e19e43737ae",
+    "polynomial_contract.py": "67611c3ecc222c6d722382ec7841d7a56dbc1b959c43e7093c071d5c6b2b371e",
+    "quick_baseline.py": "ad609b57a8a149c9dc81abe4a56685ed7c4a16b2f809824fab0d4e9a3009cf70",
+    "refined_core.py": "ea2129a0a5d6090094b27d06aceef7fca06cac5fd1416fa7e5039676936bfa3c",
+    "run_comparison.py": "bd64446f4c330077b2084d9bbbbda1e690d55bd3223177a433a7e81a2bcaf399",
+    "sparse_faces.py": "b6f55b68c7f632b52d05ff095000fdf22ab78f81b549e1f586d99d09a61dc1e7",
+    "taylor_faces.py": "a6082203407888fced6c0405b656aeeaa1a03f70aa0cf0b5e437390be49ea49e",
+    "validate_zhao_carleman.py": "fadc68fdbc8f1ad3277294b3b902c0f0d6951bef0954b44b303920f7df7263b9",
+    "zhao_carleman.py": "06aa33c162910b959b1f254309fcfc4df016a677988f26934c6ec5625576e28a"
+  }
+}

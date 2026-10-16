@@ -1,0 +1,63 @@
+{
+  "id": "normal_v10__zhao2t3",
+  "method": "zhao2t3",
+  "status": "SAMPLED_NO_STOPLINE_CROSSING",
+  "plan_sha256": "2580b4a3569a5b3025dcb088ab23135b50a0f18e4a7bddf138b8dda580734c09",
+  "started_utc": "2026-10-13T05:15:34.988803+00:00",
+  "continuous_certificate": false,
+  "real_time_wall_clock_guarantee": false,
+  "sensor_perception": false,
+  "native_truth_in_estimator": false,
+  "availability_model": "Public normal raw timeline continues during a fixed 0.1s computation/response window; estimator only decides a brake veto at window end. Prior accepted guard covers next decision plus response (0.2s). No wall-clock real-time assertion.",
+  "guard_deadline_scope": "Sensor packet generation, common prior quick, estimator, state bounds, position guard; excludes log serialization and CARLA scene operation, both included in full cycle timing",
+  "invariant_body_radius_m": 3.708917501489181,
+  "calibrated_initial_s_m": 1.570856426274421e-07,
+  "stopline_s_m": 58.45734793087202,
+  "landmarks": [
+    {
+      "s": 12.000000157085642,
+      "lateral": 3.0
+    },
+    {
+      "s": 26.000000157085644,
+      "lateral": -4.0
+    },
+    {
+      "s": 46.000000157085644,
+      "lateral": 5.0
+    }
+  ],
+  "minimum_world_clearance_m": 24.41997931081452,
+  "first_world_crossing_s": null,
+  "emergency_applied_s": 1.6,
+  "emergency_reason": "MEASURED_GUARD_TIMEOUT",
+  "fault_injected": false,
+  "max_emergency_prefix_excess_m": -0.25000022836011127,
+  "sampled_backup_membership": true,
+  "normal_acceleration_max_mps2": 0.7940375954648788,
+  "stopped_final_tail_s": 7.403499999998616,
+  "final_speed_mps": -6.5281831403289485e-06,
+  "estimator_calls": 1,
+  "estimator_unknown_count": 1,
+  "quick_prior_accept_count": 15,
+  "timeout_count": 1,
+  "audit_true_bias_exclusion_count": 0,
+  "guard_measured_compute_max_s": 0.1146682002581656,
+  "guard_reported_compute_max_s": 0.1146682002581656,
+  "guard_measured_compute_total_s": 0.11530650174245238,
+  "full_cycle_wall_max_s": 0.12006670003756881,
+  "full_cycle_wall_over10ms_count": 228,
+  "wall_elapsed_is_not_simulated_delay": true,
+  "finished_utc": "2026-10-13T05:16:06.760057+00:00",
+  "wall_s": 31.77219869988039,
+  "native_rows": 24001,
+  "policy_rows": 1200,
+  "sensor_rows": 120,
+  "timing_rows": 1200,
+  "world_rows": 1201,
+  "native_sha256": "666258d60390721505dd72f134f3a512050e9b2c3c5b2f9a5acd325af4a8ca9a",
+  "policy_sha256": "81f1904a6578a5f6f61ce466508ff9862574b1a72f60fa0b02abd4f11aabf767",
+  "sensor_sha256": "202129d5e7c48b44b26c797b4ede4c17620e5e46a165b4ce3c8c170842477175",
+  "timing_sha256": "c3f27d81d9302ef4ca537dbd5c83c255df2af52d13e416468bd19af2207fd57f",
+  "decision_sha256": "2c50ce86b600861d00693ff73dc49ae3fa1f0b3bc47277b9369f9ee483f4a90c"
+}

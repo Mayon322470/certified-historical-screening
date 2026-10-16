@@ -1,0 +1,2 @@
+case_index,name,template_id,population,epsilon,baseline,candidate,baseline_success,candidate_success,baseline_conclusion,candidate_conclusion,common_quick,timing_eligible,exclusion_reasons,new_success,lost_success,baseline_median,candidate_median,speedup_ratio,log_speedup,candidate_slowdown_fraction,slowdown_gt_5pct
+17,case_017,8,ordinary,1/100,zhao2t3_rank1,zhao2t3_rank1_structured,False,True,,CERTIFIED_UNSAFE,False,False,baseline_not_stable_within_budget,True,False,5.059883799869567,1.1222630999982357,,,,False

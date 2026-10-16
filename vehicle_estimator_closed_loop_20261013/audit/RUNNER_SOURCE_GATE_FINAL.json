@@ -1,0 +1,33 @@
+{
+  "status": "PASS_INDEPENDENT_FINAL_FROZEN_INTERFACE_GATE",
+  "checks": 37,
+  "source_sha256": {
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\integration\\run_estimator_closed_loop.py": "59b662c79d5c03bef79d32127e087c81217f76ab4f39d3ab21aea41881ed9a4d",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\source\\sensor_estimators.py": "86e0431327452d48d077008341a5cd77878196bf50428752d3ab44f1a64e94a2",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\inputs\\PROTOCOL_DRAFT.json": "09f1f78c57d7d0c38012da89e2bcd7cb8a49e5f4d2009dfc03202b7da2995ee1",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\audit_runner_source_gate_final.py": "2ca6a96e6a2bab2c0b3b22560b25fe27a54ca1f13c0215d2e7e7a1a00f02f881"
+  },
+  "planned_cases": 20,
+  "same_scene_parameters_across_methods": true,
+  "estimate_call_arguments": [
+    [
+      "case['method']",
+      "rows",
+      "plan['prior']",
+      "deadline"
+    ]
+  ],
+  "qualitative_source_review": [
+    "Live clearance and native truth only update audit/diagnostic logs; command veto uses packet-derived state bounds.",
+    "Initial s0/stopline and invariant body radius are declared fixed calibration; true initial speed and b do not enter estimator arguments.",
+    "Common quick is prior-only and identical for all five methods.",
+    "Three histories use fixed latest-packet indexing; drop keeps original latest stamp and fails age before estimation.",
+    "Normal request follows the public timeline; veto schedules brake at fixed 0.1s window end. Guard reserves next decision plus response; this is a modeled deadline watchdog, not a concurrent real-time implementation.",
+    "All 20 planned cases execute without result-driven selection/retry; partial failures remain in execution records.",
+    "Quadratic observation kernel has independent rational point/deletion tests. CarSim waiting/braking membership still requires new sampled logs."
+  ],
+  "scope": "Source and frozen-protocol preparation only. No simulator, new trajectory, sampled membership or all-domain proof.",
+  "plan_sha256": "2580b4a3569a5b3025dcb088ab23135b50a0f18e4a7bddf138b8dda580734c09",
+  "original_source_gate_preserved_sha256": "8ce6cf03625f9784c395dd85835f236e9362a94bf22cbfb43ac04309a7403b15",
+  "revision_note": "Original pre-freeze gate/source record is preserved. Final runner adds freeze checks/document metadata and final protocol adds replay metadata. Re-running the original gate rejected its existing output. This final audit binds the frozen final source and protocol before new simulations."
+}

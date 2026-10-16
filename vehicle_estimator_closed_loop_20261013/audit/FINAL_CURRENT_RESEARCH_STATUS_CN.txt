@@ -1,0 +1,194 @@
+最新状态：第一篇已完成Ma/Zhao/结构增强的CARLA＋CarSim闭环对照（2026-10-13）。
+
+入口：vehicle_estimator_closed_loop_20261013/REPORT_CN.txt、CONTINUE_HERE.txt、
+figures/comparison_v2.png、audit/FINAL_INDEPENDENT_REVIEW_CN.txt。
+20条新轨迹/480020 native/24000 policy/24020 world/2400 decision独审PASS；
+20/20采样未越停止线，267接受窗107067 waiting节点位置/速度包含、制动
+prefix及停车尾PASS，最小保守车头余量16.09265m，停车保持7.1655–8.6010s。
+6UNKNOWN/10timeouts保留，drop实际有效3/5、forced late4/5，其余先已回退。
+
+6同query×5法×3rep=90回放独审PASS。Ma18对精确同区间/同guard，估计
+调用成本−76.64%，含准备/guard流水−75.21%，配对中位4.905×。Zhao截止
+完成0→15/18，3UNKNOWN，流水−41.42%但无同精度合格加速pair；normal_v10
+增强版多推进2.4132m，正常/丢测v8仍超时。exact_range更快、更紧，必须报告。
+
+接口为数字里程/速度固定偏置b＋CARLA理想lane-range的三历史相容观测；
+不是旧lag+cubic的CarSim成员资格，不是作者完整车辆observer原代码复现。
+所有法同观测/100ms deadline/100ms response/共同quick/同直接物理制动。
+车辆动力学仍原CarSim；CARLA代理关闭物理，无道路力/碰撞双向反馈、无
+渲染感知。限定域采样闭环证据，无连续全域或墙钟硬实时资格。无实车要求。
+
+首次全审5个normal_A字段定义误报及旧source gate/旧图保留，V2独审仅纠正
+诊断定义，不改方法、数据或门槛。旧32例Ma退化及旧完整车辆预测FAIL不变。
+下一阶段可围绕有限效率贡献进入论文论证/写作，不追求各场景全部完胜；
+模型层48/32例与本轮应用分开报告，经典guard/二次筛面不包装为新一般理论。
+main.tex/main.pdf仍历史稿；第二篇及所有旧封包只读。上一状态完整备份在
+本轮audit/PREVIOUS_CURRENT_RESEARCH_STATUS_CN.txt。
+
+以下保留上一阶段完整状态：
+
+最新状态：第一篇已实跑CARLA＋CarSim停止线守卫/回退闭环基础验证（2026-10-13）。
+
+用户明确无实车平台，以CARLA＋CarSim高保真联仿作为应用实验依据，不再
+以硬件/道路试验为本项目要求。入口：vehicle_position_contract_20261013/
+REPORT_CN.txt、CONTINUE_HERE.txt、figures/stopline_closed_loop.png。
+新8原生开发＋4新整轨迹验证固定停车位置合同均通过，336012 native/
+16800 policy全部独审。源物理车/摩擦.85/ABS未改；虚拟A2.5/tau.30/B2/
+padding.25只定义位置包络，非全域真实减速度/曲率证明；原fullstate FAIL保留。
+
+联仿V2四场景初始化失败（无已记录native/policy）保留；V3另冻结地图
+入口几何修正，不改动力学/停止线/控制器数字，4完整闭环全部独审。
+CARLA车身包络几何参与控制，CarSim动力学推进；无guard诊断越线13.421m；
+正常guard、计算超时、过期观测回退均未越线，实际最小余量13.943/18.235/
+18.235m，全native保守车头裕量13.703/17.995/17.995m。停车尾3.59~7.29s。
+4轨迹80004 native/4000 policy/4004 world；8CARLA启动含失败全分母保留。
+owned servers已结束，既有cslm管理器保留；world/native时标和全姿态/CG/
+8bbox/queue/实际压力审核通过。fullcycle多次超过10ms，不能声称墙钟实时。
+
+重要范围：这是经典位置guard与备用动作的闭环接入基础，不是Ma/Zhao/
+所提结构估计器闭环比较。这三种估计器尚未插入安全决策；下一阶段需
+同响应信息/同deadline/同回退、各自新推动轨迹，明确其额外必要任务。
+CARLA代理关闭物理，无路面力/接触双向反馈；有限node安全不升级全域连续
+证明。不要以经典guard改名伪造论文方法应用优势，也不要继续扩大合成优势。
+上一状态完整备份：本轮audit/PREVIOUS_CURRENT_RESEARCH_STATUS_CN.txt。
+
+以下为上一readiness与算法阶段记录：
+第一篇先补车辆闭环安全应用证据链，再定稿车辆安全主张（2026-10-13）。
+
+用户已明确要求优先准备车辆安全证据。入口：vehicle_closed_loop_readiness_20261013/
+EVIDENCE_CHAIN_CN.txt；当前只完成证据/缺口核查和依赖顺序，没有新冻结数值
+采集协议、没有新模型资格PASS、没有新增模拟器运行或闭环结果。
+CG/时标/输入及同步接口已通过，车辆响应预算成员资格、连续bridge、可执行
+超时回退/递归安全、新独立同条件闭环仍缺。先准备位置/停车任务合同，不要求
+全隐态预测完美；全部旧FAIL保留。算法实证继续作为基础，暂不扩大合成优势。
+CARLA+CarSim是高保真仿真证据；物理实车证据另需硬件/道路验证，当前尚无。
+上一状态完整备份在该readiness目录/PREVIOUS_CURRENT_RESEARCH_STATUS_CN.txt。
+
+以下为已经完成的算法比较结果：
+第一篇已完成共同响应预算下的32例/480次Ma、Zhao比较及全量独立审核（2026-10-13）。
+
+当前入口：research_task_face_budget_20261013/COMPARISON_REPORT_CN.txt、
+CONTINUE_HERE.txt、REPRODUCE_CN.txt、figures/comparison_overview.png。
+方法/统计/协议25源先冻结再一次生成16模板×2预算，单线程串行每次5秒，
+全部原packet同tau/beta见证、480记录/726阶段证书及模板cluster统计PASS。
+120 SAFE/291 UNSAFE/69 UNKNOWN，0 ERROR/晚到/结论矛盾；失败分母完整。
+
+核心实测增量：Zhao2026 IEEE TAC二阶+T3加历史预筛，26→27/32稳定解决，
+96次全部成本131.213→94.912s（−27.67%）；非共同quick同结论22配对2.022×，
+95%cluster区间[.975,3.889]跨1。预声明普通组13配对/7模板为3.762×
+[2.101,5.935]，唯一新增case017（10mm），无丢失成功；结构组0.951×变慢。
+Ma2026 Automatica强化rank1/FM两版28/32不变，总成本−2.77%，同任务配对
+0.850×整体变慢。快Ma和Zhao一阶均28/32；不能说增强版为全部5法最优。
+Ma15/Zhao5条慢>5%全列，共20条。全部13组、排除原因和原始耗时保留。
+
+新接口已接入：同一固定tau、同一全局cubic beta响应贯穿过去与未来；
+所有基线共享完整rank-one噪声、共同beta后端、原包见证、actual连续bridge。
+epsilon_x=1/1000与1/100仅声明数学类。新增beta耦合面和共同beta后端正式
+0次删除，收益来自已有Sturm/稀疏Taylor历史预筛，不归因于新增面。
+可计算证书链已经建立；经典消元/support本身不是创新，新增面独立增量
+未被本轮证明。可接受的论文主线是特定条件下提高高阶集合估计的任务效率，
+不用追求所有工况/所有方法完胜。理论成本论证与论文整理下一轮继续。
+
+本轮无CarSim/CARLA运行或安全滤波闭环，无真实车辆响应类成员资格。
+所有旧车辆原门槛和FAIL保持，旧窗口为已知开发，不追认为新留出。
+main.tex/main.pdf仍历史稿。第二篇和所有旧封存目录只读。
+这32例已使用；后续改方法或做新组件消融须另立冻结协议，不能继续调参
+后把它们当新留出。封包入口PACKAGE_MANIFEST.json/verify_package.py。
+
+本状态上一版完整备份：research_task_face_budget_20261013/audit/
+PREVIOUS_CURRENT_RESEARCH_STATUS_CN.txt。
+
+以下为上一连续预测框架轮的历史记录，不是本轮算法比较进展：
+第一篇已纠正发动机输入，并完成连续预测框架重审，原精度资格仍未通过（2026-10-13）。
+
+当前入口：vehicle_predictive_rethink_20261013/REPORT_CN.txt、CONTINUE_HERE.txt、
+REPRODUCE_CN.txt；分别读取physics_diagnosis、engine_correction/audit、
+direct_response/audit、rethink_theory与audit_strategy的独立证据。
+
+明确来源错误：源OPT_THROTTLE_DELAY0，旧V1错误使用SV_THROTTLE驱动engine图。
+V3仅用当步预测physicalcommand修正该输入，无新拟合，其余V1保持。
+715窗数值失败0、实际超限11；最终半径[.053388704,.166896989,1.293746204]，
+score1.724994939 FAIL（原V1 2.182894339）。改善不等于独立资格通过。
+来源方程还证实δ遗漏独立扭角且混合轮端/车体速度；八个既有末点扭矩恒等式
+差≤.035025Nm，但全时域缺合法初始化信息。本轮停止一阶δ经验补丁。
+
+独立新路线：0.2s历史/current174特征/causal raw-prefix直接RFF+affine响应，
+8条共同遥测域整轨迹留一；480规定blockfit、520窗完成，无数值失败。
+34窗实际超限；半径[.150459229,.434872372,2.253263696]、score3.004351594 FAIL。
+已停止架构，不改ridge/加feature。LOTO仍为已知开发，不是独立holdout；
+与V3全部已知开发拟合后的评分不是同等泛化协议，不能直接排名。
+全部模型、预测、原生节点及独立数值/信息/前缀审核保留。
+
+另3次CarSim native checkpoint接口probe（同known v4 query7s）均FAIL：
+IO保存被拒；官方native-clock手动/自动可保存并还原clock，但同边界a/RPM
+未过1e-10身份门槛；B/C未完成，checkpoint路线暂缓。正常前向数据与旧v4
+精确相同。原生探测均结束，无CARLA、无新cal/holdout、无真实安全滤波闭环。
+
+数据只11case/5次换档，715相邻窗83.33%重叠，没有饱和/停车保持、完整挡位
+或完整raw请求覆盖。窗口大分母不代表独立事件充分；已知cal仍不能重新当盲验证。
+
+论文方向重审：不把所有车辆隐态高精度重建自动当作理论创新或位置安全的
+逻辑必要条件。可另研究任务安全面及signed积分的共同响应证书，但先证明
+真实成员资格、历史共同witness和连续bridge；旧[.1,.25,.75]gate与FAIL全保留。
+task-face正弦数学例及joint graph组件审核通过，仅支持声明类的条件数学，
+不认证实际车辆/连续安全/新颖性。RFF/ridge/support/integral都是经典工具。
+新接口未接入Ma/Zhao；潜在增量需公平共享信息/预算，在非退化例族证明或
+实测sound筛除减少贵求解总成本，不能为保住原框架虚构优势。main仍历史稿。
+
+本状态上一版保存在vehicle_predictive_rethink_20261013/audit_strategy/PREVIOUS_CURRENT_RESEARCH_STATUS_CN.txt。
+第二篇与既有封存轮只读。本轮没有修改旧FAIL、增大原门槛或启动持续任务。
+
+以下保留上一混合模型封存轮的历史摘要（不是最新阶段）：
+第一篇已纳入档位、换档阶段和控制器记忆，两版混合模型开发精度仍失败（2026-10-13）。
+
+先读 vehicle_hybrid_model_20261013/REPORT_CN.txt、CONTINUE_HERE.txt、REPRODUCE_CN.txt，
+及audit/HYBRID_AUDIT_REVIEW_CN.txt、audit/rpm_memory_v2/RPM_MEMORY_V2_AUDIT_REVIEW_CN.txt。
+
+新增8次CarSim原生开发运行：6条设计输入、2条旧失败案例扩展遥测重播；
+128008行native、6400次控制更新，合计2次升档、3次降档。两条重播的全部
+共有native字段与旧记录数值精确相同。全部属于DEVELOPMENT；旧cal_v10/v16
+已成为已知开发资料，不能再用于未来独立校准。物理车、控制器和原门槛未改。
+
+V1显式携带发动机转速、油门/压力、gear/ratio/shift阶段、输出轴转速偏差、
+初始加速度失配及PI/reference记忆。正式预测只给未来raw请求，未来油门/
+制动、积分、档位及加速度全部由模型推进。执行器真实计划重播另作诊断。
+控制器时序、当前信息接口、参数拟合及全部715窗口预测已独立核查。
+因果中心实际误差11/715窗口超限；最终0.6秒半径
+  [0.0690282993 m, 0.2093789895 m/s, 1.6371707543 m/s²]，score=2.182894339 FAIL。
+
+另立V2，仅新增输出轴转速偏差的四参数动力学；一次有界拟合保留112000个
+转移和所有换档/峰值。V1不改，V2第一/第四系数触边，未扩大边界或重新拟合。
+完整8案例520窗口由独立向量化实现重建；生产标量25查询仅用于逐节点交叉核验。
+实际误差26/520窗口超限；最终半径
+  [0.0653681101 m, 0.3576794176 m/s, 2.1807874230 m/s²]，score=2.907716564 FAIL。
+V1同8案例域的超限为11/520；V2未改善共同信息域的全体最坏误差门槛。
+
+固定门槛仍为0.6秒[0.1 m, 0.25 m/s, 0.75 m/s²]。档位标签正确时也存在
+加速度超限，不能把失败只归因于guard；替换未来真实输出RPM的oracle诊断
+不是可操作预测，整窗也不保证改善。下一轮优先核验发动机/传动/轮胎连续
+动力状态关系、减少预测中心误差，再构造有效预算。不能只扩大误差界、删
+换档窗或追认稳定工况；若改变应用域，必须另立明确协议及独立验证。
+
+混合集合分支理论接口已完成，10/10自测及独立边界/轨迹包含审计通过。
+保证以sound flow、完整guards/reset/memory及有效分支预算为前提；未认证
+当前SDK自动机、物理近似、连续安全或理论创新性，旧线性证书不能直接沿用。
+当前信息仍含模拟器内部遥测，不能视为实际传感器噪声下的资格证据。
+
+本轮新calibration=0、holdout=0、CARLA=0、真实车辆安全滤波闭环=0。
+尚未接入Ma/Zhao主求解器；同轨迹比较必须公平提供新增状态/输入/失配集合，
+并计入初始化、模式分支和控制器推进成本。所有原生运行已结束。
+
+历史入口：vehicle_augmented_state_20261013的ARX2新校准score=3.061659 FAIL，
+82文件/19外部依赖；vehicle_model_repair_20261012新校准score=1.256293 FAIL，
+87文件/48外部依赖。vehicle_validation_20261012保留更早9条资格、2条CARLA
+同步接口重播及12条控制器筛选，372文件/5依赖；接口通过不等于安全闭环。
+这些已封存目录保持只读，不继承旧零扰动证书来覆盖新的车辆模型。
+
+算法比较入口：research_zhao2026_comparison_20261012/COMPARISON_REPORT_CN.txt。
+两篇近期基线为Ma2026 Automatica与Zhao2026 IEEE TAC；48例、960次运行。
+Ma加结构筛除解决数40→42，Zhao二阶+T3为30→37。结论限于旧固定理想模型
+中的独立任务适配，不是作者原代码在全部应用上的全面比较。
+
+main.tex/main.pdf仍为历史稿，不是已完成的新期刊论文。理论优先权、车辆
+安全、硬实时和投稿准备仍需各自证据。第二篇与既有封存包保持只读。
+本状态上一版保存在vehicle_hybrid_model_20261013/audit/PREVIOUS_CURRENT_RESEARCH_STATUS_CN.txt。

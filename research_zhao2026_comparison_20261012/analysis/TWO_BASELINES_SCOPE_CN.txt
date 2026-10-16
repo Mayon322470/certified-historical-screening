@@ -1,0 +1,101 @@
+两篇独立近期基线：本轮实现范围与论文表述
+2026-10-12。此文件只说明算法身份；不提前写入任何性能结论。
+
+一、确实是两篇独立文献
+
+Ma, Wang, Kinnaert, Shen. Automatica 192 (2026), 113189.
+DOI: 10.1016/j.automatica.2026.113189；2026-07-23在线。
+核心是顺序展开/有符号平方余项的改进ZFO，以及最小区间包络宽度的LP组合。
+
+Zhao, Wang, Liang, Xu. IEEE TAC 71(4) (2026), 2466-2481.
+DOI: 10.1109/TAC.2025.3627100；2025-10-31早期在线，2026年4月正式卷期。
+核心是完整Kronecker多项式lift、认证Carleman余项、最小F-radius增益，
+并用Theorem3高阶状态约束进一步校正。
+
+Ma的多个strip/structured变体仍是一篇论文的变体；
+Zhao的nu=1、nu=2与Theorem3开关仍是另一篇论文的阶数/机制消融。
+不得把六个主方法写成六篇外部论文。
+
+二、两种模型接口需要明确区分
+
+共同物理任务是过去分段保持输入下的固定theta历史相容集及未来连续安全查询。
+所有方法得到相同的初态、命令记录、终端packet、theta先验、未来命令/H/rho；
+均使用精确保持段闭式物理模型，不存在一方Euler、一方解析模型的差别。
+
+Ma：静态标量q=1/theta，恒等预测；精确历史终点g(q)作为三通道非线性批量量测。
+原文直接允许非线性measurement。使用其有符号平方余项、Theorem4一致性条带、
+Theorem5最小宽度LP在一维的等价解析解。主对手ma_strip再与全部条带和先验相交，
+这是预先声明的更强适配，不是原文LP原样输出。
+一维减少了多变量展开次序的发挥空间，但不消除有符号平方余项贡献。
+
+Zhao：四维状态(r,z_x,z_v,z_a)，q=q_c+r，单步F(r,z)=(r,g(q_c+r))；
+线性终端measurement C=[0 I3]。初始辅助状态确定为0，过程噪声为0，
+属于明确的半正定边界扩展；单sensor和理想通信省去本任务不存在的通信误差。
+nu=2实际预测/更新21维lift，保留r²初始非零中心、统一block余项、全部高阶行，
+再按Theorem3校正。不是普通二阶Taylor换名，也不是把物理packet人工平方后
+假定其噪声独立。r*z项可以让高阶约束反馈参数r。
+
+两种模型改写利用相同数据，各自满足对应论文的量测形式，转换成本计入方法。
+Zhao需高阶导数及乘积余项，Ma需二阶导数，属于不同方法自身的信息处理成本。
+两者都不是原生连续时间安全求解器；本轮外接同一个认证未来后端。
+
+三、核心目标不同，指标不得混写
+
+Ma优化interval-hull半宽；Zhao优化生成元Frobenius范数，即F-radius。
+Zhao Theorem3可降低F-radius，但不保证参数投影的绝对行和半宽逐例缩小。
+本项目最后以安全判定、预算内解决数及端到端时间衡量实际用途，不预设哪个
+几何目标在此任务上更好，也不把F-radius变化直接等同真实可行集体积变化。
+同样，外包碰到不安全区域只表示可能性；UNSAFE需要实际历史相容参数的越界证书。
+
+四、结构方法和消融的可归属范围
+
+ma_strip_structured和zhao2t3_structured各自使用相同的历史结构整cell筛除前端，
+其余部分分别保留对应基础方法。前端未能筛除时继续调用相应基线。
+这样可分别评估结构信息对两个独立集合估计器的增量。
+zhao2t3_sturm和zhao2t3_sparse只是前端组成的消融，不是外部新文献。
+完整结构前端、Sturm单独、稀疏Taylor/单调性单独的身份按冻结正式协议解释；
+不能把未启用的曲率机制算入单独sparse结果。
+
+五、建议正文措辞
+
+中文方法说明：
+“我们独立实现了两种近期集合估计方法在同一参数相容性任务上的适配：
+Ma等人的改进ZFO估计器，以及Zhao等人的Carleman多项式估计器。前者采用静态
+标量参数与非线性批量量测，并加入明确声明的精确一维条带相交；后者采用单步
+四维动态改写和线性量测，保留二阶lift及原文高阶约束校正。两者共享物理信息、
+认证算术和连续时间安全后处理。我们进一步分别在两种基线上加入相同的历史
+结构筛除，以评估该前端的附加价值。”
+
+English methods wording:
+“We independently implement task-specific adaptations of two recent set-membership
+estimators: the improved ZFO estimator of Ma et al. and the Carleman polynomial
+estimator of Zhao et al. The former uses a static scalar parameter with a nonlinear
+batch measurement and an explicitly added intersection of scalar consistency
+strips. The latter uses a one-step four-state reformulation with a linear terminal
+measurement, retaining the second-order lift and the higher-order correction of
+Theorem 3. Both receive the same physical information and use the same certified
+continuous-time safety backend. We also add the same history-structure exclusion
+module to each estimator to assess its incremental contribution.”
+
+实验局限措辞：
+“These experiments compare the specified adaptations on a fixed synthetic suite.
+They do not reproduce the papers' complete communication and multi-sensor studies,
+and they do not establish uniform superiority over general set-membership methods.”
+
+六、结果出来后才能填写的内容
+
+主统计以冻结的新48例为单位，32普通随机与16已知机制的新参数压力例分开。
+公开宽裕组、数值参考正/紧正/负margin四组各12例；数值参考不是真值标签。
+双方所有重复均预算内取得相同有效结论且非共同快速门的案例，才用于求解时间比。
+包含UNKNOWN的总时间比只能称任务成本比；晚到正确证书不算预算内成功。
+保留方法间退化、变慢、状态差异和无效果病例；不能按结果换阶数或删掉难例。
+3次重复测计时波动；case级bootstrap只描述固定套件的重采样稳定性。
+任何新优势结论须引用正式结果/独立审计文件；本说明不提供预设胜负数字。
+
+审计关联
+
+算法合同：analysis/ZHAO_PAPER_CONTRACT_CN.txt；Ma合同在上一轮对应analysis目录。
+正式方法/统计设计：analysis/FORMAL_COMPARISON_PROTOCOL_CN.txt。
+本轮输入/冻结低开销核查：qa/GENERATION_FREEZE_AUDIT.json，464项PASS。
+正式960任务计时结束后，qa/GENERATION_MATH_AUDIT.json已完成48例独立生成点/
+参考点轨迹重算PASS；它不认证数值全局峰值，也不替代正式求解器证书审计。

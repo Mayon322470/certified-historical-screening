@@ -1,0 +1,63 @@
+{
+  "id": "timeout_v8__zhao2t3_structured",
+  "method": "zhao2t3_structured",
+  "status": "SAMPLED_NO_STOPLINE_CROSSING",
+  "plan_sha256": "2580b4a3569a5b3025dcb088ab23135b50a0f18e4a7bddf138b8dda580734c09",
+  "started_utc": "2026-10-13T05:21:20.361621+00:00",
+  "continuous_certificate": false,
+  "real_time_wall_clock_guarantee": false,
+  "sensor_perception": false,
+  "native_truth_in_estimator": false,
+  "availability_model": "Public normal raw timeline continues during a fixed 0.1s computation/response window; estimator only decides a brake veto at window end. Prior accepted guard covers next decision plus response (0.2s). No wall-clock real-time assertion.",
+  "guard_deadline_scope": "Sensor packet generation, common prior quick, estimator, state bounds, position guard; excludes log serialization and CARLA scene operation, both included in full cycle timing",
+  "invariant_body_radius_m": 3.708917501489181,
+  "calibrated_initial_s_m": 1.570856426274421e-07,
+  "stopline_s_m": 43.45734793087202,
+  "landmarks": [
+    {
+      "s": 12.000000157085642,
+      "lateral": 3.0
+    },
+    {
+      "s": 26.000000157085644,
+      "lateral": -4.0
+    },
+    {
+      "s": 46.000000157085644,
+      "lateral": 5.0
+    }
+  ],
+  "minimum_world_clearance_m": 19.24605179645865,
+  "first_world_crossing_s": null,
+  "emergency_applied_s": 1.4000000000000001,
+  "emergency_reason": "FORCED_COMPUTE_TIMEOUT",
+  "fault_injected": true,
+  "max_emergency_prefix_excess_m": -0.2500002134863326,
+  "sampled_backup_membership": true,
+  "normal_acceleration_max_mps2": 0.7937301786222469,
+  "stopped_final_tail_s": 8.15849999999848,
+  "final_speed_mps": -5.925607368953512e-06,
+  "estimator_calls": 5,
+  "estimator_unknown_count": 0,
+  "quick_prior_accept_count": 9,
+  "timeout_count": 1,
+  "audit_true_bias_exclusion_count": 0,
+  "guard_measured_compute_max_s": 0.06418469967320561,
+  "guard_reported_compute_max_s": 0.15,
+  "guard_measured_compute_total_s": 0.2988938996568322,
+  "full_cycle_wall_max_s": 0.08625750010833144,
+  "full_cycle_wall_over10ms_count": 215,
+  "wall_elapsed_is_not_simulated_delay": true,
+  "finished_utc": "2026-10-13T05:21:51.546520+00:00",
+  "wall_s": 31.184637000318617,
+  "native_rows": 24001,
+  "policy_rows": 1200,
+  "sensor_rows": 120,
+  "timing_rows": 1200,
+  "world_rows": 1201,
+  "native_sha256": "ccf874a02b56395e2b66580f88792854017355b4f2de813743c4d8565ab70c2c",
+  "policy_sha256": "8f64453042ba035cc1122a550749fe8b76ba6b3781a71c482c16ed8af691d12a",
+  "sensor_sha256": "0ce966615f7df89bda40d60f7c6fecf5a519beb4a06ec7ac98cb057e0fc35414",
+  "timing_sha256": "3cec5a7c66526c56d8150b30c9fb108b7fb6120c4d7711718c01218edd92f605",
+  "decision_sha256": "616ca86a8700fe7857f0f101d106ba3edda1ca1a4c7b87fd7c53748d86467d7d"
+}

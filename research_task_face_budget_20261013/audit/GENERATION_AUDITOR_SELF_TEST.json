@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "scope": "GENERATION_AUDITOR_DEVELOPMENT_ONLY",
+  "records": 4,
+  "formal_suite_opened": false,
+  "generator_imported_or_called": false,
+  "source_sha256": "440474f6b4fbba5fd135b0e03850ce307d9f7da29785367a346cf84b75b24ba0",
+  "checks": [
+    {
+      "tau": "1",
+      "beta": "0",
+      "independent_history_in_original_packet": true,
+      "independent_reported_nominal_and_actual_enclosures": true,
+      "independent_future_witness_enclosure": true,
+      "threshold_policy": 0,
+      "certified_public_safe": true,
+      "certified_generating_unsafe": false,
+      "near_label_not_truth": false
+    },
+    {
+      "tau": "1",
+      "beta": "1/2000",
+      "independent_history_in_original_packet": true,
+      "independent_reported_nominal_and_actual_enclosures": true,
+      "independent_future_witness_enclosure": true,
+      "threshold_policy": 0,
+      "certified_public_safe": true,
+      "certified_generating_unsafe": false,
+      "near_label_not_truth": false
+    },
+    {
+      "tau": "1",
+      "beta": "-1/2000",
+      "independent_history_in_original_packet": true,
+      "independent_reported_nominal_and_actual_enclosures": true,
+      "independent_future_witness_enclosure": true,
+      "threshold_policy": 0,
+      "certified_public_safe": true,
+      "certified_generating_unsafe": false,
+      "near_label_not_truth": false
+    },
+    {
+      "tau": "1",
+      "beta": "1/2000",
+      "independent_history_in_original_packet": true,
+      "independent_reported_nominal_and_actual_enclosures": true,
+      "independent_future_witness_enclosure": true,
+      "threshold_policy": 1,
+      "certified_public_safe": false,
+      "certified_generating_unsafe": true,
+      "near_label_not_truth": false
+    }
+  ],
+  "elapsed_seconds": 0.005152700003236532
+}

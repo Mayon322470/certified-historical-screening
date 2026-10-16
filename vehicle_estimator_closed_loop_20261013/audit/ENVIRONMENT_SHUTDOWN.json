@@ -1,0 +1,13 @@
+{
+  "status": "PASS_NO_CARLA_OR_SIMULATION_PORT_LISTENER",
+  "created_utc": "2026-10-13T05:32:00.569553+00:00",
+  "carla_processes": [],
+  "simulation_listeners": [],
+  "existing_license_managers_preserved": [
+    {
+      "name": "cslm.exe",
+      "exe": "E:\\Applications\\CarSim\\Programs\\cslm.exe",
+      "pid": 42472
+    }
+  ]
+}

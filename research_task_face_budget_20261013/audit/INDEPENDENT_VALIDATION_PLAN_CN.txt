@@ -1,0 +1,128 @@
+任务面响应预算接入：独立验证设计与旧API合同审查
+日期：2026-10-13。范围为本新目录/audit；旧封存包只读。
+本次只做源码审查和16项小型有理数逻辑检查；没有运行旧大批证书、车辆或正式计时。
+
+目标与结论
+可在明确且可信的声明域内，研究相对Ma2026/Zhao2026的必要筛除与固定预算判别
+收益；不要求每一类、每一指标都领先。但必须先让所有方法判定同一个非空历史
+相容响应类、同一个连续位置安全面，不能把较宽松任务或不同误差预算当作算法优势。
+目前生产适配器与其新证书仍未完成独立验证；下述计划不能写成新方法已经通过。
+
+一、旧API已核对的事实与具体接入点
+只读源：research_zhao2026_comparison_20261012/implementation下的
+comparison_core.py、certified_core.py、quick_baseline.py、run_comparison.py，
+以及Ma目录comparison_core.py。旧独立qa接口已定位，未运行其历史批量审计。
+
+1. comparison_core.parse_case只把initial/prior/past/future/packet/H/rho/limit
+   转为Fraction；虽然dict会保留额外字段，后续计算不会自动使用response预算。
+   新字段必须有显式schema、单位、原始packet与有效packet的版本区分，不能仅
+   在JSON里加一个预算字段便声称已接入。
+2. pc.prepare、tf.prepare、ma.prepare/contract、zhao.contract与make_cell全部
+   依赖case.packet。若past误差要求扩张packet，必须先构造所有方法共享的同一
+   有效packet，再生成任何Sturm/Taylor/Ma/Zhao模型。不能一方用原包、一方用扩张包。
+3. comparison_core可输出CERTIFIED_SAFE且nonempty_witness=None；旧runner已经
+   明确不把这种vacuous SAFE计为resolved。这不是旧正式统计漏检；新runner须
+   保留此约束，并把witness升级到新响应合同，而不能只检查膨胀后的名义终点。
+4. 旧check_witness只检查名义历史endpoint∈packet，再以名义未来position_lower
+   严格超limit作UNSAFE。加响应误差后这两项不能原样继承为实际车辆反例。
+5. 旧time_allowance=(max(packet加速度绝对界,U)+rho*theta_hi)*(H/nt)^2/8
+   来自旧名义动态。future tube必须另按连续合同进入，不能只在节点加预算后
+   仍以这项名义bridge声称涵盖实际节点之间误差。
+6. 旧quick_certificate有自己的包络与名义中点可行性。新预算必须同样进入
+   quick，否则应所有方法统一关闭quick；不能只改主backend而漏掉提前SAFE通路。
+7. 旧runner把准备/quick/各级求解纳入elapsed，最后以elapsed<=budget判定预算内
+   成功。这一逻辑应保留；仅看budget_hit布尔值不能排除单cell计算导致的晚到证书。
+
+二、先冻结四个对象，避免测量误差、响应误差与外包混淆
+A. P_i：真实观测包及测量误差定义，注明坐标、时刻、开闭边界和原始单位。
+B. R(H,U)：所有允许过去/未来响应及其共同变量；必须明示它是完整可实现模型类，
+   还是只承诺真实轨迹包含于一个外包。后者可以支持SAFE，但外包中的一个点未必
+   是可实现UNSAFE反例。普通记录最大误差不能自动成为R的全域成员资格证明。
+C. E_past：对每历史包的必要响应外包。若实际状态=g(theta)+e且
+   e∈[e_lo,e_hi]，必要名义包为[P_lo-e_hi,P_hi-e_lo]，不是随意对称扩大。
+   同一个theta和同一个允许响应/初态/输入/mode/controller历史必须解释全部包。
+D. U_future(theta,t)/共同位置upper tube：适用theta/输入域、有效全时域、初始
+   锚定、与过去误差的连接及证据角色。若只有future上界，没有可实现下界/响应
+   见证，仍可研究SAFE效率，但不能强行保留原UNSAFE能力。
+
+特别注意：past tolerance若只是测量噪声，名义动力学可仍描述真实状态；若它是
+模型响应偏差，则future t=0必须承接同一过去末端位置/速度/加速度偏差。不能把
+带误差past packet扩张后，又把future误差无条件reset为0。未来位置预算应已覆盖
+初始偏差传播，或显式加入这些项；两种做法不能重复加，也不能遗漏。
+
+三、四类输出的独立证明义务
+SAFE：完整覆盖先验/相容域的所有cell或合法严格排除；保留部分的名义future
+上界、响应上tube与连续bridge之和在整个时域不超过同一limit；另有一个同一
+响应类的全部历史共同可实现witness，才计非空任务成功。缺witness时为UNKNOWN
+或另列条件式/vacuous bound，不混入SAFE解决率。
+
+UNSAFE_IN_DECLARED_CLASS：必须给出theta、完整共同历史解释、合法future输入/
+扰动/响应及某时刻的严格位置下界>limit。它表示声明类中存在反例、鲁棒安全
+命题失败，不表示实际未知车辆已经越界。若要声明ACTUAL_UNSAFE，需实际身份
+证据或对所有实际允许解释的适当违规证明，不能由一个名义反例推出。
+单侧upper超limit只能说明该上界未认证SAFE；名义轨迹超limit而允许响应可能
+为负也不能自动给实际下界。若类明确允许同一witness下零future误差，名义反例
+可以成为该声明类反例，但必须独立验证零响应与past解释可共同实现。
+
+INCONSISTENT：完整先验域被有效必要条件严格排除，或对完整共同响应模型证明
+历史无解；未完成覆盖、找不到见证、求解器失败或预算用尽均不能视作无解。
+仅在收缩外包还有点时不能声称非空；若整个必要外包为空，则可以证明原类为空。
+闭packet或cell触边应保留，等于安全limit也不是严格UNSAFE。
+
+UNKNOWN：覆盖未完、预算用尽、仅上界超限、共同witness未证、必要物理预算缺失、
+求解器不能完成等。ERROR单列实现异常；不将其伪装成不一致或成功。
+
+四、最小证书字段
+输入digest、方法冻结digest、响应合同digest、原始/有效packet及扩张推导；完整
+prior cell分割与逐cell去留；每次前端contract的原证明与共享预算；每个retained
+cell的名义节点界、tube项、连续bridge项、最后位置上界；共同历史witness的
+所有变量及逐包残差；UNSAFE时同一witness的future可实现构造与严格下界；
+grid完整性、开始/结束时间、实际elapsed、预算、overshoot、quick路径及其证明。
+若tube是统一常数E且对全时域有效，可用max_node_nominal+nominal_bridge+E；
+若tube仅在节点给定，必须提供另一个连续插值/变化率/响应动态证明。
+缓存键至少包含完整公开输入、响应合同、方法版本与完整证书payload；不能只
+按case名、状态标签或θ复用一份旧证明。
+
+五、小可执行验证流程（先开发、后冻结、再生成正式新输入）
+0. 已执行contract_smoke.py的16项纯Fraction逻辑检查。它演示误判反例，不是
+   生产certificate verifier；不作为方法计时或实验性能数据。
+1. 接入后先做最多7个小解析开发fixture，n≤4、nt≤4：严格SAFE、严格声明类
+   UNSAFE、历史共同不一致、边界singleton、必要包非空但共同历史空、上tube
+   超限但无合法反例。每个只用所有候选共同协议运行一次，保留UNKNOWN。
+   增加一个“旧nominal unsafe、负response使其安全”的反例防止原witness直接迁移。
+2. 独立核对每个fixture的packet扩张、共同witness、每cell收缩/删除、完整覆盖、
+   名义未来界、tube、bridge、状态与quick。旧qa/audit_comparison.py的endpoint/
+   flow/future/check_contract/check_geometry可在新副本做受控复用，必须加新预算
+   和witness层；不能只拿旧check_result的PASS覆盖新合同。
+   Zhao lift/gain/余项及Ma原合同使用已独立reference的原检查，保留方法身份。
+3. 至少12类单项变异应拒绝：漏past预算、signed端点颠倒、漏future tube、
+   漏bridge、将名义反例冒充joint反例、每包不同β、删nonempty witness仍宣称
+   resolved、遗漏cell、把闭触边删掉、减小Ma/Zhao余项、将late改within-budget、
+   给某方法不同response/input digest。检查器自身也保留失败和修正版本。
+4. 源码/响应类/输入生成规则/方法变体/网格策略/预算/quick/计时边界/分析统计
+   全部冻结并记录hash。然后才由单独生成器生成正式新输入；公开solver接口
+   不含生成隐藏theta、响应轨迹、真值标签或未来真实状态。不得用新输入结果
+   选择预算/ν/方法最佳变体；发生实质修改则本批降为开发并另开协议。
+5. 正式计时独占工作时段；此audit不与其并行占CPU。先结束全部计时、冻结记录，
+   再离线审计全部终态证明与完整分母。重复payload只可按全输入+全payload hash
+   复用已通过审核，另列独立计算量与缓存复用量，不把复用称新数学重算。
+6. 再从原始记录独立重建解决率、same-conclusion配对、总成本和失败成本。只在
+   双方所有预声明重复均预算内解决且同结论的集合计算成功速度比；其余分别
+   报新增解决、丢失解决、UNKNOWN、ERROR、晚到、变慢案例。证书相互矛盾须先
+   查明正确性，不能照常汇总。quick-only单列；无优势的组照实保留。
+
+六、公平性与可接受的有限增量
+所有方法共享R、原始/有效history packet、初始/输入/模式信息、未来backend、
+任务面、bridge、预算、输出非空语义和quick。若structured利用共同响应相关性，
+必须说明基线为何合法保留/放松这些信息；不能一方拿完整joint类、另一方仅拿
+更差的独立盒却归因于纯算法效率。基线加强变体应在冻结前确定且显式命名。
+所有必要筛除构造、导数、LP/lift、共同预算计算、witness搜索与证书生成纳入
+规定成本；不得把自己的前处理藏在计时外。内存/精度/线程/冷缓存策略一致。
+可以只在预声明且非退化的有结构组证明更少贵调用或更高预算内解决率，不必
+所有组更快。但开发选择的组、生成机制、失败组及能力边界必须完整披露。
+本轮首先是条件数学benchmark；除非另有物理预算资格证据，不能写成CarSim
+连续安全验证，更不能把标准tube相加或已有LP本身当作新理论。
+
+当前交付状态
+源码/API审查与小型合同测试已完成；新生产适配器审核、正式新输入/计时、全量
+新证书及统计审核均未执行，等待新合同与实现落盘。未修改旧包或读取未来留出。

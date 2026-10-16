@@ -1,0 +1,67 @@
+{
+  "dt_s": 0.0005,
+  "initial_state": {
+    "time": 0.0,
+    "x": -1.0135764645848386,
+    "y": 0.0,
+    "z": 0.5341099514755034,
+    "vx": 8.0,
+    "vy": -0.0,
+    "ax": -0.017049943792413022,
+    "ay": -3.9703226523513925e-20,
+    "yaw": 0.0,
+    "pitch": 0.002629680702525999,
+    "roll": 0.0,
+    "xo": 0.0,
+    "yo": 0.0,
+    "zo": -0.008557304252810486,
+    "body_vx": 8.0,
+    "body_ax": -0.01693971470221777
+  },
+  "solver_dll": "E:\\Applications\\CarSim\\Programs\\solvers\\carsim_64.dll",
+  "solver_sha256": "5f85c18b0e081b733682ba0a27710394d8bc6a76ff074331749de67d44994184",
+  "vs_get_version_model": "Vehicle Configuration: I_I",
+  "vs_get_version_product": "CarSim 2024.1",
+  "diagnostic_channels": {
+    "gear_status": [
+      "SV_GEAR_STAT",
+      1.0
+    ],
+    "gear_command": [
+      "SV_GEAR",
+      1.0
+    ],
+    "gear_delayed": [
+      "SV_GEAR_DELAY",
+      1.0
+    ],
+    "gear_ratio": [
+      "SV_R_GEAR_SHIFT",
+      1.0
+    ],
+    "engine_rpm": [
+      "SV_AV_ENG",
+      9.549296585513721
+    ],
+    "brake_front_actual_mpa": [
+      "SV_PBK_L1",
+      1e-06
+    ],
+    "brake_rear_actual_mpa": [
+      "SV_PBK_L2",
+      1e-06
+    ],
+    "delayed_throttle_state": [
+      "SV_THROTTLE",
+      1.0
+    ],
+    "shift_start_time": [
+      "SV_T_SHIFT_START",
+      1.0
+    ],
+    "shift_active": [
+      "SV_TH_AUTO_SHIFT",
+      1.0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "scope": "Runtime provenance supplement collected at final packaging; does not change frozen implementations, inputs, results, or audit reports.",
+  "solver_runtime_recorded_during_main_run": {
+    "source": "results/holdout_main/run_metadata.json",
+    "python": "3.12.7",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16,
+    "numerical_threads": 1,
+    "blas": "Intel MKL 2023.1-Product, one thread",
+    "openmp": "Intel libiomp5md, one thread"
+  },
+  "anaconda_environment_observed_at_packaging": {
+    "executable": "E:\\Applications\\Anaconda\\anaconda\\python.exe",
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct 4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "mpmath": "1.3.0",
+    "observation_boundary": "Dependency versions checked after the runs. No dependency installation or changes were made during this experiment. Do not misrepresent these as versions individually recorded by every audit."
+  },
+  "independent_statistics_runtime_recorded_in_audit": {
+    "source": "qa/AUDIT_statistics.json",
+    "numpy": "2.3.5",
+    "python": null,
+    "executable": null,
+    "note": "The audit records NumPy 2.3.5 but does not record its Python version or executable. It must not be described as using the solver's NumPy 1.26.4 environment. All 8117 comparisons and 737 bootstrap intervals passed independent recomputation."
+  }
+}

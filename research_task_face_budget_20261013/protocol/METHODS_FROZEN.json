@@ -1,0 +1,79 @@
+{
+  "status": "METHODS_FROZEN",
+  "timestamp_utc": "2026-10-12T18:42:24.021556+00:00",
+  "generator_sha256": "082684c101544948e20a385ceef556d00402438ce91821d81435e0261eb23dc8",
+  "protocol_sha256": "7a081aaa2ccd6ee94ea5f5a68171a761de4f3096b4f6ca8b2c2eaf1ea6f066ee",
+  "source_sha256": {
+    "implementation/budget_comparison.py": "69021d578705156709ab741159325b25d3a23bcb8a41e01ea497d82d72bc055d",
+    "implementation/certified_core.py": "71fbd06c63d736b3c2c3f872a19bd9805a9915e06aec8928c80f7f6c8ca820bd",
+    "implementation/coupling_faces.py": "b95bc67a46e1e92a1428a7c783fb446494b4bd121047fd7a3b3a1b0a832b5a6f",
+    "implementation/development_smoke.py": "c2300bd266965ec6c5dba4f902f184881e6864e96a9d65a6eb45e7d4f940f3f6",
+    "implementation/history_derivatives.py": "205d21ae0df0dfdd3104eb44f668334d85febec540a966083623ee796d7ee1a9",
+    "implementation/ma_scalar_certified.py": "4dd331b0dc5ade15adf814e0740d8be8286fe955ceb1a79ec8edd3a204ddcd9a",
+    "implementation/ma_zfo.py": "51e7bcc08a54caa4c753a19813c7edfe01e20f1795cdfe7325df9e19e43737ae",
+    "implementation/polynomial_contract.py": "67611c3ecc222c6d722382ec7841d7a56dbc1b959c43e7093c071d5c6b2b371e",
+    "implementation/quick_baseline.py": "ad609b57a8a149c9dc81abe4a56685ed7c4a16b2f809824fab0d4e9a3009cf70",
+    "implementation/rank1_ma.py": "2fc2d049101596957bd9ac3f23e0de1ed5780b3fea552362d7d92c68b377385d",
+    "implementation/refined_core.py": "ea2129a0a5d6090094b27d06aceef7fca06cac5fd1416fa7e5039676936bfa3c",
+    "implementation/run_budget_comparison.py": "797bbd2fa1cb8a7f3fa4a64e06a9497befbb106400abbc18a853af61e465112d",
+    "implementation/sparse_faces.py": "b6f55b68c7f632b52d05ff095000fdf22ab78f81b549e1f586d99d09a61dc1e7",
+    "implementation/taylor_faces.py": "a6082203407888fced6c0405b656aeeaa1a03f70aa0cf0b5e437390be49ea49e",
+    "implementation/zhao_carleman.py": "76082b2c9e27aa94251365c7fb3788a657d5f39135d12ae0317270e1a1eabb5b",
+    "theory/response_budget_math.py": "d38a97fc776c367806b0f1017e1f4008663cab8c8788b4ccdd7dba1f1a2c2b59",
+    "theory/shared_response.py": "6b2453d0d446151015f792f420e4c412793371268a8b690efd82fcaf48b27f2c",
+    "theory/validate_response_budget_math.py": "3c2c705c399758984631d2bbf45c51ce0352bac815ff8b276362cafac2b08ed4",
+    "theory/SHARED_TAU_RESPONSE_INTERFACE_CN.txt": "555ca2693f7f2243db2031cc35bd58cd7b66a07ff77fe3cfb0c20adf8a37e35f",
+    "protocol/freeze_methods.py": "200eab77b01c3106afd9f9142d7541f0cbaae1f2595b85fe237696913fdeca77",
+    "protocol/generate_taskface_suite.py": "082684c101544948e20a385ceef556d00402438ce91821d81435e0261eb23dc8",
+    "protocol/FINITE_COMPARISON_PROTOCOL_CN.txt": "7a081aaa2ccd6ee94ea5f5a68171a761de4f3096b4f6ca8b2c2eaf1ea6f066ee",
+    "protocol/PROTOCOL_DESIGN.json": "a3532d632b8cbd3713a5ea70f05eba465fd4078e98904616fb3c7fa2c7ea6411",
+    "analysis/analyze_comparison.py": "8b299048774eeb2050cba91c90c502ada2bf3ff2adf5f6c90bd34ad1f7ccbdc9",
+    "analysis/STATS_RULES_CN.txt": "875d7039e4dc743b397fee0bbee8546fea13c0e0350fbcb7aad3485f445523d1"
+  },
+  "prefreeze_validation_sha256": {
+    "audit/RANK1_CONTRACT_AUDIT.json": "d33f5ae5236560dec1af2c7a25f7073b222be4a1b238619d9c3dd7e435edce1e",
+    "audit/COUPLING_AND_SERIALIZATION_AUDIT.json": "1e03d5afa8ebd9c4f05e9cdde7edd31d52dd135b5e3037fb3a5bcdc4e73f7700",
+    "audit/BACKEND_DEVELOPMENT_AUDIT.json": "1b33a9382539227123cb6a96ee29f1fdc26537160840edcfe8c2c393e953bbe9"
+  },
+  "configuration": {
+    "methods": [
+      "ma_rank1",
+      "ma_rank1_structured",
+      "zhao1_rank1",
+      "zhao2t3_rank1",
+      "zhao2t3_rank1_structured"
+    ],
+    "grids": [
+      8,
+      32,
+      128,
+      512
+    ],
+    "time_grids": [
+      32,
+      64,
+      128,
+      256
+    ],
+    "budget_seconds": 5.0,
+    "repeats": 3,
+    "order_seed": 712913,
+    "interval_bits": 96,
+    "numerical_threads": 1,
+    "derivative_subdivisions": 1,
+    "quick_gate": true,
+    "collect_every_repeat": true
+  },
+  "statistics": {
+    "template_clusters": 16,
+    "case_count": 32,
+    "expected_records": 480,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20261013947,
+    "threshold_for_listed_slowdown": 1.05
+  },
+  "formal_data_generated_before_freeze": false,
+  "formal_solver_called_before_freeze": false,
+  "physical_budget_qualification_claimed": false,
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]"
+}

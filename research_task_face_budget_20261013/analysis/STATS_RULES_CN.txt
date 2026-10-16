@@ -1,0 +1,23 @@
+固定统计口径（正式记录读取前冻结）
+
+1. 输入与固定分母
+只读取 results/formal_main/records.jsonl 与 protocol/frozen_suite/evaluation_groups.json；不导入算法，不读取私有构造见证。方法固定为 ma_rank1、ma_rank1_structured、zhao1_rank1、zhao2t3_rank1、zhao2t3_rank1_structured。32例×5法×3次=480运行；rep为0、1、2。每法96次、32例，所有分组按原始组表保持分母。响应预算为epsilon_x=1/1000、1/100；运行时间预算为5秒，二者不可混称。
+
+2. 记录有效性与成功
+CERTIFIED_SAFE仅在nonempty_witness非空时resolved；CERTIFIED_UNSAFE、INCONSISTENT为resolved。UNKNOWN、ERROR均不resolved。预算内定义为resolved且elapsed<=5，不用取整耗时。校验runner声明标志、5秒预算、overshoot=max(0,elapsed-5)、case/method身份和计数字段。每例每法只有三次记录全部有效、resolved、预算内且结论相同才计成功；晚到证书、UNKNOWN、ERROR和不稳定结论均不成功。缺失或重复槽位分别记MISSING/INVALID，保留480分母；输出校验问题并以退出码2提示输入不完整。非法JSON或非法组表直接报错，不猜测数据。结论冲突使statistics_valid_for_reporting为false；该字段只表示当前统计输入完整且无证书逻辑矛盾，不表示论文投稿就绪。
+
+3. 主要配对与速度方向
+主要配对：ma_rank1→ma_rank1_structured；zhao2t3_rank1→zhao2t3_rank1_structured。配对耗时只纳入两法均成功、同结论且非共同quick的案例。共同quick指两法各三次均result.quick_resolved=true；quick本身仍计成功和总成本。非正中位耗时不进入比值。每法每例先取3次elapsed的中位数，逐例r=中位基线/中位增强；r>1表示增强较快。总体点估计为exp(median(log(r)))，不是运行池比值，也不是两组独立中位数之比。列出所有配对合格且增强中位耗时>1.05×基线中位耗时的慢例；速度不合格的案例仍完整列在paired_cases表，附排除原因。新成功=基线不成功且增强成功；丢失成功反之，均用完整32例分母。
+
+4. 模板聚类自助法（不把重复运行当独立样本）
+固定种子20261013947，10000次；抽样框为16个template_id。每次有放回等概率抽16个模板，每个模板出现一次便保留其两个响应预算案例一整对；模板重复出现时其两个案例也重复出现。随后使用预先固定的配对合格筛选及分组筛选，计算保留案例log(r)的中位数，再取exp。所有方法配对及分组共享同一10000次模板抽样序列。全体1组、普通/结构总体2组、两响应预算2组、两者交叉4组、threshold_policy=0..3各组共13分组全部报告；每个阈值政策为4模板/8例；分组不另改抽样框。95%区间在非空抽样的log统计量上取2.5%/97.5%线性插值分位数后取exp（索引位置=(n-1)p）。明确报告合格案例数、合格模板数、空/非空抽样次数、每次合格案例数量范围。若存在空抽样，区间注明条件于非空样本；全部为空时点估计/区间为null，不补零、不重新抽样。
+
+5. 成本与分层
+每个原始观察记录的有效非负elapsed全部计入总成本，包含UNKNOWN、ERROR和超时；如出现重复、非预期记录也保留在全局观察成本，单独标为输入无效。缺失耗时不假定为0，报告不可计成本记录数。各方法/分组同时报告固定运行分母、状态计数、预算内和晚到计数、成功例数、观察总耗时及所有观察运行耗时中位数（median_observed_elapsed_seconds，包含UNKNOWN/ERROR/晚到）。不同成功集合下的总成本比不可描述成同任务加速；同任务速度仅使用第3条配对集合。
+
+6. 矛盾检查
+同一案例任意有效resolved记录（包括晚到证书、各方法及各重复）出现不同结论时列出证据。嵌套响应预算共享模板且小预算可行集包含于大预算：大预算SAFE+小预算UNSAFE，或大预算INCONSISTENT+小预算SAFE/UNSAFE，均报矛盾；小预算SAFE+大预算UNSAFE可以成立。跨方法也作检查，不用多数票掩盖矛盾。
+
+7. 文件与执行
+正常执行：python -B analysis/analyze_comparison.py。默认输出到analysis：SUMMARY_STATISTICS.json及run_slots、case_methods、paired_cases、method_groups、paired_groups、slowdowns_gt_5pct、success_changes、conclusion_conflicts、nested_budget_contradictions、validation_issues等CSV；空表仍有表头。JSON含输入文件与脚本SHA256。程序化CSV使用UTF-8、标准csv转义、无嵌套单元格。
+冻结前自测：python -B analysis/analyze_comparison.py --self-test，仅使用内存模拟32例/480次并临时验证JSON/CSV后清理，不读取真实正式结果或生成正式套件。检验完整分母、late/UNKNOWN/ERROR、共同quick、慢例、新/失成功、不稳定、冲突、嵌套预算、log中位比、模板成对抽样/空样本、缺失/重复/标志错配和序列化。

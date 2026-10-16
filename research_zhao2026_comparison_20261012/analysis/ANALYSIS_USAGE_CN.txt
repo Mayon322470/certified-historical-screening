@@ -1,0 +1,70 @@
+正式比较分析与绘图（2026-10-12）
+
+一、冻结主分析脚本
+analyze_comparison.py 采用逐行 JSONL 读取；每次只解码一个完整原始证书行，
+立即归约为案例/方法/重复的计时、状态、少量计数。删除引擎仅统计 rep0。
+不把全部证书字符串或解码对象放入列表；内存上限仍包含单个最大证书行。
+
+正式 CLI（全部计时结束后执行）：
+  python -B analysis/analyze_comparison.py holdout_main
+
+写到对应 results/tag/：paired_summary.json、per_case_summary.json、analysis_tables.txt。
+默认拒绝缺失、重复、非法 rep、截断 JSONL、输入 hash 不符、缺少 runner 完成标记。
+每个输入 index × metadata 方法 × rep 必须恰有一行；新48例六方法主跑必须3次。
+六方法主跑共11组比较：两组结构增量、六组Ma与Zhao对比、三组Zhao内部对比。
+
+时间以每例3次中位数汇总。解决率要求该例每次运行都在预算内获得非空语义下
+的证书。SAFE 缺少非空见证不计为已解决；晚到有效证书单独保存并排除解决率。
+配对速度比还要求双方状态稳定且相同、该例无跨方法/重复认证结论冲突，
+且不是双方每次均由共同quick gate解决。单边quick单列异常，不悄然丢弃。
+方向统一为 baseline 秒 / candidate 秒，大于1有利于candidate。
+跨论文对比以Zhao为baseline、Ma或Ma+structure为candidate。
+UNKNOWN、错误、超预算证书均留在全任务成本中；该成本比不称求解加速。
+完整状态变化、矛盾、错误 traceback、晚证书、各剔除原因和>5%变慢案例均保存。
+
+bootstrap=10000，基础seed=20261012947，按指标上下文hash派生固定随机流。
+先在案例内取重复中位数，再以案例为单位成对有放回抽样；速度区间重抽固定的
+合格子集。区间是2.5/97.5百分位，仅描述固定套件的案例组成变化，不推广到
+总体，也不声称估计重复运行计时方差。没有显著性检验或多重比较推断。
+只有3重复主跑输出区间；1重复辅助分析关闭全部CI。
+按具体家族、普通/结构两组、四种预定阈值政策分别汇总。
+阈值政策仅从公开索引/家族轮转规则推导，不读取私有生成点/数值参考文件；
+数值参考的正负margin不是安全真值标签。
+
+二、辅助消融
+  python -B analysis/analyze_ablation.py holdout_main AUXILIARY_TAG
+
+读取完成的main与auxiliary两批。full-structure只选main的rep0；Sturm-only与
+sparse-only使用auxiliary唯一rep0，形成三列单次结果，不混用3次中位数和单次。
+严格检查相同输入hash、实现hash、预算、网格、时间网格、quick等参数。
+所有置信区间关闭；明确不同tag可能有执行顺序/机器状态漂移，无法由此估计。
+输出auxiliary目录下的ablation_rep0_summary.json、ablation_rep0_per_case.json、
+ablation_rep0_tables.txt；保留full/两消融间三组配对。
+
+三、独立科学图
+  python -B analysis/make_figure.py holdout_main
+  python -B analysis/make_figure.py AUXILIARY_TAG --summary ablation_rep0_summary.json --prefix ablation
+
+绘图只读压缩summary，不重新读取原始证书、重新筛选或重新bootstrap。
+输出可独立使用的PNG与PDF：
+  comparison_overview：预算内解决数与全任务成本分面；
+  comparison_paired_ratios：全部/普通/结构三组配对几何均值比及区间、样本数、变慢数；
+  comparison_threshold_resolution：四个预定阈值组的解决数/总数。
+单次消融图使用ablation前缀且无区间。论文使用前应目视检查所有PNG/PDF。
+
+四、合成测试
+test_analyze_comparison.py：10项，包括缺失/重复/截断/完成标记/hash、3次中位数、
+晚证书、状态矛盾、quick筛选、固定seed、逐行读取、单次无CI及公开阈值平衡。
+在正式计时开始前已全部通过；之后不再修改冻结的analyze_comparison.py。
+test_ablation.py：rep0选择及不同实现hash拒绝；仅在所有正式计时结束后运行。
+合成测试均在analysis目录下隔离临时目录，不读任何正式留出输入/结果。
+
+五、本轮已执行状态
+正式tag为holdout_main（864行）和holdout_ablation（96行）；两批计时全部结束后
+完成了上述主/辅助分析、rep0消融以及PNG/PDF生成。消融两项合成测试全部通过。
+另已执行diagnose_unknowns.py holdout_main和holdout_ablation，输出对应tag下
+unknown_diagnostics.json，用以区分已到预算与提前耗尽预定网格schedule的UNKNOWN。
+准确数值、变慢案例、5个状态变化、3个晚证书及解释限制汇总于FORMAL_RESULTS_CN.txt。
+六个最终PNG目视核验，六个PDF由Poppler重新渲染核验，均无标签遮挡/裁切；
+analysis/pdf_review/formal_figures/pdf_contact_sheet.png保留PDF渲染审阅拼图。
+主analyzer冻结hash仍为43295e1e2a21c51e868f6cf3d978fc2a7601d49be1f65b60f1efeaeafa5bcdd1。

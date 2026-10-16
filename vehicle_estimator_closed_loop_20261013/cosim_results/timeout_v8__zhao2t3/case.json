@@ -1,0 +1,17 @@
+{
+  "id": "timeout_v8__zhao2t3",
+  "mode": "forced_timeout",
+  "speed_mps": 8.0,
+  "initial_front_clearance_m": 40.0,
+  "bias": 0.3,
+  "seed": 20261013304,
+  "fault": {
+    "kind": "late",
+    "at_s": 1.3,
+    "reported_elapsed_s": 0.15
+  },
+  "scene_id": "timeout_v8",
+  "method": "zhao2t3",
+  "plan_sha256": "2580b4a3569a5b3025dcb088ab23135b50a0f18e4a7bddf138b8dda580734c09",
+  "created_utc": "2026-10-13T05:20:49.005561+00:00"
+}

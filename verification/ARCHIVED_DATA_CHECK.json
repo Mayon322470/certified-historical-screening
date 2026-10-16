@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "scope": "Read-only archived-data verification; no new experiment or timing run",
+  "provenance_files_verified": 483,
+  "decoded_streams_verified": 103,
+  "exact_model_48": {
+    "runs": 864,
+    "methods": {
+      "zhao2t3_structured": {
+        "stable_completed": 37,
+        "sum_case_median_s": 73.20651310263202
+      },
+      "zhao2t3": {
+        "stable_completed": 30,
+        "sum_case_median_s": 121.43816279852763
+      },
+      "ma_strip": {
+        "stable_completed": 40,
+        "sum_case_median_s": 52.37258839793503
+      },
+      "zhao2": {
+        "stable_completed": 31,
+        "sum_case_median_s": 102.88545699929819
+      },
+      "zhao1": {
+        "stable_completed": 34,
+        "sum_case_median_s": 72.20721919927746
+      },
+      "ma_strip_structured": {
+        "stable_completed": 42,
+        "sum_case_median_s": 38.01188469864428
+      }
+    },
+    "cost_definition": "sum of 48 per-case medians, including unresolved/late work"
+  },
+  "ablation_runs": {
+    "zhao2t3_sparse": 48,
+    "zhao2t3_sturm": 48
+  },
+  "common_response_32": {
+    "runs": 480,
+    "methods": {
+      "zhao1_rank1": {
+        "stable_completed": 28,
+        "total_all_96_runs_s": 78.2618726962246
+      },
+      "zhao2t3_rank1": {
+        "stable_completed": 26,
+        "total_all_96_runs_s": 131.21288750134408
+      },
+      "ma_rank1": {
+        "stable_completed": 28,
+        "total_all_96_runs_s": 72.04715980216861
+      },
+      "ma_rank1_structured": {
+        "stable_completed": 28,
+        "total_all_96_runs_s": 70.05213099811226
+      },
+      "zhao2t3_rank1_structured": {
+        "stable_completed": 27,
+        "total_all_96_runs_s": 94.91237169783562
+      }
+    },
+    "statuses": {
+      "CERTIFIED_UNSAFE": 291,
+      "CERTIFIED_SAFE": 120,
+      "UNKNOWN": 69
+    },
+    "cost_definition": "sum of all 96 runs per method"
+  },
+  "vehicle_trajectories": {
+    "trajectories": 20,
+    "native_rows": 480020,
+    "minimum_conservative_body_clearance_m": 16.092648540685524,
+    "unknown_estimates": 6,
+    "timeout_fallbacks": 10,
+    "full_cycles_over_10ms": 4293,
+    "maximum_full_cycle_s": 0.15418570023030043,
+    "stopped_tail_range_s": [
+      7.165499999998748,
+      8.60099999999902
+    ],
+    "scope": "finite sampled CARLA/CarSim trajectories"
+  },
+  "identical_vehicle_queries": {
+    "queries": 6,
+    "runs": 90,
+    "complete_workload_cost_s": {
+      "ma": 0.08147630048915744,
+      "ma_structured": 0.020198101177811623,
+      "zhao2t3": 1.9465487003326416,
+      "zhao2t3_structured": 1.1402512011118233,
+      "exact_range": 0.004742998164147139
+    },
+    "on_time_OK": {
+      "ma": 18,
+      "ma_structured": 18,
+      "zhao2t3": 0,
+      "zhao2t3_structured": 15,
+      "exact_range": 18
+    },
+    "scope": "six identical input queries, five methods and three repetitions; not 90 trajectories"
+  }
+}

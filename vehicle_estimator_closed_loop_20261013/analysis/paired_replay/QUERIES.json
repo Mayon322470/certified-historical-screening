@@ -1,0 +1,576 @@
+{
+  "status": "SELECTED_BY_FROZEN_RULE",
+  "plan_sha256": "2580b4a3569a5b3025dcb088ab23135b50a0f18e4a7bddf138b8dda580734c09",
+  "registration": {
+    "role": "Offline identical-query timing, not additional closed-loop trajectories",
+    "source_methods": [
+      "exact_range"
+    ],
+    "source_scenes": [
+      "normal_v8",
+      "normal_v10"
+    ],
+    "selection": "first at most three decisions per source normal scene where estimator was called, in increasing simulated time; retain all queries and deadline outcomes",
+    "repetitions": 3,
+    "deadline_s": 0.1,
+    "method_order": "rotate frozen method tuple by repetition number; sequential single thread",
+    "include_all_costs": "estimate call includes structural screening, frontend and certificate construction; preparation/guard separately logged",
+    "inference": "descriptive paired totals and median only, no small-sample population confidence claim"
+  },
+  "sources": [
+    {
+      "scene_id": "normal_v8",
+      "case_id": "normal_v8__exact_range",
+      "decision_path": "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\cosim_results\\normal_v8__exact_range\\decision.jsonl",
+      "decision_sha256": "a96e4bbcd3c8ecadd7c040f8b8a7debd8434ffb45043fb92ab2694e40ccd973c",
+      "eligible_decisions": 8,
+      "selected_decisions": 3,
+      "selection": "first at most three in increasing time"
+    },
+    {
+      "scene_id": "normal_v10",
+      "case_id": "normal_v10__exact_range",
+      "decision_path": "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\cosim_results\\normal_v10__exact_range\\decision.jsonl",
+      "decision_sha256": "e77fb658da0012835363c8c31ca73995589fa9a2049127ed80e7331965395340",
+      "eligible_decisions": 3,
+      "selected_decisions": 3,
+      "selection": "first at most three in increasing time"
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "normal_v8__q000",
+      "scene_id": "normal_v8",
+      "source_case_id": "normal_v8__exact_range",
+      "simulated_time_s": 0.9,
+      "selected_rows": [
+        {
+          "stamp_s": 0.7000000000000001,
+          "a": -6.19130545216882,
+          "c2": 9.0,
+          "packet": [
+            49.77500573767461,
+            51.482668128694584
+          ],
+          "landmark_id": 0,
+          "measured_range_m": 7.115141376893617
+        },
+        {
+          "stamp_s": 0.8,
+          "a": -19.36617063468738,
+          "c2": 16.0,
+          "packet": [
+            399.76240131285414,
+            404.5754559652097
+          ],
+          "landmark_id": 1,
+          "measured_range_m": 20.054060150479028
+        },
+        {
+          "stamp_s": 0.9,
+          "a": -38.54199391465607,
+          "c2": 25.0,
+          "packet": [
+            1529.6451867622102,
+            1539.0463065679817
+          ],
+          "landmark_id": 2,
+          "measured_range_m": 39.1706796793864
+        }
+      ],
+      "current_packet": {
+        "stamp_s": 0.9,
+        "odom_m": 7.458006085343935,
+        "speed_mps": 8.245440092351815,
+        "s0_m": 1.570856426274421e-07,
+        "rows": [
+          {
+            "stamp_s": 0.9,
+            "a": -4.541993914656065,
+            "c2": 9.0,
+            "packet": [
+              31.960700757742668,
+              33.331934952209416
+            ],
+            "landmark_id": 0,
+            "measured_range_m": 5.713380587268368
+          },
+          {
+            "stamp_s": 0.9,
+            "a": -18.541993914656068,
+            "c2": 16.0,
+            "packet": [
+              369.1914553883246,
+              373.81737803393384
+            ],
+            "landmark_id": 1,
+            "measured_range_m": 19.27435645076453
+          },
+          {
+            "stamp_s": 0.9,
+            "a": -38.54199391465607,
+            "c2": 25.0,
+            "packet": [
+              1529.6451867622102,
+              1539.0463065679817
+            ],
+            "landmark_id": 2,
+            "measured_range_m": 39.1706796793864
+          }
+        ]
+      },
+      "prior": [
+        -0.8,
+        0.8
+      ],
+      "source_estimate_status": "OK",
+      "invariant_body_radius_m": 3.708917501489181,
+      "stopline_s_m": 43.45734793087202
+    },
+    {
+      "query_id": "normal_v8__q001",
+      "scene_id": "normal_v8",
+      "source_case_id": "normal_v8__exact_range",
+      "simulated_time_s": 1.0,
+      "selected_rows": [
+        {
+          "stamp_s": 0.8,
+          "a": -5.366170634687378,
+          "c2": 9.0,
+          "packet": [
+            40.235670176860204,
+            41.772454266641205
+          ],
+          "landmark_id": 0,
+          "measured_range_m": 6.403160321415489
+        },
+        {
+          "stamp_s": 0.9,
+          "a": -18.541993914656068,
+          "c2": 16.0,
+          "packet": [
+            369.1914553883246,
+            373.81737803393384
+          ],
+          "landmark_id": 1,
+          "measured_range_m": 19.27435645076453
+        },
+        {
+          "stamp_s": 1.0,
+          "a": -37.71875390673468,
+          "c2": 25.0,
+          "packet": [
+            1468.4599750632494,
+            1477.6714464916745
+          ],
+          "landmark_id": 2,
+          "measured_range_m": 38.380491276916466
+        }
+      ],
+      "current_packet": {
+        "stamp_s": 1.0,
+        "odom_m": 8.281246093265318,
+        "speed_mps": 8.238803595255105,
+        "s0_m": 1.570856426274421e-07,
+        "rows": [
+          {
+            "stamp_s": 1.0,
+            "a": -3.7187539067346815,
+            "c2": 9.0,
+            "packet": [
+              24.948633495429632,
+              26.161820524871114
+            ],
+            "landmark_id": 0,
+            "measured_range_m": 5.054861708311057
+          },
+          {
+            "stamp_s": 1.0,
+            "a": -17.718753906734683,
+            "c2": 16.0,
+            "packet": [
+              339.8934882095758,
+              344.33265055004273
+            ],
+            "landmark_id": 1,
+            "measured_range_m": 18.496201481920775
+          },
+          {
+            "stamp_s": 1.0,
+            "a": -37.71875390673468,
+            "c2": 25.0,
+            "packet": [
+              1468.4599750632494,
+              1477.6714464916745
+            ],
+            "landmark_id": 2,
+            "measured_range_m": 38.380491276916466
+          }
+        ]
+      },
+      "prior": [
+        -0.8,
+        0.8
+      ],
+      "source_estimate_status": "OK",
+      "invariant_body_radius_m": 3.708917501489181,
+      "stopline_s_m": 43.45734793087202
+    },
+    {
+      "query_id": "normal_v8__q002",
+      "scene_id": "normal_v8",
+      "source_case_id": "normal_v8__exact_range",
+      "simulated_time_s": 1.1,
+      "selected_rows": [
+        {
+          "stamp_s": 0.9,
+          "a": -4.541993914656065,
+          "c2": 9.0,
+          "packet": [
+            31.960700757742668,
+            33.331934952209416
+          ],
+          "landmark_id": 0,
+          "measured_range_m": 5.713380587268368
+        },
+        {
+          "stamp_s": 1.0,
+          "a": -17.718753906734683,
+          "c2": 16.0,
+          "packet": [
+            339.8934882095758,
+            344.33265055004273
+          ],
+          "landmark_id": 1,
+          "measured_range_m": 18.496201481920775
+        },
+        {
+          "stamp_s": 1.1,
+          "a": -36.89642102444848,
+          "c2": 25.0,
+          "packet": [
+            1408.5636525359491,
+            1417.5856037846593
+          ],
+          "landmark_id": 2,
+          "measured_range_m": 37.590837022342335
+        }
+      ],
+      "current_packet": {
+        "stamp_s": 1.1,
+        "odom_m": 9.103578975551523,
+        "speed_mps": 8.23304058015749,
+        "s0_m": 1.570856426274421e-07,
+        "rows": [
+          {
+            "stamp_s": 1.1,
+            "a": -2.896421024448477,
+            "c2": 9.0,
+            "packet": [
+              19.19739960205521,
+              20.263373701161917
+            ],
+            "landmark_id": 0,
+            "measured_range_m": 4.441484721532605
+          },
+          {
+            "stamp_s": 1.1,
+            "a": -16.89642102444848,
+            "c2": 16.0,
+            "packet": [
+              311.86865371505917,
+              316.12147763388947
+            ],
+            "landmark_id": 1,
+            "measured_range_m": 17.71980433172086
+          },
+          {
+            "stamp_s": 1.1,
+            "a": -36.89642102444848,
+            "c2": 25.0,
+            "packet": [
+              1408.5636525359491,
+              1417.5856037846593
+            ],
+            "landmark_id": 2,
+            "measured_range_m": 37.590837022342335
+          }
+        ]
+      },
+      "prior": [
+        -0.8,
+        0.8
+      ],
+      "source_estimate_status": "OK",
+      "invariant_body_radius_m": 3.708917501489181,
+      "stopline_s_m": 43.45734793087202
+    },
+    {
+      "query_id": "normal_v10__q000",
+      "scene_id": "normal_v10",
+      "source_case_id": "normal_v10__exact_range",
+      "simulated_time_s": 1.5,
+      "selected_rows": [
+        {
+          "stamp_s": 1.3,
+          "a": 0.46040729661318913,
+          "c2": 9.0,
+          "packet": [
+            9.425534116532,
+            10.176771662846159
+          ],
+          "landmark_id": 0,
+          "measured_range_m": 3.130104274571069
+        },
+        {
+          "stamp_s": 1.4000000000000001,
+          "a": -12.586214026751103,
+          "c2": 16.0,
+          "packet": [
+            162.8820318449291,
+            165.9594892572109
+          ],
+          "landmark_id": 1,
+          "measured_range_m": 12.822525509082405
+        },
+        {
+          "stamp_s": 1.5,
+          "a": -31.625519199485154,
+          "c2": 25.0,
+          "packet": [
+            993.3650042289928,
+            1000.9437772223182
+          ],
+          "landmark_id": 2,
+          "measured_range_m": 31.577694510613888
+        }
+      ],
+      "current_packet": {
+        "stamp_s": 1.5,
+        "odom_m": 14.37448080051485,
+        "speed_mps": 9.663122460216174,
+        "s0_m": 1.570856426274421e-07,
+        "rows": [
+          {
+            "stamp_s": 1.5,
+            "a": 2.374480800514849,
+            "c2": 9.0,
+            "packet": [
+              16.49309326454698,
+              17.482190537938983
+            ],
+            "landmark_id": 0,
+            "measured_range_m": 4.12116995296748
+          },
+          {
+            "stamp_s": 1.5,
+            "a": -11.625519199485153,
+            "c2": 16.0,
+            "packet": [
+              139.69754858536024,
+              142.54864556306103
+            ],
+            "landmark_id": 1,
+            "measured_range_m": 11.879372750874081
+          },
+          {
+            "stamp_s": 1.5,
+            "a": -31.625519199485154,
+            "c2": 25.0,
+            "packet": [
+              993.3650042289928,
+              1000.9437772223182
+            ],
+            "landmark_id": 2,
+            "measured_range_m": 31.577694510613888
+          }
+        ]
+      },
+      "prior": [
+        -0.8,
+        0.8
+      ],
+      "source_estimate_status": "OK",
+      "invariant_body_radius_m": 3.708917501489181,
+      "stopline_s_m": 58.45734793087202
+    },
+    {
+      "query_id": "normal_v10__q001",
+      "scene_id": "normal_v10",
+      "source_case_id": "normal_v10__exact_range",
+      "simulated_time_s": 1.6,
+      "selected_rows": [
+        {
+          "stamp_s": 1.4000000000000001,
+          "a": 1.413785973248899,
+          "c2": 9.0,
+          "packet": [
+            11.983157524118145,
+            12.82837259309094
+          ],
+          "landmark_id": 0,
+          "measured_range_m": 3.521670759540639
+        },
+        {
+          "stamp_s": 1.5,
+          "a": -11.625519199485153,
+          "c2": 16.0,
+          "packet": [
+            139.69754858536024,
+            142.54864556306103
+          ],
+          "landmark_id": 1,
+          "measured_range_m": 11.879372750874081
+        },
+        {
+          "stamp_s": 1.6,
+          "a": -30.658048625986908,
+          "c2": 25.0,
+          "packet": [
+            931.9040227923542,
+            939.245050121289
+          ],
+          "landmark_id": 2,
+          "measured_range_m": 30.58710408549362
+        }
+      ],
+      "current_packet": {
+        "stamp_s": 1.6,
+        "odom_m": 15.341951374013096,
+        "speed_mps": 9.72899776439948,
+        "s0_m": 1.570856426274421e-07,
+        "rows": [
+          {
+            "stamp_s": 1.6,
+            "a": 3.341951374013096,
+            "c2": 9.0,
+            "packet": [
+              22.998875924554365,
+              24.16426702635512
+            ],
+            "landmark_id": 0,
+            "measured_range_m": 4.855715328914345
+          },
+          {
+            "stamp_s": 1.6,
+            "a": -10.658048625986906,
+            "c2": 16.0,
+            "packet": [
+              118.35683377832603,
+              120.98228402282056
+            ],
+            "landmark_id": 1,
+            "measured_range_m": 10.9391936988323
+          },
+          {
+            "stamp_s": 1.6,
+            "a": -30.658048625986908,
+            "c2": 25.0,
+            "packet": [
+              931.9040227923542,
+              939.245050121289
+            ],
+            "landmark_id": 2,
+            "measured_range_m": 30.58710408549362
+          }
+        ]
+      },
+      "prior": [
+        -0.8,
+        0.8
+      ],
+      "source_estimate_status": "OK",
+      "invariant_body_radius_m": 3.708917501489181,
+      "stopline_s_m": 58.45734793087202
+    },
+    {
+      "query_id": "normal_v10__q002",
+      "scene_id": "normal_v10",
+      "source_case_id": "normal_v10__exact_range",
+      "simulated_time_s": 1.7,
+      "selected_rows": [
+        {
+          "stamp_s": 1.5,
+          "a": 2.374480800514849,
+          "c2": 9.0,
+          "packet": [
+            16.49309326454698,
+            17.482190537938983
+          ],
+          "landmark_id": 0,
+          "measured_range_m": 4.12116995296748
+        },
+        {
+          "stamp_s": 1.6,
+          "a": -10.658048625986906,
+          "c2": 16.0,
+          "packet": [
+            118.35683377832603,
+            120.98228402282056
+          ],
+          "landmark_id": 1,
+          "measured_range_m": 10.9391936988323
+        },
+        {
+          "stamp_s": 1.7,
+          "a": -29.68397607488,
+          "c2": 25.0,
+          "packet": [
+            872.0753658619174,
+            879.1773057931202
+          ],
+          "landmark_id": 2,
+          "measured_range_m": 29.590923197959164
+        }
+      ],
+      "current_packet": {
+        "stamp_s": 1.7,
+        "odom_m": 16.31602392512,
+        "speed_mps": 9.796454936700718,
+        "s0_m": 1.570856426274421e-07,
+        "rows": [
+          {
+            "stamp_s": 1.7,
+            "a": 4.316023925120001,
+            "c2": 9.0,
+            "packet": [
+              31.543026567500394,
+              32.905365804794094
+            ],
+            "landmark_id": 0,
+            "measured_range_m": 5.676318883409057
+          },
+          {
+            "stamp_s": 1.7,
+            "a": -9.68397607488,
+            "c2": 16.0,
+            "packet": [
+              98.90660995915472,
+              101.30789347691338
+            ],
+            "landmark_id": 1,
+            "measured_range_m": 10.005181237640478
+          },
+          {
+            "stamp_s": 1.7,
+            "a": -29.68397607488,
+            "c2": 25.0,
+            "packet": [
+              872.0753658619174,
+              879.1773057931202
+            ],
+            "landmark_id": 2,
+            "measured_range_m": 29.590923197959164
+          }
+        ]
+      },
+      "prior": [
+        -0.8,
+        0.8
+      ],
+      "source_estimate_status": "OK",
+      "invariant_body_radius_m": 3.708917501489181,
+      "stopline_s_m": 58.45734793087202
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "tag": "holdout_main",
+  "records": 864,
+  "detailed_stage_records": 1775,
+  "decisions": {
+    "UNKNOWN": 213,
+    "CERTIFIED_SAFE": 474,
+    "CERTIFIED_UNSAFE": 177
+  },
+  "checked": {
+    "quick_gates": 864,
+    "zhao_contracts": 37730,
+    "sturm_deletions": 13623,
+    "retained_cells": 30507,
+    "nonempty_witnesses": 1686,
+    "unsafe_witnesses": 177,
+    "zhao_deletions": 13139,
+    "ma_contracts": 28882,
+    "ma_deletions": 16953,
+    "sparse_deletions": 16218,
+    "common_chord_deletions": 6013
+  },
+  "unique_computations_checked": {
+    "zhao_contracts": 20015,
+    "sturm_deletions": 5625,
+    "retained_cells": 15948,
+    "nonempty_witnesses": 649,
+    "unsafe_witnesses": 59,
+    "zhao_deletions": 5404,
+    "ma_contracts": 13215,
+    "ma_deletions": 7521,
+    "sparse_deletions": 6303,
+    "common_chord_deletions": 4357
+  },
+  "duplicate_full_stage_payloads_checked_by_hash": 1075,
+  "zhao_contract_cache": {
+    "independent_contract_computations": 12295,
+    "identical_contract_payloads_checked_by_hash": 7720
+  },
+  "mutations_rejected": {
+    "ma_signed_square": true,
+    "ma_LP_optimum": true,
+    "zhao_whole_cell_derivative": true,
+    "zhao_squared_initial_center": true,
+    "zhao_gain_center_reconstruction": true,
+    "zhao_kappa": true,
+    "zhao_ordered_lift_indices": true,
+    "zhao_q_projection": true,
+    "lowered_future_upper": true,
+    "omitted_retained_cell": true
+  },
+  "recorded_errors": [],
+  "bindings": {
+    "inputs\\holdout_48.json": "bfd1fe58dfa49e24e21d7e01f2be8ee758757bcf96d7170a63bf0380534f9d66",
+    "results\\holdout_main\\records.jsonl": "ade8b1f6c81ecdb9ec85d8c4dd127c3ce14a651ea64a26f57fab96ac3499a369",
+    "results\\holdout_main\\run_metadata.json": "1fa7dcbdecf0ddbdcf540f97ee1da9b8674c9d8ec314a7527a506341dcfc00d3",
+    "results\\holdout_main\\summary.json": "c5fa19c5a7bd5061064c918a1a4cca85dc49c809d141a73e770e86b4c2bcc0b2",
+    "current_implementation_hash_matches": {
+      "certified_core.py": true,
+      "comparison_core.py": true,
+      "generate_new_holdout.py": true,
+      "history_derivatives.py": true,
+      "ma_scalar_certified.py": true,
+      "ma_zfo.py": true,
+      "polynomial_contract.py": true,
+      "quick_baseline.py": true,
+      "refined_core.py": true,
+      "run_comparison.py": true,
+      "sparse_faces.py": true,
+      "taylor_faces.py": true,
+      "validate_zhao_carleman.py": true,
+      "zhao_carleman.py": true
+    }
+  },
+  "elapsed_seconds": 1060.1959744999185,
+  "independent_reference": "command-jump Laurent-exponential model; ordered symbolic Kronecker products and derivatives; rational 220-bit exponential; adaptive closed-interval derivative coverage; exact rational reconstruction of all gain centers/generators; future flow outward 208 bits",
+  "scope": "Every recorded frontend contraction, structural deletion, common-backend geometry, future certificate, witness, stage schedule and summary. Fixed finite binary gains are certified for containment; their numerical optimality and wall-clock accuracy are not asserted.",
+  "trust_boundary": "Uses SHA256-bound prior independent structural auditors and reused curvature inequalities evaluated through formulas; not a formal machine proof or a universal superiority claim.",
+  "checker_source_sha256": {
+    "audit_ablation_rep0.py": "4af716a845a6299c9a2ed6d8c6b22ab74e3e7629bf64c55868e59408d7d0d763",
+    "audit_comparison.py": "fe4ff5b2124d0bc81444348951bc90892b92d43e1bc982960e93566c32de2c02",
+    "audit_freeze_provenance.py": "aefd0576c2c6f14d00e49a57a25e7f157700290789a994e2ff67424fad2823ba",
+    "audit_generation_freeze.py": "b0dddb48180c88fb5e5804025a7683e014a5dc60455d19cd8044ad08d3f4843b",
+    "audit_generation_math.py": "58f073084988d9165944f59154ac1c5b55b00f9331051ca8abbd7129e3831e9b",
+    "audit_statistics.py": "a83bb93e8bd31ce9ce0c7cdadd84375960b9f5eec77826345df2219895e6ca92",
+    "audit_zhao_contract.py": "2e8810a824298232679799917275a0a71bd3be228c1dff60c4c83499c4c9d76d",
+    "fast_interval_exp.py": "a526a300d31de9471c28aea6e397a9ab3a70fc193de5b473477f52a6a1b50688",
+    "independent_ma_reference.py": "495e43c95288eea09d0c8626facf7271068abaa46201b3965c1ba3d9e2fdeaf2",
+    "profile_independent_audit.py": "a3c2374c47c1759f63396ddda9fcea26dda5136e57dc6d9ce8eabf7fd003e206",
+    "profile_natural_shortcircuit.py": "f9578ef6871778381cf304aebff1fcbf603dd0a48dabad20f6f7d48b479758bd",
+    "run_independent_audit.py": "45e7cbe36bd0ba325190fa24b4822bd00754edf5b8a1beb0c27f2af33252c13a",
+    "zhao_reference.py": "c76ae70052222e6d6e7d0479b449c3177d2e6c91a0f19fe387c7a27df23fc65f"
+  }
+}

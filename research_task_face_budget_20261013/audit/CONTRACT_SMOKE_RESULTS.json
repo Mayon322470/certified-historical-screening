@@ -1,0 +1,30 @@
+{
+  "status": "PASS_SMALL_CONTRACT_LOGIC_CHECKS_ONLY",
+  "checks": 16,
+  "passed": [
+    "signed packet inflation uses [packet_lo-error_hi,packet_hi-error_lo]",
+    "invalid interval rejected",
+    "individually feasible packets may lack one common response witness",
+    "closed packet boundary/singleton is retained",
+    "nominal violation 11>10 does not witness actual-response class with beta=-2",
+    "upper tube exceeding limit is UNKNOWN, never an unsafe witness",
+    "explicit common history+future response can witness unsafe in declared class",
+    "equality to safety limit is not strict violation",
+    "vacuous or unproved-nonempty safe is not resolved",
+    "partial grid coverage cannot certify universal safe",
+    "inconsistency needs complete certified exclusion",
+    "safe nodes alone miss continuous quadratic excursion; bridge is required",
+    "closed continuous upper bound equal to limit can certify safe with witness",
+    "omitting tube or bridge would forge a safe certificate",
+    "valid certificate after deadline is not a within-budget resolution",
+    "physical response discrepancy cannot silently reset at future origin"
+  ],
+  "production_certificate_verifier_completed": false,
+  "new_benchmark_inputs_generated": false,
+  "old_certificate_batch_rerun": false,
+  "simulation_started": false,
+  "formal_timing_performed": false,
+  "source_sha256": {
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\contract_smoke.py": "aefecf36a7634d957c7f5f34cf890f74e933ec8c3b6f03fb1e5d4e240afc85d2"
+  }
+}

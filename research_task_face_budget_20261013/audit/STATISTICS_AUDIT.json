@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "scope": "INDEPENDENT_RAW_RUN_PAIRED_CLUSTER_STATISTICS_AUDIT",
+  "records": 480,
+  "case_methods": 160,
+  "paired_cases": 64,
+  "method_group_rows": 65,
+  "paired_group_rows": 26,
+  "cluster_bootstrap_replicates_per_row": 10000,
+  "weighted_order_statistic_reconstruction": true,
+  "slowdown_cases": 20,
+  "success_change_cases": 1,
+  "all_csv_tables_checked": true,
+  "source_sha256": {
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\audit_statistics.py": "693f2ffdb7cc5d95c029a9203d6cd5c3b73e8c78c8609cd015511829ed919b85",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\analysis\\SUMMARY_STATISTICS.json": "77c0e02b79aa3f67321cf51e78fb1fb9bcbdfa16cf51dd5d5c32e79dc8ab307c",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\results\\formal_main\\records.jsonl": "727171440e5f2c429d3d697bd4c511e580cf238a850984f6993c10581ff2896b",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\protocol\\frozen_suite\\evaluation_groups.json": "d40ffce3d81c7e5a0add71c8ac45642b84835e9d267db0dd13d436797de29c1d",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\analysis\\analyze_comparison.py": "8b299048774eeb2050cba91c90c502ada2bf3ff2adf5f6c90bd34ad1f7ccbdc9",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\analysis\\STATS_RULES_CN.txt": "875d7039e4dc743b397fee0bbee8546fea13c0e0350fbcb7aad3485f445523d1",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\analysis\\case_methods.csv": "a3efa9c0ec19dd4c8795fb99da20dd33b0a1771ac18823e01a3b54dc79ae2700",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\analysis\\conclusion_conflicts.csv": "0d348cf3c0b1b12d0dd998dea0e788ad830c2361076ac5c05e9f96e0ed2977bf",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\analysis\\method_groups.csv": "23c009e1d47c3d54673f7da8a29f785324ff9156f708d459932f0c539cfe5c76",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\analysis\\nested_budget_contradictions.csv": "72d020ac50c932bb79b99a11270c1ed8bb107e94f41825f53a6046a49ca46a5b",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\analysis\\paired_cases.csv": "9148ef38e1d02dcef168de5b8544ae1833f66fcc5e138f5d3c521db7eb13040b",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\analysis\\paired_groups.csv": "bbef9523c2003763690768ace8187ae0e12fb1472ebbed4d4eaa3cd767d5f19f",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\analysis\\run_slots.csv": "f4b27eb67c2a9055bd976361b1231152a9b607a4d1d70b2e1f5d4bddaf1af96e",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\analysis\\slowdowns_gt_5pct.csv": "bdbf5a69f503cf37c59dc4948a68fbc62c3eb64211b7d3ec1fb08ca760ae611a",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\analysis\\success_changes.csv": "471d43936405d2766ebb40ef769b43cb6df0b22fbfff9e6d55d935ac7245d98e",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\analysis\\validation_issues.csv": "939ac88f86ac1bbfb96d4cb4995720db72085fd06ab40397bd04ca104bfc0291",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\analysis\\DIAGNOSTIC_WORK_COUNTS.json": "9f2e2d97089e6a481b2f754ed530e822988a3e34d71e2d49252111b5e09653ed"
+  },
+  "elapsed_seconds": 3.1479322998784482,
+  "descriptive_all_stage_work_counts_checked": true,
+  "all_stage_work_counts": {
+    "ma_rank1": {
+      "frontend_calls": 5303,
+      "future_vertices": 2963,
+      "runs": 96,
+      "delete_ma": 2820
+    },
+    "ma_rank1_structured": {
+      "frontend_calls": 2406,
+      "future_vertices": 2886,
+      "runs": 96,
+      "delete_sparse": 282,
+      "delete_sturm": 2538
+    },
+    "zhao1_rank1": {
+      "frontend_calls": 5665,
+      "future_vertices": 3040,
+      "runs": 96,
+      "delete_zhao": 876,
+      "delete_common_chord": 2247
+    },
+    "zhao2t3_rank1": {
+      "frontend_calls": 1787,
+      "future_vertices": 1439,
+      "runs": 96,
+      "delete_zhao": 504,
+      "delete_common_chord": 291
+    },
+    "zhao2t3_rank1_structured": {
+      "frontend_calls": 1073,
+      "future_vertices": 1529,
+      "runs": 96,
+      "delete_sturm": 2325,
+      "delete_sparse": 234
+    }
+  },
+  "producer_analysis_imported": false,
+  "timing_overlap": false,
+  "certificate_validity_is_separately_audited": true,
+  "theory_novelty_or_publication_readiness_claimed": false
+}

@@ -1,0 +1,99 @@
+{
+  "status": "DESCRIPTIVE_IDENTICAL_QUERY_REPLAY",
+  "queries": 6,
+  "all_runs": 90,
+  "methods": {
+    "ma": {
+      "runs": 18,
+      "estimate_total_s": 0.08004470029845834,
+      "estimate_median_s": 0.0043697000946849585,
+      "guard_total_s": 0.00017379969358444214,
+      "preparation_total_s": 0.0012578004971146584,
+      "ok": 18,
+      "unknown": 0,
+      "errors": 0,
+      "measured_late": 0,
+      "frontend_calls": 144,
+      "deleted": 123
+    },
+    "ma_structured": {
+      "runs": 18,
+      "estimate_total_s": 0.0187003999017179,
+      "estimate_median_s": 0.000886149937286973,
+      "guard_total_s": 0.0001358003355562687,
+      "preparation_total_s": 0.0013619009405374527,
+      "ok": 18,
+      "unknown": 0,
+      "errors": 0,
+      "measured_late": 0,
+      "frontend_calls": 21,
+      "deleted": 123
+    },
+    "zhao2t3": {
+      "runs": 18,
+      "estimate_total_s": 1.945214199833572,
+      "estimate_median_s": 0.10605114977806807,
+      "guard_total_s": 1.1200550943613052e-05,
+      "preparation_total_s": 0.0013232999481260777,
+      "ok": 0,
+      "unknown": 18,
+      "errors": 0,
+      "measured_late": 18,
+      "frontend_calls": 36,
+      "deleted": 36
+    },
+    "zhao2t3_structured": {
+      "runs": 18,
+      "estimate_total_s": 1.1382159013301134,
+      "estimate_median_s": 0.053855199832469225,
+      "guard_total_s": 0.00019770022481679916,
+      "preparation_total_s": 0.0018375995568931103,
+      "ok": 15,
+      "unknown": 3,
+      "errors": 0,
+      "measured_late": 3,
+      "frontend_calls": 21,
+      "deleted": 120
+    },
+    "exact_range": {
+      "runs": 18,
+      "estimate_total_s": 0.0027334000915288925,
+      "estimate_median_s": 0.0001459997147321701,
+      "guard_total_s": 0.0001485990360379219,
+      "preparation_total_s": 0.0018609990365803242,
+      "ok": 18,
+      "unknown": 0,
+      "errors": 0,
+      "measured_late": 0,
+      "frontend_calls": 0,
+      "deleted": 0
+    }
+  },
+  "pairs": [
+    {
+      "baseline": "ma",
+      "structured": "ma_structured",
+      "complete_pair_runs": 18,
+      "total_cost_speed_ratio": 4.280373720302371,
+      "full_workload_cost_reduction_fraction": 0.7663755397672709,
+      "median_all_pair_speed_ratio": 4.905192599989041,
+      "structured_slower_pairs": 0,
+      "qualified_pairs": 18,
+      "median_qualified_speed_ratio": 4.905192599989041
+    },
+    {
+      "baseline": "zhao2t3",
+      "structured": "zhao2t3_structured",
+      "complete_pair_runs": 18,
+      "total_cost_speed_ratio": 1.709002832907539,
+      "full_workload_cost_reduction_fraction": 0.41486346263177776,
+      "median_all_pair_speed_ratio": 1.950122382521805,
+      "structured_slower_pairs": 1,
+      "qualified_pairs": 0,
+      "median_qualified_speed_ratio": null
+    }
+  ],
+  "timing_role": "Offline identical rows/current packet; not another closed-loop safety experiment",
+  "no_population_significance_claim": true,
+  "timed_out_work_in_totals": true
+}

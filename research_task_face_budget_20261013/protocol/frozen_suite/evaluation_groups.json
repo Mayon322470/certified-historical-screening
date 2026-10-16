@@ -1,0 +1,258 @@
+[
+  {
+    "name": "case_000",
+    "template_id": 0,
+    "family": "ordinary",
+    "structured": false,
+    "epsilon": "1/1000",
+    "threshold_policy": 0
+  },
+  {
+    "name": "case_001",
+    "template_id": 0,
+    "family": "ordinary",
+    "structured": false,
+    "epsilon": "1/100",
+    "threshold_policy": 0
+  },
+  {
+    "name": "case_002",
+    "template_id": 1,
+    "family": "ordinary",
+    "structured": false,
+    "epsilon": "1/1000",
+    "threshold_policy": 0
+  },
+  {
+    "name": "case_003",
+    "template_id": 1,
+    "family": "ordinary",
+    "structured": false,
+    "epsilon": "1/100",
+    "threshold_policy": 0
+  },
+  {
+    "name": "case_004",
+    "template_id": 2,
+    "family": "four_hold_acceleration",
+    "structured": true,
+    "epsilon": "1/1000",
+    "threshold_policy": 0
+  },
+  {
+    "name": "case_005",
+    "template_id": 2,
+    "family": "four_hold_acceleration",
+    "structured": true,
+    "epsilon": "1/100",
+    "threshold_policy": 0
+  },
+  {
+    "name": "case_006",
+    "template_id": 3,
+    "family": "five_hold_velocity_valley",
+    "structured": true,
+    "epsilon": "1/1000",
+    "threshold_policy": 0
+  },
+  {
+    "name": "case_007",
+    "template_id": 3,
+    "family": "five_hold_velocity_valley",
+    "structured": true,
+    "epsilon": "1/100",
+    "threshold_policy": 0
+  },
+  {
+    "name": "case_008",
+    "template_id": 4,
+    "family": "ordinary",
+    "structured": false,
+    "epsilon": "1/1000",
+    "threshold_policy": 1
+  },
+  {
+    "name": "case_009",
+    "template_id": 4,
+    "family": "ordinary",
+    "structured": false,
+    "epsilon": "1/100",
+    "threshold_policy": 1
+  },
+  {
+    "name": "case_010",
+    "template_id": 5,
+    "family": "ordinary",
+    "structured": false,
+    "epsilon": "1/1000",
+    "threshold_policy": 1
+  },
+  {
+    "name": "case_011",
+    "template_id": 5,
+    "family": "ordinary",
+    "structured": false,
+    "epsilon": "1/100",
+    "threshold_policy": 1
+  },
+  {
+    "name": "case_012",
+    "template_id": 6,
+    "family": "four_hold_acceleration",
+    "structured": true,
+    "epsilon": "1/1000",
+    "threshold_policy": 1
+  },
+  {
+    "name": "case_013",
+    "template_id": 6,
+    "family": "four_hold_acceleration",
+    "structured": true,
+    "epsilon": "1/100",
+    "threshold_policy": 1
+  },
+  {
+    "name": "case_014",
+    "template_id": 7,
+    "family": "five_hold_position_valley",
+    "structured": true,
+    "epsilon": "1/1000",
+    "threshold_policy": 1
+  },
+  {
+    "name": "case_015",
+    "template_id": 7,
+    "family": "five_hold_position_valley",
+    "structured": true,
+    "epsilon": "1/100",
+    "threshold_policy": 1
+  },
+  {
+    "name": "case_016",
+    "template_id": 8,
+    "family": "ordinary",
+    "structured": false,
+    "epsilon": "1/1000",
+    "threshold_policy": 2
+  },
+  {
+    "name": "case_017",
+    "template_id": 8,
+    "family": "ordinary",
+    "structured": false,
+    "epsilon": "1/100",
+    "threshold_policy": 2
+  },
+  {
+    "name": "case_018",
+    "template_id": 9,
+    "family": "ordinary",
+    "structured": false,
+    "epsilon": "1/1000",
+    "threshold_policy": 2
+  },
+  {
+    "name": "case_019",
+    "template_id": 9,
+    "family": "ordinary",
+    "structured": false,
+    "epsilon": "1/100",
+    "threshold_policy": 2
+  },
+  {
+    "name": "case_020",
+    "template_id": 10,
+    "family": "four_hold_acceleration",
+    "structured": true,
+    "epsilon": "1/1000",
+    "threshold_policy": 2
+  },
+  {
+    "name": "case_021",
+    "template_id": 10,
+    "family": "four_hold_acceleration",
+    "structured": true,
+    "epsilon": "1/100",
+    "threshold_policy": 2
+  },
+  {
+    "name": "case_022",
+    "template_id": 11,
+    "family": "five_hold_velocity_valley",
+    "structured": true,
+    "epsilon": "1/1000",
+    "threshold_policy": 2
+  },
+  {
+    "name": "case_023",
+    "template_id": 11,
+    "family": "five_hold_velocity_valley",
+    "structured": true,
+    "epsilon": "1/100",
+    "threshold_policy": 2
+  },
+  {
+    "name": "case_024",
+    "template_id": 12,
+    "family": "ordinary",
+    "structured": false,
+    "epsilon": "1/1000",
+    "threshold_policy": 3
+  },
+  {
+    "name": "case_025",
+    "template_id": 12,
+    "family": "ordinary",
+    "structured": false,
+    "epsilon": "1/100",
+    "threshold_policy": 3
+  },
+  {
+    "name": "case_026",
+    "template_id": 13,
+    "family": "ordinary",
+    "structured": false,
+    "epsilon": "1/1000",
+    "threshold_policy": 3
+  },
+  {
+    "name": "case_027",
+    "template_id": 13,
+    "family": "ordinary",
+    "structured": false,
+    "epsilon": "1/100",
+    "threshold_policy": 3
+  },
+  {
+    "name": "case_028",
+    "template_id": 14,
+    "family": "four_hold_acceleration",
+    "structured": true,
+    "epsilon": "1/1000",
+    "threshold_policy": 3
+  },
+  {
+    "name": "case_029",
+    "template_id": 14,
+    "family": "four_hold_acceleration",
+    "structured": true,
+    "epsilon": "1/100",
+    "threshold_policy": 3
+  },
+  {
+    "name": "case_030",
+    "template_id": 15,
+    "family": "five_hold_position_valley",
+    "structured": true,
+    "epsilon": "1/1000",
+    "threshold_policy": 3
+  },
+  {
+    "name": "case_031",
+    "template_id": 15,
+    "family": "five_hold_position_valley",
+    "structured": true,
+    "epsilon": "1/100",
+    "threshold_policy": 3
+  }
+]

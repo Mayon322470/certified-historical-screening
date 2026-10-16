@@ -1,0 +1,12 @@
+{
+  "id": "normal_v8__ma",
+  "mode": "normal",
+  "speed_mps": 8.0,
+  "initial_front_clearance_m": 40.0,
+  "bias": 0.3,
+  "seed": 20261013301,
+  "scene_id": "normal_v8",
+  "method": "ma",
+  "plan_sha256": "2580b4a3569a5b3025dcb088ab23135b50a0f18e4a7bddf138b8dda580734c09",
+  "created_utc": "2026-10-13T05:10:52.887818+00:00"
+}

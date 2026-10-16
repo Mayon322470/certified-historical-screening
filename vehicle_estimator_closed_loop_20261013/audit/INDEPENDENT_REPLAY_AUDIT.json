@@ -1,0 +1,101 @@
+{
+  "status": "PASS_INDEPENDENT_IDENTICAL_QUERY_REPLAY_AUDIT",
+  "checks": 416,
+  "full_runs": 90,
+  "query_count": 6,
+  "source_scenes": [
+    "normal_v8",
+    "normal_v10"
+  ],
+  "audit_source_sha256": "73c17109384217229b7f410c4a3d34858a56534b06a5d7f8688544bf53645f14",
+  "plan_sha256": "2580b4a3569a5b3025dcb088ab23135b50a0f18e4a7bddf138b8dda580734c09",
+  "source_hashes": {
+    "QUERIES.json": "d1e0b88d973ba1cf9c5d270096874f0a0bf525e121d0cf0a64d0267823737913",
+    "EXECUTION.json": "4879785e28fcf116d02692da50348eb6c0895d33344cc6842badeccd5342397b",
+    "runs.jsonl": "420eeed0ecf8f540c93709aa578363be3c41040d77654ddd14af4782d99bd1ce",
+    "SUMMARY.json": "cf2f678c5f689148ca0c1883cbba1f34a217284cc2afd216806f2ebad2a6918d"
+  },
+  "method_costs": {
+    "ma": {
+      "estimate_total_s": 0.08004470029845834,
+      "preparation_total_s": 0.0012578004971146584,
+      "guard_total_s": 0.00017379969358444214,
+      "measured_pipeline_total_s": 0.08147630048915744,
+      "runs": 18,
+      "status_counts": {
+        "OK": 18
+      }
+    },
+    "ma_structured": {
+      "estimate_total_s": 0.0187003999017179,
+      "preparation_total_s": 0.0013619009405374527,
+      "guard_total_s": 0.0001358003355562687,
+      "measured_pipeline_total_s": 0.020198101177811623,
+      "runs": 18,
+      "status_counts": {
+        "OK": 18
+      }
+    },
+    "zhao2t3": {
+      "estimate_total_s": 1.945214199833572,
+      "preparation_total_s": 0.0013232999481260777,
+      "guard_total_s": 1.1200550943613052e-05,
+      "measured_pipeline_total_s": 1.9465487003326416,
+      "runs": 18,
+      "status_counts": {
+        "UNKNOWN": 18
+      }
+    },
+    "zhao2t3_structured": {
+      "estimate_total_s": 1.1382159013301134,
+      "preparation_total_s": 0.0018375995568931103,
+      "guard_total_s": 0.00019770022481679916,
+      "measured_pipeline_total_s": 1.1402512011118233,
+      "runs": 18,
+      "status_counts": {
+        "UNKNOWN": 3,
+        "OK": 15
+      }
+    },
+    "exact_range": {
+      "estimate_total_s": 0.0027334000915288925,
+      "preparation_total_s": 0.0018609990365803242,
+      "guard_total_s": 0.0001485990360379219,
+      "measured_pipeline_total_s": 0.004742998164147139,
+      "runs": 18,
+      "status_counts": {
+        "OK": 18
+      }
+    }
+  },
+  "pairs": [
+    {
+      "baseline": "ma",
+      "structured": "ma_structured",
+      "all_pairs": 18,
+      "qualified_pairs": 18,
+      "exact_same_rational_interval_pairs": 18,
+      "same_guard_conclusion_pairs": 18,
+      "all_estimate_workload_cost_reduction_fraction": 0.7663755397672709,
+      "pipeline_including_preparation_and_guard_reduction_fraction": 0.7520984500210646,
+      "median_qualified_speed_ratio": 4.905192599989041,
+      "structured_slower_all_pairs": 0
+    },
+    {
+      "baseline": "zhao2t3",
+      "structured": "zhao2t3_structured",
+      "all_pairs": 18,
+      "qualified_pairs": 0,
+      "exact_same_rational_interval_pairs": 0,
+      "same_guard_conclusion_pairs": 0,
+      "all_estimate_workload_cost_reduction_fraction": 0.41486346263177776,
+      "pipeline_including_preparation_and_guard_reduction_fraction": 0.41421902215086204,
+      "median_qualified_speed_ratio": null,
+      "structured_slower_all_pairs": 1
+    }
+  ],
+  "cheapest_complete_pipeline_run_counts": {
+    "exact_range": 18
+  },
+  "interpretation": "Six preregistered same-input queries, three repeats and five methods. Ma equal rational intervals/guard verdicts can qualify matched speed ratios; Zhao baseline all UNKNOWN precludes an equal-output speedup. All timed-out work retained. Preparation/guard counted separately and pipeline costs include both. No new closed-loop trajectory or population inference."
+}

@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying work when referring to these data and independent implementations."
+title: "Certified Historical Screening for Task-Oriented Set-Membership Estimation"
+type: dataset
+authors:
+  - family-names: Ma
+    given-names: Yongsheng
+    affiliation: "School of Automation, Southeast University"
+  - family-names: Zhang
+    given-names: Guobao
+    affiliation: "School of Automation, Southeast University"
+  - family-names: Huang
+    given-names: Yongming
+    affiliation: "School of Automation, Southeast University"
+    orcid: "https://orcid.org/0000-0002-9697-7515"
+date-released: 2026-10-16
+abstract: "Data, input configurations, independent estimator implementations, screening code, and retained results for 48 exact-model cases, 32 common-response cases, 20 CARLA/CarSim vehicle trajectories, and 90 identical-query timing runs. The accompanying manuscript is unpublished."
+keywords:
+  - set-membership estimation
+  - historical consistency
+  - nonlinear systems
+  - interval arithmetic
+  - vehicle control
+
+url: "https://github.com/Mayon322470/certified-historical-screening"
+repository-code: "https://github.com/Mayon322470/certified-historical-screening"

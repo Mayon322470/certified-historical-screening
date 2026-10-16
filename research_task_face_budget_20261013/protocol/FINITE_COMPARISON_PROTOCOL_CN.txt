@@ -1,0 +1,165 @@
+任务位置面与共同输出失配：有限新比较协议 v1
+日期：2026-10-13。状态：生成器/协议准备；正式方法尚未冻结；正式套件尚未生成。
+
+一、目的及不能混淆的结论
+
+在明确的标量固定时常数模型及一个预先声明的相关输出失配类内，比较共同
+信息下的Ma/Zhao适配与结构筛除的增量。接受有限问题范围内的小幅收益，
+也接受没有收益。不能因结果不理想改变误差量级、难度、方法、预算或删例。
+经典积分、rank-one zonotope、support和线性消元本身不作为新理论优先权。
+
+这是新的数学响应类比较。旧CarSim预测门槛及全部FAIL保持；非零预算不由
+旧CarSim误差、已有失败窗口、仿真中观测峰值或数据拟合得到。此处没有建立
+CarSim属于该类的证据，没有车辆闭环、递归安全或硬实时主张。
+
+旧43/48例和旧Zhao48例全部属于已知DEVELOPMENT。旧报告中“新留出”仅指
+当时冻结轮次，不能作为本轮独立新数据。可保留其困难家族和慢例作回归。
+
+二、同一实际轨迹与公共信息
+
+nominal模型：x'=v, v'=a, a'=(u-a)/tau；tau在正先验内固定；起点状态精确，
+完整past/future分段保持命令已知。本轮rho字段保留但固定为0，不再叠加另一
+正过程扰动来源。T=sum(past durations)>0，H>0，L=T+H。
+
+声明输出类（对0<=t<=L使用同一全局时钟）为
+  y_actual(t)=y_nominal,tau(t)+beta psi(t), beta∈[-epsilon_x,+epsilon_x],
+  psi_x(t)=t^3/L^3, psi_v(t)=3t^2/L^3, psi_a(t)=6t/L^3。
+同一beta贯穿全部x/v/a历史输出和未来轨迹，不在查询时刻reset，不逐坐标任选。
+三个初始误差为0，且误差满足e_x'=e_v、e_v'=e_a。beta单位m。
+未来位置预算E_x(s)=epsilon_x((T+s)/L)^3，0<=s<=H；最大为epsilon_x。
+全任务最大速度/加速度误差分别3epsilon_x/L、6epsilon_x/L^2。
+
+仅用一个T时刻三坐标packet作为本轮最小接口；三坐标必须来自同一tau和beta。
+扩展多时刻包不是本轮已实现结果。未来nominal必须由同一tau的nominal历史
+终点继续传播，不能先把actual packet center作为精确nominal初值。
+
+epsilon_x固定两档：1/1000 m和1/100 m。zero-budget仅做开发退化检查。
+两档用同一基础模板，除epsilon_x外公共输入逐字相同：原packet、limit、L、
+先验、初始条件和past/future命令均不变（匿名name不同）。因此较小响应类
+嵌入较大类，不能通过重造packet/阈值制造虚假的预算敏感性。
+
+公共JSON白名单：name, initial, past, prior, packet, future, H, rho, limit,
+response={kind:'normalized_global_cubic_v1',epsilon_x,L}。值以有理数字符串保存。
+名字只用匿名case_000等。family/template_id/threshold_policy/真值标签另写
+evaluation_groups.json，只供分析，不作为算法输入。
+private_generation_witnesses.json记录隐藏tau、beta及独立区间见证，仅生成QA读取。
+算法不能读取生成元数据、种子重造隐藏点、阈值政策或参考最大点。
+
+三、同信息的较强文献基线与共同后端
+
+主要5列：ma_rank1，ma_rank1_structured，zhao1_rank1，zhao2t3_rank1，
+zhao2t3_rank1_structured（分别为Ma强化适配、其结构版、Zhao一阶、二阶+T3、其结构版）。
+zhao1作为较快低阶独立对照保留；nu=2无T3可作开发公式消融，本轮不在正式
+套件上选出较弱版本替代已冻结的zhao2t3。5×32×3=480个主任务。
+
+原packet中心c及半宽r代表独立测量噪声，beta psi(T)是共同rank-one项。
+所有文献基线必须获得并使用相同的相关噪声集合：
+  V=[diag(r_x,r_v,r_a), epsilon_x psi(T)]。
+符号对中心对称beta区间无影响，但系数符号及原包解释须在证书中一致。
+Zhao按完整lift/Eq42/T3公式使用矩形V，不能将其偷偷换成较松对角半宽。
+Ma Eq18的加权L1组合纳入rank-one噪声，并交全部linearized consistency
+约束的二维(q,beta) Fourier-Motzkin投影；这属于明确强化的Ma适配。
+原有三坐标统一逐层余项、完整有序Kronecker项、浮点gain有理化后认证重算、
+Theorem3独立generator拼接等合同继续适用；不能以一个更弱近似冒称原方法。
+
+expanded packet_i=[P_i.lower-epsilon_x psi_i(T),P_i.upper+epsilon_x psi_i(T)]
+只用于共同必要条件、旧曲率界和必要结构筛除，不等于原共同响应集合。
+不能用“nominal在expanded包内”直接当非空或UNSAFE见证。
+结构列增加root实现的coupled sparse/必要筛除；实现顺序和全部参数随方法
+一起冻结。它不能得到额外隐藏tau/beta或比基线更窄的响应预算。
+
+共同beta后端：给定tau，求原packet与beta先验的共同交集。浮点/区间外包
+只证明必要可行范围；非空证据需一个明确beta，使nominal区间加该beta psi
+整体落入所有原packet。future support保留同beta关联；所有方法共用相同
+future预算、时间覆盖、witness候选策略、quick gate和区间精度。
+UNSAFE证书必须包含同tau/same beta过原历史包的证据，以及某一允许future
+时间点实际声明位置的严格lower>limit。upper>limit只能是UNKNOWN理由。
+SAFE要求全先验/全部连续时间覆盖及一个独立原包非空witness；纯外包非空
+不等于真实非空。若历史集空，应报INCONSISTENT，不能算非空SAFE。
+
+四、16基础模板、32新输入及生成合法性
+
+固定seed=20261013137，只调用一次；方法冻结前不得实例化正式模板。
+4阈值政策×(2普通+2结构)=16基础模板，每模板各两档epsilon，得到32例。
+普通8模板/16例，N=1,2,4,8各出现两次，包含共同有理时间格及不同素数分母。
+结构8模板/16例：4个四段加速度面、2个五段速度谷、2个五段位置谷。
+这些是已知家族的新参数，不是新问题类型的外部验证。
+
+每模板隐藏beta固定为±1/4或±3/4乘较小预算1/1000，始终非零，两档共用。
+普通模板：先取新隐藏tau，独立有理区间精算nominal终点，加同beta psi(T)，
+再加预定非零测量偏移r_i/4；packet半宽沿预设四档生成，不能按结果改宽。
+结构模板：新时长/基值/幅值/根参数产生合法nominal packet，然后三坐标
+整个packet按同beta psi(T)平移；所有原包仍有同tau/beta见证。
+非零预算可能抹去旧近相切/窄分支，这正是需如实报告的现象；不得缩小预算
+来保留结构收益，也不得删去无效果结构例。
+
+独立生成核使用标准库Fraction，exp(-r)经缩至[0,1/2]的交错Taylor相邻和
+外包及区间平方；在10^80格向外舍入，级数停止项<10^-90。生成核不导入
+Ma、Zhao、结构生产实现或其认证流。所有原packet包含性必须由同一隐藏
+tau/beta的整个独立区间包含证明。失败保留GENERATION_FAILURE，不重抽。
+
+四个阈值政策各4模板/8例：
+0. 宽裕SAFE：用大预算的公共连续界B，limit=B+1/100 m。B使用原packet
+   的当前x/v上界，nominal加速度界加6epsilon/L^2，给整个未来连续界。
+   它是容易控制组；共同quick解决的计时不作为核心算法加速证据。
+1. UNSAFE：在固定future候选{0,H/4,H/2,3H/4,H}及命令边界中，独立选择
+   隐藏tau/beta位置lower最大的候选，limit=该lower-1/1000 m。
+   它在两预算都是真实声明类的反例；此点只供QA，不交给算法。
+2. near+：较小预算共同(tau,beta)类的有限数值参考M+1/10000 m。
+3. near-：同一规则的有限数值参考M-1/10000 m。
+   两档epsilon共用同一个limit；高预算可把较低预算的安全任务变为不安全。
+
+near的M只在q=1/tau的128/256分格及相同数量时间分格、所有future命令边界
+上数值计算；每q先交所有原packet的同beta范围，正psi_x使beta上端最大化。
+额外检查合法隐藏tau防止数值格未击中窄可行分支；这仍不是全域最大值证书。
+粗细不一致、漏窄分支、漏连续峰值均明确保留。数值参考失败时使用预先固定
+公共B作为fallback并标记；不重抽、不删例、不称近边界标签为安全真值。
+所有m级margin都在生成前指定，与CarSim已见误差无关。
+
+五、冻结、开发和运行顺序
+
+当前只可运行generate_taskface_suite.py --self-test或--write-development。
+development目录4个有理简单见证含epsilon=0退化例，并明确标记DEVELOPMENT。
+不运行--generate，不启动任何模拟器。旧目录保持只读。
+
+随后先完成公开方法/理论代码与独立开发审计，冻结精确文件hash、配置、统计
+规则和此生成器/协议。method manifest须有status=METHODS_FROZEN，以及
+generator_sha256、protocol_sha256两个字段与当前文件匹配。
+只有协调者确认method freeze完成后才能执行--generate --frozen-methods PATH。
+生成默认写本protocol/frozen_suite，以独占创建方式拒绝覆盖。原始输入字节
+及private/group元数据均hash记录。生成过程不调用任何比较算法，不按结果
+选择新输入。若冻结后发现正确性bug，保留整轮并宣布失效，另立新版本。
+
+六、预算及统计
+
+每方法每例3次，串行随机顺序seed=712913；BLAS/OpenMP单线程。墙钟5秒，
+沿旧theta分格[8,32,128,512]与future时间格[32,64,128,256]逐阶段推进，
+96-bit区间精度、导数domain subdivisions=1；实际实现变更须在正式生成前
+写入method freeze。总预算含公共解析、profile、相关噪声/消元、筛除、
+lift、共同beta后端、连续bridge和证书构造；不含导入/清缓存/落盘/离线审计。
+单cell边界检查期限，保留实际overshoot和晚到证书，不冒称硬中断上限。
+
+所有480预定任务检查完整笛卡尔积；ERROR、UNKNOWN、FAIL审计及晚到结果
+都保留。UNKNOWN区分到预算与耗尽固定schedule；不能一律写成不安全或超时。
+主要描述量为3次均预算内解决数、状态稳定性、全部任务中位成本、各类证书数。
+配对速度比只在双方3次预算内解决、各自稳定且结论相同、非共同quick的子集
+上计算；比值=baseline/candidate。列出全部慢于5%、退化及新解决案例。
+两个预算共享模板，统计单位是16个模板：bootstrap如使用则10000次以模板
+为cluster重采样，seed=20261013947；不得将32例当32个独立抽样对象。
+报告每预算16例，普通/结构各8例，4阈值政策各4例；小样本限定必须保留。
+预算嵌套检查：同模板较小预算UNSAFE意味着较大预算不能合法SAFE；较大
+预算SAFE意味着较小预算不能合法UNSAFE。UNKNOWN不违反该逻辑。
+
+验收先检查所有输入witness、zero-budget退化、相关V维度与公式、同beta
+可行性、全连续覆盖、严格删除/UNSAFE及变异证书拒收。不能用生产代码重放
+一次替代独立证书核查。结果不得预设胜者；最终收益即使只有少量有限改善，
+也按实际范围陈述，不能扩成所有车辆、所有噪声或通用估计理论的结论。
+
+七、来源入口（只读）
+
+E:/codex_project/TheFirstOne/research_zhao2026_comparison_20261012/analysis/ZHAO_PAPER_CONTRACT_CN.txt
+E:/codex_project/TheFirstOne/research_zhao2026_comparison_20261012/analysis/FORMAL_COMPARISON_PROTOCOL_CN.txt
+E:/codex_project/TheFirstOne/research_zhao2026_comparison_20261012/implementation/generate_new_holdout.py
+E:/codex_project/TheFirstOne/research_ma2026_comparison_20261012/analysis/FROZEN_PROTOCOL_CN.txt
+E:/codex_project/TheFirstOne/vehicle_predictive_rethink_20261013/rethink_theory/TASK_FACE_VS_STATE_PRECISION_CN.txt
+新理论正式定义见E:/codex_project/TheFirstOne/research_task_face_budget_20261013/theory。

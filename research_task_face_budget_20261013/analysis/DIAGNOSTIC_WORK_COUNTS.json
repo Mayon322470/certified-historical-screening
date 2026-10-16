@@ -1,0 +1,287 @@
+{
+  "scope": "POSTHOC_DESCRIPTIVE_WORK_ONLY_NOT_COMPONENT_ABLATION",
+  "aggregate": {
+    "zhao1_rank1": {
+      "frontend_calls": 5665,
+      "future_vertices": 3040,
+      "runs": 96,
+      "delete_zhao": 876,
+      "delete_common_chord": 2247
+    },
+    "zhao2t3_rank1": {
+      "frontend_calls": 1787,
+      "future_vertices": 1439,
+      "runs": 96,
+      "delete_zhao": 504,
+      "delete_common_chord": 291
+    },
+    "ma_rank1": {
+      "frontend_calls": 5303,
+      "future_vertices": 2963,
+      "runs": 96,
+      "delete_ma": 2820
+    },
+    "ma_rank1_structured": {
+      "frontend_calls": 2406,
+      "future_vertices": 2886,
+      "runs": 96,
+      "delete_sparse": 282,
+      "delete_sturm": 2538
+    },
+    "zhao2t3_rank1_structured": {
+      "frontend_calls": 1073,
+      "future_vertices": 1529,
+      "runs": 96,
+      "delete_sturm": 2325,
+      "delete_sparse": 234
+    }
+  },
+  "new_case_017": [
+    {
+      "method": "ma_rank1",
+      "rep": 2,
+      "status": "CERTIFIED_UNSAFE",
+      "elapsed": 0.3994630998931825,
+      "frontend": 83,
+      "vertices": 21,
+      "deletes": {
+        "ma": 70
+      },
+      "levels": [
+        8,
+        32,
+        128
+      ]
+    },
+    {
+      "method": "ma_rank1_structured",
+      "rep": 0,
+      "status": "CERTIFIED_UNSAFE",
+      "elapsed": 0.34413120010867715,
+      "frontend": 13,
+      "vertices": 21,
+      "deletes": {
+        "sturm": 70
+      },
+      "levels": [
+        8,
+        32,
+        128
+      ]
+    },
+    {
+      "method": "zhao2t3_rank1",
+      "rep": 1,
+      "status": "UNKNOWN",
+      "elapsed": 5.059883799869567,
+      "frontend": 79,
+      "vertices": 16,
+      "deletes": {
+        "zhao": 39,
+        "common_chord": 30
+      },
+      "levels": [
+        8,
+        32,
+        128
+      ]
+    },
+    {
+      "method": "ma_rank1_structured",
+      "rep": 2,
+      "status": "CERTIFIED_UNSAFE",
+      "elapsed": 0.34020869992673397,
+      "frontend": 13,
+      "vertices": 21,
+      "deletes": {
+        "sturm": 70
+      },
+      "levels": [
+        8,
+        32,
+        128
+      ]
+    },
+    {
+      "method": "zhao2t3_rank1",
+      "rep": 0,
+      "status": "UNKNOWN",
+      "elapsed": 5.086385699920356,
+      "frontend": 79,
+      "vertices": 16,
+      "deletes": {
+        "zhao": 39,
+        "common_chord": 30
+      },
+      "levels": [
+        8,
+        32,
+        128
+      ]
+    },
+    {
+      "method": "ma_rank1_structured",
+      "rep": 1,
+      "status": "CERTIFIED_UNSAFE",
+      "elapsed": 0.3356681000441313,
+      "frontend": 13,
+      "vertices": 21,
+      "deletes": {
+        "sturm": 70
+      },
+      "levels": [
+        8,
+        32,
+        128
+      ]
+    },
+    {
+      "method": "zhao2t3_rank1_structured",
+      "rep": 0,
+      "status": "CERTIFIED_UNSAFE",
+      "elapsed": 1.1313151000067592,
+      "frontend": 13,
+      "vertices": 21,
+      "deletes": {
+        "sturm": 70
+      },
+      "levels": [
+        8,
+        32,
+        128
+      ]
+    },
+    {
+      "method": "ma_rank1",
+      "rep": 1,
+      "status": "CERTIFIED_UNSAFE",
+      "elapsed": 0.438589199911803,
+      "frontend": 83,
+      "vertices": 21,
+      "deletes": {
+        "ma": 70
+      },
+      "levels": [
+        8,
+        32,
+        128
+      ]
+    },
+    {
+      "method": "ma_rank1",
+      "rep": 0,
+      "status": "CERTIFIED_UNSAFE",
+      "elapsed": 0.4723514001816511,
+      "frontend": 83,
+      "vertices": 21,
+      "deletes": {
+        "ma": 70
+      },
+      "levels": [
+        8,
+        32,
+        128
+      ]
+    },
+    {
+      "method": "zhao1_rank1",
+      "rep": 1,
+      "status": "CERTIFIED_UNSAFE",
+      "elapsed": 0.518533400259912,
+      "frontend": 83,
+      "vertices": 23,
+      "deletes": {
+        "zhao": 39,
+        "common_chord": 29
+      },
+      "levels": [
+        8,
+        32,
+        128
+      ]
+    },
+    {
+      "method": "zhao1_rank1",
+      "rep": 0,
+      "status": "CERTIFIED_UNSAFE",
+      "elapsed": 0.5205114004202187,
+      "frontend": 83,
+      "vertices": 23,
+      "deletes": {
+        "zhao": 39,
+        "common_chord": 29
+      },
+      "levels": [
+        8,
+        32,
+        128
+      ]
+    },
+    {
+      "method": "zhao2t3_rank1",
+      "rep": 2,
+      "status": "UNKNOWN",
+      "elapsed": 5.010548899881542,
+      "frontend": 77,
+      "vertices": 14,
+      "deletes": {
+        "zhao": 39,
+        "common_chord": 30
+      },
+      "levels": [
+        8,
+        32,
+        128
+      ]
+    },
+    {
+      "method": "zhao2t3_rank1_structured",
+      "rep": 1,
+      "status": "CERTIFIED_UNSAFE",
+      "elapsed": 1.10821139998734,
+      "frontend": 13,
+      "vertices": 21,
+      "deletes": {
+        "sturm": 70
+      },
+      "levels": [
+        8,
+        32,
+        128
+      ]
+    },
+    {
+      "method": "zhao1_rank1",
+      "rep": 2,
+      "status": "CERTIFIED_UNSAFE",
+      "elapsed": 0.502341799903661,
+      "frontend": 83,
+      "vertices": 23,
+      "deletes": {
+        "zhao": 39,
+        "common_chord": 29
+      },
+      "levels": [
+        8,
+        32,
+        128
+      ]
+    },
+    {
+      "method": "zhao2t3_rank1_structured",
+      "rep": 2,
+      "status": "CERTIFIED_UNSAFE",
+      "elapsed": 1.1222630999982357,
+      "frontend": 13,
+      "vertices": 21,
+      "deletes": {
+        "sturm": 70
+      },
+      "levels": [
+        8,
+        32,
+        128
+      ]
+    }
+  ]
+}

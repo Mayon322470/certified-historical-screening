@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "selected_records": 144,
+  "cases": 48,
+  "methods": 3,
+  "paired_comparisons": 3,
+  "checks": {
+    "scalar_or_structure_comparisons": 1402
+  },
+  "source_bindings": {
+    "holdout_main": {
+      "per_case_sha256": "6539e398a9ccda0889936087a5e226c910f6c19ad1b7b92bdf77f3c9a2e50e2d",
+      "records_sha256": "ade8b1f6c81ecdb9ec85d8c4dd127c3ce14a651ea64a26f57fab96ac3499a369"
+    },
+    "holdout_ablation": {
+      "per_case_sha256": "497ed36ce18dd1120b2b2559535f19a94c7bdecec19bb268f759169cd5077aee",
+      "records_sha256": "e871a2db7f867e7f91296a2f4cc958c384806d9abc61520d6a6fa126d1f58d48"
+    }
+  },
+  "statistics_audit_sha256": "35c9fd9ccaed5e1d0cc22f6aa3a75a65fa571388e6139f5c23b654df404e0c69",
+  "summary_sha256": "dd3b231348b4e512fef2adaccdb4c5e02c56909c339bb6a06793ac81fc201cee",
+  "per_case_sha256": "2c5b23f75a662e7682cfb496437c048fd144b47ae68c9fde3329482b16ffc9cf",
+  "checker_sha256": "4af716a845a6299c9a2ed6d8c6b22ab74e3e7629bf64c55868e59408d7d0d763",
+  "scope": "Independent subset selection, per-case reconstruction, all method and paired stratified arithmetic from hash-bound independently audited raw-record reductions; no producer import.",
+  "limitations": "One run per case/method across separate run tags. No confidence intervals, repeat-level timing inference, machine-state drift estimate, or universal ablation claim."
+}

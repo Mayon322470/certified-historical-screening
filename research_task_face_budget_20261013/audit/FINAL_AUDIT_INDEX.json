@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "scope": "Final independent mathematical/input/statistical review; not a novelty or physical-membership certificate",
+  "reports_sha256": {
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\GENERATED_INPUT_AUDIT.json": "4f41b0b704b6b65a8a627be311a2e9a3d9d79dcd47393f898cc288cebd117587",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\FORMAL_RESULTS_AUDIT.json": "916e6bb40630c7c188cec1e278fdfc884e4fd8ba5430d1b5809186ece764f737",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\STATISTICS_AUDIT.json": "e8cc2175119a4aca94368e795f2e8dd92805c63956b78d44261b00dbe6b0c2cb",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\AUDIT_EXTERNAL_DEPENDENCIES.json": "66d40e0eac2e5f1524d3116c4ac82bc17fc329fe6b833d421118f216373168fd",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\HISTORICAL_SOURCE_HASH_CLOSURE.json": "214b73aa4a29695c698dba910beda31057b97dea0c3b522fefc327e3778564f0",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\FINAL_INDEPENDENT_REVIEW_CN.txt": "3bc4d3e1f34e372bfaeaf0eb7d3fdfdd0a17d50a71c2d27b55b2216c6bd987a0"
+  },
+  "all_external_runtime_dependencies_sha256": {
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\qa\\audit_comparison.py": "fe4ff5b2124d0bc81444348951bc90892b92d43e1bc982960e93566c32de2c02",
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\qa\\independent_ma_reference.py": "495e43c95288eea09d0c8626facf7271068abaa46201b3965c1ba3d9e2fdeaf2",
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\qa\\zhao_reference.py": "c76ae70052222e6d6e7d0479b449c3177d2e6c91a0f19fe387c7a27df23fc65f",
+    "E:\\codex_project\\TheFirstOne\\research_efficiency_20261012\\implementation\\audit_efficiency.py": "8398a1e4e0ea0ea8c9cb74da446b7ebc9587d26b1c8af2207e2c616e054d9ac8",
+    "E:\\codex_project\\TheFirstOne\\research_efficiency_20261012\\implementation\\audit_refined.py": "fa71c95f6c51f0fc7fe12e48351d3813ca905ca1f2be0815452dbcfe00c8c69c"
+  },
+  "records": 480,
+  "formal_stages": 726,
+  "formal_audit_status": "PASS",
+  "statistics_audit_status": "PASS",
+  "new_coupling_formal_deletions": 0,
+  "no_frozen_source_changes": true,
+  "no_historical_source_exemptions": true
+}

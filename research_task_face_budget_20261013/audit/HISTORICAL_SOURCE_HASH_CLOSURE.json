@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "scope": "Historical prefreeze audit source closure; no exemptions from byte matching",
+  "method": "Reconstructed exact inverse diffs and required SHA-256 equality to the hash already stored in each historical report before saving immutable copies. Current formal reports bind current sources.",
+  "historical_sources": [
+    {
+      "report": "RANK1_CONTRACT_AUDIT.json",
+      "reported_path": "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\audit_rank1_ma.py",
+      "historical_sha256": "eff7d348c96ecc87027eb7b15309dedb8b97b03dc33aa1702c60272e5284c64a",
+      "preserved_copy": "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\preserved_sources\\eff7d348c96ecc87027eb7b15309dedb8b97b03dc33aa1702c60272e5284c64a__audit_rank1_ma.py",
+      "verified_exact_recorded_hash": true
+    },
+    {
+      "report": "RANK1_CONTRACT_AUDIT.json",
+      "reported_path": "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\rank1_ma.py",
+      "historical_sha256": "73f54a5e36785a84ebb05ff04db2a4490659c687e387197b6c1d644a30aa78eb",
+      "preserved_copy": "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\preserved_sources\\73f54a5e36785a84ebb05ff04db2a4490659c687e387197b6c1d644a30aa78eb__rank1_ma.py",
+      "verified_exact_recorded_hash": true
+    },
+    {
+      "report": "BACKEND_DEVELOPMENT_AUDIT.json",
+      "reported_path": "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\audit_budget_result.py",
+      "historical_sha256": "61571b3b66892571ce73b03469e8588f52d26f8b1ea5a475cdf921a3400621cc",
+      "preserved_copy": "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\preserved_sources\\61571b3b66892571ce73b03469e8588f52d26f8b1ea5a475cdf921a3400621cc__audit_budget_result.py",
+      "verified_exact_recorded_hash": true
+    },
+    {
+      "report": "GENERATION_AUDITOR_SELF_TEST.json",
+      "reported_path": "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\audit_generation.py",
+      "historical_sha256": "440474f6b4fbba5fd135b0e03850ce307d9f7da29785367a346cf84b75b24ba0",
+      "preserved_copy": "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\preserved_sources\\440474f6b4fbba5fd135b0e03850ce307d9f7da29785367a346cf84b75b24ba0__audit_generation.py",
+      "verified_exact_recorded_hash": true
+    }
+  ]
+}

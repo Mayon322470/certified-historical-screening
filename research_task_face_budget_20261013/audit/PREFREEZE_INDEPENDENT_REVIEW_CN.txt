@@ -1,0 +1,54 @@
+第一篇：响应预算构造的冻结前独立审查
+日期：2026-10-13。所有新增文件均在本新目录audit，旧封存目录只读。
+
+结论
+当前构造在声明的固定tau、单个终端三坐标包、共同全局三次beta响应、rho=0
+合同下，已通过有限开发数学/实现独立检查。没有发现阻止冻结的正确性问题。
+这只支持进入预先固定的新比较；尚未证明相对既有方法的性能优势、实质创新，
+也没有证明CarSim实际误差属于该响应类。28项故意证书篡改全被拒绝。
+
+已完成的独立检查
+1. Ma rank-one加权L1：40个小问题与独立二维对偶多边形精确一致。生产代码
+   枚举三维kink顶点，审计不复用该枚举。34个FM投影与独立(q,beta)紧多边形
+   顶点投影一致，包括零响应、退化线段/单点和不可行情形。
+2. beta_outer/inner：56个小合同检查。必要outer不能充当可实现witness；
+   每点inner须有一个beta同时将全部名义区间放入原包。global t=T+s未reset，
+   actual位置bridge使用Qnom+6*epsilon/L²。
+3. 4个Ma及4个Zhao开发history合同以独立指数多项式导数和精确矩阵重放；
+   Zhao保留5/21维完整lift、每阶统一余项及T3。原包对角噪声加一列epsilon*psi，
+   没有双重扩张。零响应与旧Ma加强适配、旧Zhao1/2T3精确回归一致。
+4. coupling：独立command-jump表达式重建48个面，864项0至5阶导区间核查；
+   另检验只有共同beta消元才能发现的矛盾、闭边界不删除及4项变异拒收。
+   所有面统一乘q²>0；每个指数项的多项式系数完整求导。
+5. 完整backend：20个既定开发结果重跑并从落盘形式独审，得到10 SAFE、
+   8 UNKNOWN、2 UNSAFE；另5个共同beta矛盾小例均INCONSISTENT。4个quick
+   也独立核对。105份前端合同中97份唯一合同精确重放，其他仅完整输入和
+   payload哈希命中后复用。20保留cell、31 Sturm、20 sparse、8 chord、
+   4 coupling、4 common-beta删除均核查。12个非空见证、2个UNSAFE共同
+   历史/未来beta见证通过，额外12项整链篡改被拒绝。
+
+证据完整性修正
+最初backend记录遗漏了结构模型和两类共同删除的端点区间，无法完整离线
+重放。生产实现已在冻结前补sturm/sparse/coupling模型及对应端点区间；
+独立新结果保存在BACKEND_DEVELOPMENT_PROOFS.json。原ADAPTER_SMOKE未覆盖。
+审计自身最初把allowance诊断字典当数值的错误已保留并勘误，见
+RANK1_AUDIT_DEVELOPMENT_ERRATUM_CN.txt；未改科学门槛或数值容差。
+
+协议及成本审查
+正式runner固定32例×5方法×3重复=480项，5秒墙钟与同一stage schedule；
+parse/quick/profile/前端/准备/共同后端/完整证书均入计时，清缓存和落盘不入。
+晚到证书按真实elapsed处理；单cell只在边界检查deadline，不是硬实时。
+只读取public_cases和哈希清单，不读private witness/groups；生成器不导入
+比较算法。正式输入审计将使用另一个384-bit非缩放指数/command-jump参考。
+4个开发生成见证自测已通过；本说明时尚未读或生成正式suite、未运行正式计时。
+
+代码封包必须包含或绑定全部本地传递依赖：新audit脚本之外，还有旧Zhao qa
+的audit_comparison/independent_ma_reference/zhao_reference，以及动态导入的
+旧efficiency audit_efficiency/audit_refined。开发回归另绑定旧Zhao生产实现
+及旧audit_zhao_contract来源。详见AUDIT_EXTERNAL_DEPENDENCIES.json。
+
+尚待完成
+正式方法/协议/统计冻结的哈希与来源一致性；一次生成后的全部输入见证QA；
+独占计时结束后所有终态/阶段证书、完整480分母、paired/cluster统计独查。
+正式结果可能没有优势。通用FM、rank-one生成元和响应tube叠加仍不构成新
+理论优先权；若有计算收益，只能在预声明有限响应类和输入族的范围内陈述。

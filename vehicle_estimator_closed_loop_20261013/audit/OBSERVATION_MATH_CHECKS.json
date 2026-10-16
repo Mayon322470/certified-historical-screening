@@ -1,0 +1,10 @@
+{
+  "status": "PASS_INDEPENDENT_RATIONAL_OBSERVATION_COMPONENT_CHECKS",
+  "checks": 1238,
+  "source_sha256": "7d14f3811d417a936a4bcd28dbb01bb9b85f3abc2b52dbcfef72b9b8ee70cf85",
+  "scope": "Digital range+odom packet inclusion, exact quadratic bounds, monotone task face. No simulator, method kernel, or physical-response qualification.",
+  "range_composite_error_m": "3/50",
+  "odom_error_m": "1/50",
+  "speed_error_mps": "1/100",
+  "future_cubic_vehicle_model_used": false
+}

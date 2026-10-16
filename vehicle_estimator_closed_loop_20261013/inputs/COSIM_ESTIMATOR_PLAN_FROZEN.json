@@ -1,0 +1,469 @@
+{
+  "status": "FROZEN_BEFORE_NEW_CLOSED_LOOP_TRAJECTORIES",
+  "study_role": "Fresh closed-loop comparison of independent nonlinear digital-observation adapters; not original lag/cubic vehicle qualification",
+  "duration_s": 12.0,
+  "native_dt_s": 0.0005,
+  "tracker_dt_s": 0.01,
+  "decision_period_s": 0.1,
+  "prior": [
+    -0.8,
+    0.8
+  ],
+  "landmark_offsets": [
+    {
+      "s": 12.0,
+      "lateral": 3.0
+    },
+    {
+      "s": 26.0,
+      "lateral": -4.0
+    },
+    {
+      "s": 46.0,
+      "lateral": 5.0
+    }
+  ],
+  "sensor_config": {
+    "odom_error_bound_m": 0.02,
+    "speed_error_bound_mps": 0.01,
+    "range_error_bound_m": 0.04,
+    "numeric_range_padding_m": 1e-06,
+    "current_state_float_pad": 1e-08,
+    "model": "one fixed common speed/odometer bias; digital transverse-compensated lane ranges from live CARLA CG",
+    "rendered_perception": false
+  },
+  "fault": {
+    "at_s": 1.3,
+    "max_observation_age_s": 0.02,
+    "forced_compute_report_s": 0.15,
+    "drop_observation_age_s": 0.1
+  },
+  "checks": {
+    "position_tolerance_m": 1e-08,
+    "state_membership_tolerance": 1e-07,
+    "min_stopped_tail_s": 3.0,
+    "stop_speed_band_mps": 0.05,
+    "waiting_acceleration_upper_mps2": 2.5
+  },
+  "raw_request": {
+    "before": 0.0,
+    "after": 0.75,
+    "switch_s": 1.0
+  },
+  "emergency_command": [
+    0.0,
+    2.5,
+    0.0
+  ],
+  "common_quick": "Accept if the fixed prior alone certifies the same waiting-and-backup guard; all five methods skip estimator on exactly this condition",
+  "history_selection": "three latest decision packets, row j from packet max(0,len-3+j), j=0,1,2; no future packet; fixed prior each query",
+  "methods": [
+    "ma",
+    "ma_structured",
+    "zhao2t3",
+    "zhao2t3_structured",
+    "exact_range"
+  ],
+  "scenes": [
+    {
+      "id": "normal_v8",
+      "mode": "normal",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013301
+    },
+    {
+      "id": "normal_v10",
+      "mode": "normal",
+      "speed_mps": 10.0,
+      "initial_front_clearance_m": 55.0,
+      "bias": -0.3,
+      "seed": 20261013302
+    },
+    {
+      "id": "drop_v8",
+      "mode": "dropped_observation",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013303,
+      "fault": {
+        "kind": "drop",
+        "at_s": 1.3
+      }
+    },
+    {
+      "id": "timeout_v8",
+      "mode": "forced_timeout",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013304,
+      "fault": {
+        "kind": "late",
+        "at_s": 1.3,
+        "reported_elapsed_s": 0.15
+      }
+    }
+  ],
+  "statistical_scope": "four scenarios and five methods, 20 fresh trajectories; complete denominator; no population significance claim; shared-input query timing only from separately declared replay",
+  "safety_evidence": "sampled native/body stopline, digital observation and waiting-member checks, finite braking tail; no all-domain continuous or wall-clock real-time guarantee",
+  "no_retry_or_overwrite": true,
+  "compute_budget_s": 0.1,
+  "response_delay_s": 0.1,
+  "max_observation_age_s": 0.02,
+  "measurement_pad_m": 0.005,
+  "cases": [
+    {
+      "id": "normal_v8__ma",
+      "mode": "normal",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013301,
+      "scene_id": "normal_v8",
+      "method": "ma"
+    },
+    {
+      "id": "normal_v8__ma_structured",
+      "mode": "normal",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013301,
+      "scene_id": "normal_v8",
+      "method": "ma_structured"
+    },
+    {
+      "id": "normal_v8__zhao2t3",
+      "mode": "normal",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013301,
+      "scene_id": "normal_v8",
+      "method": "zhao2t3"
+    },
+    {
+      "id": "normal_v8__zhao2t3_structured",
+      "mode": "normal",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013301,
+      "scene_id": "normal_v8",
+      "method": "zhao2t3_structured"
+    },
+    {
+      "id": "normal_v8__exact_range",
+      "mode": "normal",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013301,
+      "scene_id": "normal_v8",
+      "method": "exact_range"
+    },
+    {
+      "id": "normal_v10__ma",
+      "mode": "normal",
+      "speed_mps": 10.0,
+      "initial_front_clearance_m": 55.0,
+      "bias": -0.3,
+      "seed": 20261013302,
+      "scene_id": "normal_v10",
+      "method": "ma"
+    },
+    {
+      "id": "normal_v10__ma_structured",
+      "mode": "normal",
+      "speed_mps": 10.0,
+      "initial_front_clearance_m": 55.0,
+      "bias": -0.3,
+      "seed": 20261013302,
+      "scene_id": "normal_v10",
+      "method": "ma_structured"
+    },
+    {
+      "id": "normal_v10__zhao2t3",
+      "mode": "normal",
+      "speed_mps": 10.0,
+      "initial_front_clearance_m": 55.0,
+      "bias": -0.3,
+      "seed": 20261013302,
+      "scene_id": "normal_v10",
+      "method": "zhao2t3"
+    },
+    {
+      "id": "normal_v10__zhao2t3_structured",
+      "mode": "normal",
+      "speed_mps": 10.0,
+      "initial_front_clearance_m": 55.0,
+      "bias": -0.3,
+      "seed": 20261013302,
+      "scene_id": "normal_v10",
+      "method": "zhao2t3_structured"
+    },
+    {
+      "id": "normal_v10__exact_range",
+      "mode": "normal",
+      "speed_mps": 10.0,
+      "initial_front_clearance_m": 55.0,
+      "bias": -0.3,
+      "seed": 20261013302,
+      "scene_id": "normal_v10",
+      "method": "exact_range"
+    },
+    {
+      "id": "drop_v8__ma",
+      "mode": "dropped_observation",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013303,
+      "fault": {
+        "kind": "drop",
+        "at_s": 1.3
+      },
+      "scene_id": "drop_v8",
+      "method": "ma"
+    },
+    {
+      "id": "drop_v8__ma_structured",
+      "mode": "dropped_observation",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013303,
+      "fault": {
+        "kind": "drop",
+        "at_s": 1.3
+      },
+      "scene_id": "drop_v8",
+      "method": "ma_structured"
+    },
+    {
+      "id": "drop_v8__zhao2t3",
+      "mode": "dropped_observation",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013303,
+      "fault": {
+        "kind": "drop",
+        "at_s": 1.3
+      },
+      "scene_id": "drop_v8",
+      "method": "zhao2t3"
+    },
+    {
+      "id": "drop_v8__zhao2t3_structured",
+      "mode": "dropped_observation",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013303,
+      "fault": {
+        "kind": "drop",
+        "at_s": 1.3
+      },
+      "scene_id": "drop_v8",
+      "method": "zhao2t3_structured"
+    },
+    {
+      "id": "drop_v8__exact_range",
+      "mode": "dropped_observation",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013303,
+      "fault": {
+        "kind": "drop",
+        "at_s": 1.3
+      },
+      "scene_id": "drop_v8",
+      "method": "exact_range"
+    },
+    {
+      "id": "timeout_v8__ma",
+      "mode": "forced_timeout",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013304,
+      "fault": {
+        "kind": "late",
+        "at_s": 1.3,
+        "reported_elapsed_s": 0.15
+      },
+      "scene_id": "timeout_v8",
+      "method": "ma"
+    },
+    {
+      "id": "timeout_v8__ma_structured",
+      "mode": "forced_timeout",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013304,
+      "fault": {
+        "kind": "late",
+        "at_s": 1.3,
+        "reported_elapsed_s": 0.15
+      },
+      "scene_id": "timeout_v8",
+      "method": "ma_structured"
+    },
+    {
+      "id": "timeout_v8__zhao2t3",
+      "mode": "forced_timeout",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013304,
+      "fault": {
+        "kind": "late",
+        "at_s": 1.3,
+        "reported_elapsed_s": 0.15
+      },
+      "scene_id": "timeout_v8",
+      "method": "zhao2t3"
+    },
+    {
+      "id": "timeout_v8__zhao2t3_structured",
+      "mode": "forced_timeout",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013304,
+      "fault": {
+        "kind": "late",
+        "at_s": 1.3,
+        "reported_elapsed_s": 0.15
+      },
+      "scene_id": "timeout_v8",
+      "method": "zhao2t3_structured"
+    },
+    {
+      "id": "timeout_v8__exact_range",
+      "mode": "forced_timeout",
+      "speed_mps": 8.0,
+      "initial_front_clearance_m": 40.0,
+      "bias": 0.3,
+      "seed": 20261013304,
+      "fault": {
+        "kind": "late",
+        "at_s": 1.3,
+        "reported_elapsed_s": 0.15
+      },
+      "scene_id": "timeout_v8",
+      "method": "exact_range"
+    }
+  ],
+  "additional_frozen_files": [
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\budget_comparison.py",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\certified_core.py",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\coupling_faces.py",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\development_smoke.py",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\history_derivatives.py",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\ma_scalar_certified.py",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\ma_zfo.py",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\polynomial_contract.py",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\quick_baseline.py",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\rank1_ma.py",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\refined_core.py",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\run_budget_comparison.py",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\sparse_faces.py",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\taylor_faces.py",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\zhao_carleman.py",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\theory\\OBSERVATION_CONTRACT_CN.txt",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\ESTIMATOR_COMPONENT_AUDIT.json",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\WAITING_PHASE_REVIEW_CN.txt",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\RUNNER_SOURCE_GATE.json",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\audit_runner_source_gate.py"
+  ],
+  "availability_model": "Public normal raw timeline continues during a fixed 0.1s computation/response window; estimator only decides a brake veto at window end. Prior accepted guard covers next decision plus response (0.2s). No wall-clock real-time assertion.",
+  "paired_replay": {
+    "role": "Offline identical-query timing, not additional closed-loop trajectories",
+    "source_methods": [
+      "exact_range"
+    ],
+    "source_scenes": [
+      "normal_v8",
+      "normal_v10"
+    ],
+    "selection": "first at most three decisions per source normal scene where estimator was called, in increasing simulated time; retain all queries and deadline outcomes",
+    "repetitions": 3,
+    "deadline_s": 0.1,
+    "method_order": "rotate frozen method tuple by repetition number; sequential single thread",
+    "include_all_costs": "estimate call includes structural screening, frontend and certificate construction; preparation/guard separately logged",
+    "inference": "descriptive paired totals and median only, no small-sample population confidence claim"
+  },
+  "created_utc": "2026-10-13T05:07:57.683713+00:00",
+  "protocol_path": "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\inputs\\PROTOCOL_DRAFT.json",
+  "protocol_sha256": "09f1f78c57d7d0c38012da89e2bcd7cb8a49e5f4d2009dfc03202b7da2995ee1",
+  "pre_execution_gates": {
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\ESTIMATOR_COMPONENT_AUDIT.json": {
+      "status": "PASS_INDEPENDENT_OBSERVATION_ADAPTER_COMPONENT_AUDIT",
+      "sha256": "42916c0d7b4450e6601b2d3f14589b3e03a4492fdd60411b1bff9161fb9c4144"
+    },
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\OBSERVATION_MATH_CHECKS.json": {
+      "status": "PASS_INDEPENDENT_RATIONAL_OBSERVATION_COMPONENT_CHECKS",
+      "sha256": "f555d87651da48ce60f395ae99b97709e5f2ac291bb8f941d8833ea45debd633"
+    },
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\RUNNER_SMOKE_CHECKS.json": {
+      "status": "PASS_PURE_FAKE_BACKEND_RUNNER_CHECKS",
+      "sha256": "56b091cb7fe3ac48e57829a6355b4d09588b722643fc3701044dfc733f7935df"
+    },
+    "E:\\codex_project\\TheFirstOne\\vehicle_position_contract_20261013\\audit\\INDEPENDENT_POSITION_VALIDATION_AUDIT.json": {
+      "status": "PASS_INDEPENDENT_AUDIT_OF_NEW_POSITION_VALIDATION",
+      "sha256": "ff975c1700b0fbf6b94e5f1649564c7c80033668b5be981acc0747980074320c"
+    }
+  },
+  "source_sha256": {
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\integration\\run_estimator_closed_loop.py": "59b662c79d5c03bef79d32127e087c81217f76ab4f39d3ab21aea41881ed9a4d",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\source\\sensor_estimators.py": "86e0431327452d48d077008341a5cd77878196bf50428752d3ab44f1a64e94a2",
+    "E:\\codex_project\\TheFirstOne\\vehicle_position_contract_20261013\\source\\position_backup.py": "401e33e42e4433bb9a079aec55c6fa276f85ce41cf44ba26b73c04b2b9c88b30",
+    "E:\\codex_project\\TheFirstOne\\vehicle_position_contract_20261013\\integration\\coupling_session_v3.py": "f3ed48bca1d45e7a267f76d6cda0ed34af73e1cda82671c68506992f9fd17047",
+    "E:\\codex_project\\TheFirstOne\\vehicle_validation_20261012\\source\\cg_vehicle.py": "3f2e8d7c64e67f125a78490fa3f35a8132e49cd0a529eec692b23c00f6f961a7",
+    "E:\\codex_project\\TheFirstOne\\vehicle_validation_20261012\\source\\tracker.py": "daf6a825b80662721abb13ce6cde04f9230f3760d2e00fc0cc2cc004074e6421",
+    "E:\\codex_project\\TheFirstOne\\vehicle_validation_20261012\\inputs\\actuator_model_v2.json": "b11d89dcd18fc26192059a441ba5d62e2f06b8f9931f8f9d0029b089d4f96d3c",
+    "E:\\codex_project\\CarlaCarSimValidation\\validate.py": "2c099f27372fe1a5081903285bbcccca1811da14b71f81278696fc812bf62376",
+    "E:\\codex_project\\CarlaCarSimValidation\\validation_config.json": "127471ee840c09026910e59e13bd6f1ea75b31e5942a2a57f1f4e293cb939a86",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\inputs\\PROTOCOL_DRAFT.json": "09f1f78c57d7d0c38012da89e2bcd7cb8a49e5f4d2009dfc03202b7da2995ee1",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\audit_estimator_components.py": "b0a41c958bb2051602e9989b8735a40bb12bcb251912d434a52af9adebcb0374",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\reference_bias_math.py": "7d14f3811d417a936a4bcd28dbb01bb9b85f3abc2b52dbcfef72b9b8ee70cf85",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\integration\\runner_smoke_checks.py": "87dfc0d84c3526525434ae60a9d841d4ba49010898b98bbee2af9f3f11de0af3",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\ESTIMATOR_COMPONENT_AUDIT.json": "42916c0d7b4450e6601b2d3f14589b3e03a4492fdd60411b1bff9161fb9c4144",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\OBSERVATION_MATH_CHECKS.json": "f555d87651da48ce60f395ae99b97709e5f2ac291bb8f941d8833ea45debd633",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\RUNNER_SMOKE_CHECKS.json": "56b091cb7fe3ac48e57829a6355b4d09588b722643fc3701044dfc733f7935df",
+    "E:\\codex_project\\TheFirstOne\\vehicle_position_contract_20261013\\audit\\INDEPENDENT_POSITION_VALIDATION_AUDIT.json": "ff975c1700b0fbf6b94e5f1649564c7c80033668b5be981acc0747980074320c",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\budget_comparison.py": "69021d578705156709ab741159325b25d3a23bcb8a41e01ea497d82d72bc055d",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\certified_core.py": "71fbd06c63d736b3c2c3f872a19bd9805a9915e06aec8928c80f7f6c8ca820bd",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\coupling_faces.py": "b95bc67a46e1e92a1428a7c783fb446494b4bd121047fd7a3b3a1b0a832b5a6f",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\development_smoke.py": "c2300bd266965ec6c5dba4f902f184881e6864e96a9d65a6eb45e7d4f940f3f6",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\history_derivatives.py": "205d21ae0df0dfdd3104eb44f668334d85febec540a966083623ee796d7ee1a9",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\ma_scalar_certified.py": "4dd331b0dc5ade15adf814e0740d8be8286fe955ceb1a79ec8edd3a204ddcd9a",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\ma_zfo.py": "51e7bcc08a54caa4c753a19813c7edfe01e20f1795cdfe7325df9e19e43737ae",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\polynomial_contract.py": "67611c3ecc222c6d722382ec7841d7a56dbc1b959c43e7093c071d5c6b2b371e",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\quick_baseline.py": "ad609b57a8a149c9dc81abe4a56685ed7c4a16b2f809824fab0d4e9a3009cf70",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\rank1_ma.py": "2fc2d049101596957bd9ac3f23e0de1ed5780b3fea552362d7d92c68b377385d",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\refined_core.py": "ea2129a0a5d6090094b27d06aceef7fca06cac5fd1416fa7e5039676936bfa3c",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\run_budget_comparison.py": "797bbd2fa1cb8a7f3fa4a64e06a9497befbb106400abbc18a853af61e465112d",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\sparse_faces.py": "b6f55b68c7f632b52d05ff095000fdf22ab78f81b549e1f586d99d09a61dc1e7",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\taylor_faces.py": "a6082203407888fced6c0405b656aeeaa1a03f70aa0cf0b5e437390be49ea49e",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\zhao_carleman.py": "76082b2c9e27aa94251365c7fb3788a657d5f39135d12ae0317270e1a1eabb5b",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\theory\\OBSERVATION_CONTRACT_CN.txt": "23a1e780f837ebe1485a71fd56de6f49249cfb8c0bc349f40a9aee76bf6b00f8",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\WAITING_PHASE_REVIEW_CN.txt": "d60d69c58b4ede9ad79495627a5435ed98509d02f24b9c2706ece751b2f8e3ed",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\RUNNER_SOURCE_GATE.json": "8ce6cf03625f9784c395dd85835f236e9362a94bf22cbfb43ac04309a7403b15",
+    "E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\audit\\audit_runner_source_gate.py": "27b075d5b30aacd9a18cc4a832d8d51c353fed564868f29121e066dae91c28be",
+    "E:\\Applications\\CarSim\\Programs\\solvers\\carsim_64.dll": "5f85c18b0e081b733682ba0a27710394d8bc6a76ff074331749de67d44994184",
+    "E:\\Applications\\CarSim\\Resources\\CPAR_Archives\\SDK_External_Control.cpar": "37330c425cded69b1316f5313543cd1ed35b18c5ce2c143e5390e0e6d53b683b"
+  },
+  "carla_executable": {
+    "path": "E:\\D_Data\\DR_FILE\\CARLA\\Carla-0.10.0-Win64-Shipping\\Carla-0.10.0-Win64-Shipping\\CarlaUnreal\\Binaries\\Win64\\CarlaUnreal-Win64-Shipping.exe",
+    "bytes": 168117248
+  },
+  "all_failures_retained": true
+}

@@ -1,0 +1,14 @@
+{
+  "scope": "All local external transitive audit source dependencies, including dynamically imported verifiers; excludes Python standard library and runtime binaries",
+  "runtime_dependency_sha256": {
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\qa\\audit_comparison.py": "fe4ff5b2124d0bc81444348951bc90892b92d43e1bc982960e93566c32de2c02",
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\qa\\independent_ma_reference.py": "495e43c95288eea09d0c8626facf7271068abaa46201b3965c1ba3d9e2fdeaf2",
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\qa\\zhao_reference.py": "c76ae70052222e6d6e7d0479b449c3177d2e6c91a0f19fe387c7a27df23fc65f",
+    "E:\\codex_project\\TheFirstOne\\research_efficiency_20261012\\implementation\\audit_efficiency.py": "8398a1e4e0ea0ea8c9cb74da446b7ebc9587d26b1c8af2207e2c616e054d9ac8",
+    "E:\\codex_project\\TheFirstOne\\research_efficiency_20261012\\implementation\\audit_refined.py": "fa71c95f6c51f0fc7fe12e48351d3813ca905ca1f2be0815452dbcfe00c8c69c"
+  },
+  "development_and_origin_sha256": {
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\qa\\audit_zhao_contract.py": "2e8810a824298232679799917275a0a71bd3be228c1dff60c4c83499c4c9d76d",
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\implementation\\zhao_carleman.py": "06aa33c162910b959b1f254309fcfc4df016a677988f26934c6ec5625576e28a"
+  }
+}

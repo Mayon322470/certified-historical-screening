@@ -1,0 +1,9 @@
+{
+  "status": "ANALYSIS_OUTPUT_FILES",
+  "sha256": {
+    "cases.csv": "43167d03be2e2350cf071a158c405ee2d01eb5aa843efca407c22252c273c11f",
+    "closed_loop_and_replay.pdf": "b211656f5b5c9e6d170efe3e3eec26b6aab130defd7ae8c364335c0f75de231b",
+    "closed_loop_and_replay.png": "503178e1c6ba5fdfa269bbe3f1b02dead3d9462798a61d88b02e91f6ef547b01",
+    "SUMMARY.json": "90885d1941f5d74040ab282c07e572f1fe0f2a59ee104bf385bab6f550b0e44e"
+  }
+}

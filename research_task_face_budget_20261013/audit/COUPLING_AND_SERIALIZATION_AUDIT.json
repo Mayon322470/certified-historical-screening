@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "scope": "PREFREEZE_SMALL_INDEPENDENT_COUPLING_AND_SERIALIZATION_AUDIT",
+  "symbolic_face_reconstructions": 48,
+  "derivative_range_comparisons": 864,
+  "same_beta_only_contradiction_checked": true,
+  "closed_boundary_not_deleted": true,
+  "proof_mutations_rejected": [
+    "nonpositive_claim",
+    "wrong_face",
+    "wrong_parameter_map",
+    "wrong_expression"
+  ],
+  "saved_contracts_deserialized_and_replayed": 8,
+  "source_sha256": {
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\audit_coupling_smoke.py": "56cebfd23f6ffa5e05b6eec7afd49ed09f1f02b689607c1599224ebefe160d0e",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\audit_coupling_faces.py": "c3670f8f35804449397d8d635b9d7845baad8fdb0ebfea0314c53303b419f0b0",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\coupling_faces.py": "b95bc67a46e1e92a1428a7c783fb446494b4bd121047fd7a3b3a1b0a832b5a6f",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\audit_rank1_ma.py": "7bb221643e14e91a4767f95513c939ca91af486265737b73d55ae1be44a3a9c8",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\audit_rank1_zhao.py": "95610e1a715e2631b51995b3f6641db9c3b3b145197ffc1914c0f6763481a1ea",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\RANK1_CONTRACT_PROOFS.json": "ce23462878ae00500fef5eb1a923022d568d76904be96b3db1c8e031553cd749",
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\qa\\independent_ma_reference.py": "495e43c95288eea09d0c8626facf7271068abaa46201b3965c1ba3d9e2fdeaf2"
+  },
+  "elapsed_seconds": 0.31658710027113557,
+  "formal_generator_called": false,
+  "formal_data_read": false,
+  "performance_or_novelty_proved": false
+}

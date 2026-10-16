@@ -1,0 +1,1934 @@
+{
+  "status": "PASS",
+  "scope": "LOW_COST_METADATA_AND_EXACT_RATIONAL_ARITHMETIC_ONLY",
+  "high_precision_trajectory_recomputation": {
+    "separate_report": "qa/GENERATION_MATH_AUDIT.json",
+    "status": "PASS",
+    "input_hash_matches": true,
+    "private_hash_matches": true
+  },
+  "expected_main_jobs": 864,
+  "expected_ablation_jobs": 96,
+  "checks": 464,
+  "method_freeze_sha256": "5e203a815d35bbb28462d0399dfcec263f64c8a5b8b50509a151488272bdc6f2",
+  "input_sha256": "bfd1fe58dfa49e24e21d7e01f2be8ee758757bcf96d7170a63bf0380534f9d66",
+  "frozen_manifest_sha256": "fdb90b753cf478cc48e82fcefb904c29eabc23c21d1e19830dad8619644f6054",
+  "private_sha256": "a2570447319824d34de608896398ee9a1deddf1edec4f242d869bfd608b7b590",
+  "group_counts": {
+    "holdout_random": 32,
+    "holdout_four_hold": 8,
+    "holdout_valley_velocity": 4,
+    "holdout_valley_position": 4
+  },
+  "threshold_counts": {
+    "public_envelope_plus_5percent_scale": 12,
+    "compatible_reference_plus_1e-2_scale": 12,
+    "compatible_reference_plus_1e-4_scale": 12,
+    "compatible_reference_minus_1e-3_scale": 12
+  },
+  "threshold_by_group": {
+    "holdout_random": {
+      "public_envelope_plus_5percent_scale": 8,
+      "compatible_reference_plus_1e-2_scale": 8,
+      "compatible_reference_plus_1e-4_scale": 8,
+      "compatible_reference_minus_1e-3_scale": 8
+    },
+    "holdout_four_hold": {
+      "public_envelope_plus_5percent_scale": 2,
+      "compatible_reference_plus_1e-2_scale": 2,
+      "compatible_reference_plus_1e-4_scale": 2,
+      "compatible_reference_minus_1e-3_scale": 2
+    },
+    "holdout_valley_velocity": {
+      "compatible_reference_plus_1e-2_scale": 1,
+      "compatible_reference_plus_1e-4_scale": 1,
+      "compatible_reference_minus_1e-3_scale": 1,
+      "public_envelope_plus_5percent_scale": 1
+    },
+    "holdout_valley_position": {
+      "compatible_reference_minus_1e-3_scale": 1,
+      "public_envelope_plus_5percent_scale": 1,
+      "compatible_reference_plus_1e-2_scale": 1,
+      "compatible_reference_plus_1e-4_scale": 1
+    }
+  },
+  "numerical_reference_statuses": {
+    "NUMERICAL_REFERENCE_UNCERTIFIED": 48
+  },
+  "failures": [],
+  "details": [
+    {
+      "check": "trusted_method_freeze_hash",
+      "passed": true
+    },
+    {
+      "check": "trusted_input_hash",
+      "passed": true
+    },
+    {
+      "check": "manifest_method_reference",
+      "passed": true
+    },
+    {
+      "check": "manifest_input_hash",
+      "passed": true
+    },
+    {
+      "check": "manifest_private_hash",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:analysis/FORMAL_COMPARISON_PROTOCOL_CN.txt",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:analysis/NEW_HOLDOUT_PROTOCOL_CN.txt",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:implementation/certified_core.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:implementation/comparison_core.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:implementation/generate_new_holdout.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:implementation/history_derivatives.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:implementation/ma_scalar_certified.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:implementation/ma_zfo.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:implementation/polynomial_contract.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:implementation/quick_baseline.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:implementation/refined_core.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:implementation/run_comparison.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:implementation/sparse_faces.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:implementation/taylor_faces.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:implementation/validate_zhao_carleman.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:implementation/zhao_carleman.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_file:inputs/generation_protocol.json",
+      "passed": true
+    },
+    {
+      "check": "generator_three_way_hash",
+      "passed": true
+    },
+    {
+      "check": "generation_protocol_three_way_hash",
+      "passed": true
+    },
+    {
+      "check": "frozen_seed_and_version",
+      "passed": true
+    },
+    {
+      "check": "exact_public_schema",
+      "passed": true
+    },
+    {
+      "check": "case_private_bijection",
+      "passed": true
+    },
+    {
+      "check": "fixed_group_counts",
+      "passed": true,
+      "detail": {
+        "holdout_random": 32,
+        "holdout_four_hold": 8,
+        "holdout_valley_velocity": 4,
+        "holdout_valley_position": 4
+      }
+    },
+    {
+      "check": "four_thresholds_twelve_each",
+      "passed": true,
+      "detail": {
+        "public_envelope_plus_5percent_scale": 12,
+        "compatible_reference_plus_1e-2_scale": 12,
+        "compatible_reference_plus_1e-4_scale": 12,
+        "compatible_reference_minus_1e-3_scale": 12
+      }
+    },
+    {
+      "check": "no_internal_physical_duplicates",
+      "passed": true
+    },
+    {
+      "check": "no_copied_development_physical_cases",
+      "passed": true
+    },
+    {
+      "check": "method_schedule_identity",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_00_N1:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_00_N1:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_00_N1:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_00_N1:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_00_N1:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_00_N1:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_00_N1:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_00_N1:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_00_N1:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_01_N1:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_01_N1:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_01_N1:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_01_N1:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_01_N1:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_01_N1:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_01_N1:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_01_N1:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_01_N1:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_02_N1:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_02_N1:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_02_N1:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_02_N1:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_02_N1:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_02_N1:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_02_N1:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_02_N1:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_02_N1:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_03_N1:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_03_N1:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_03_N1:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_03_N1:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_03_N1:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_03_N1:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_03_N1:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_03_N1:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_03_N1:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_04_N1:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_04_N1:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_04_N1:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_04_N1:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_04_N1:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_04_N1:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_04_N1:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_04_N1:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_04_N1:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_05_N1:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_05_N1:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_05_N1:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_05_N1:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_05_N1:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_05_N1:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_05_N1:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_05_N1:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_05_N1:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_06_N1:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_06_N1:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_06_N1:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_06_N1:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_06_N1:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_06_N1:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_06_N1:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_06_N1:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_06_N1:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_07_N1:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_07_N1:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_07_N1:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_07_N1:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_07_N1:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_07_N1:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_07_N1:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_07_N1:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_07_N1:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_08_N2:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_08_N2:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_08_N2:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_08_N2:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_08_N2:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_08_N2:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_08_N2:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_08_N2:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_08_N2:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_09_N2:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_09_N2:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_09_N2:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_09_N2:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_09_N2:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_09_N2:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_09_N2:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_09_N2:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_09_N2:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_10_N2:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_10_N2:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_10_N2:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_10_N2:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_10_N2:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_10_N2:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_10_N2:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_10_N2:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_10_N2:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_11_N2:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_11_N2:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_11_N2:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_11_N2:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_11_N2:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_11_N2:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_11_N2:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_11_N2:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_11_N2:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_12_N2:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_12_N2:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_12_N2:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_12_N2:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_12_N2:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_12_N2:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_12_N2:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_12_N2:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_12_N2:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_13_N2:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_13_N2:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_13_N2:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_13_N2:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_13_N2:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_13_N2:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_13_N2:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_13_N2:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_13_N2:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_14_N2:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_14_N2:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_14_N2:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_14_N2:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_14_N2:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_14_N2:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_14_N2:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_14_N2:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_14_N2:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_15_N2:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_15_N2:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_15_N2:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_15_N2:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_15_N2:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_15_N2:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_15_N2:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_15_N2:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_15_N2:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_16_N4:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_16_N4:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_16_N4:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_16_N4:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_16_N4:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_16_N4:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_16_N4:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_16_N4:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_16_N4:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_17_N4:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_17_N4:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_17_N4:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_17_N4:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_17_N4:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_17_N4:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_17_N4:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_17_N4:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_17_N4:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_18_N4:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_18_N4:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_18_N4:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_18_N4:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_18_N4:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_18_N4:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_18_N4:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_18_N4:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_18_N4:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_19_N4:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_19_N4:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_19_N4:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_19_N4:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_19_N4:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_19_N4:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_19_N4:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_19_N4:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_19_N4:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_20_N4:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_20_N4:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_20_N4:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_20_N4:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_20_N4:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_20_N4:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_20_N4:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_20_N4:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_20_N4:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_21_N4:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_21_N4:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_21_N4:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_21_N4:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_21_N4:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_21_N4:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_21_N4:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_21_N4:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_21_N4:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_22_N4:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_22_N4:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_22_N4:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_22_N4:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_22_N4:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_22_N4:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_22_N4:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_22_N4:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_22_N4:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_23_N4:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_23_N4:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_23_N4:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_23_N4:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_23_N4:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_23_N4:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_23_N4:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_23_N4:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_23_N4:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_24_N8:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_24_N8:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_24_N8:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_24_N8:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_24_N8:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_24_N8:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_24_N8:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_24_N8:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_24_N8:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_25_N8:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_25_N8:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_25_N8:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_25_N8:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_25_N8:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_25_N8:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_25_N8:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_25_N8:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_25_N8:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_26_N8:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_26_N8:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_26_N8:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_26_N8:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_26_N8:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_26_N8:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_26_N8:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_26_N8:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_26_N8:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_27_N8:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_27_N8:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_27_N8:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_27_N8:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_27_N8:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_27_N8:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_27_N8:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_27_N8:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_27_N8:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_28_N8:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_28_N8:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_28_N8:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_28_N8:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_28_N8:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_28_N8:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_28_N8:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_28_N8:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_28_N8:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_29_N8:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_29_N8:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_29_N8:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_29_N8:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_29_N8:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_29_N8:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_29_N8:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_29_N8:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_29_N8:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_30_N8:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_30_N8:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_30_N8:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_30_N8:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_30_N8:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_30_N8:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_30_N8:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_30_N8:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_30_N8:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_31_N8:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_31_N8:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_31_N8:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_31_N8:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_31_N8:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_31_N8:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_31_N8:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_31_N8:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_random_31_N8:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_0:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_0:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_0:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_0:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_0:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_0:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_0:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_0:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_0:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_1:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_1:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_1:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_1:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_1:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_1:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_1:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_1:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_1:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_2:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_2:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_2:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_2:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_2:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_2:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_2:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_2:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_2:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_3:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_3:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_3:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_3:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_3:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_3:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_3:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_3:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_0_3:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_0:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_0:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_0:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_0:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_0:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_0:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_0:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_0:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_0:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_1:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_1:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_1:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_1:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_1:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_1:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_1:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_1:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_1:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_2:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_2:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_2:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_2:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_2:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_2:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_2:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_2:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_2:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_3:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_3:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_3:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_3:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_3:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_3:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_3:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_3:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_four_hold_1_3:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_0:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_0:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_0:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_0:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_0:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_0:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_0:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_0:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_0:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_1:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_1:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_1:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_1:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_1:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_1:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_1:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_1:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_1:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_2:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_2:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_2:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_2:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_2:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_2:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_2:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_2:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_2:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_3:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_3:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_3:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_3:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_3:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_3:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_3:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_3:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_velocity_3:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_0:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_0:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_0:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_0:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_0:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_0:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_0:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_0:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_0:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_1:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_1:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_1:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_1:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_1:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_1:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_1:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_1:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_1:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_2:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_2:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_2:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_2:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_2:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_2:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_2:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_2:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_2:reference_not_less_than_generated_point",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_3:physical_domain",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_3:hidden_prior",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_3:stored_generation_certificate_inside_packet",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_3:public_bound_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_3:predeclared_rotation",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_3:policy_assignment",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_3:threshold_arithmetic",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_3:reference_protocol",
+      "passed": true
+    },
+    {
+      "check": "holdout_valley_position_3:reference_not_less_than_generated_point",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Stored trajectory certificates checked for schema and packet inclusion only; mathematical bounds not recomputed here.",
+    "Finite numerical reference is not a certified complete feasible set or global maximum.",
+    "Analyzer source frozen separately before first solve; this audit checks the method freeze supplied by coordinator."
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "scope": "BOUNDED_PREFREEZE_UNIT_AND_CONTRACT_AUDIT",
+  "test_groups": {
+    "ma_primal_against_independent_dual": 40,
+    "fm_against_independent_polygon": 34,
+    "beta_outer_inner_exact_cases": 56,
+    "ma_history_contracts": 4,
+    "global_time_and_actual_curvature": 4,
+    "zhao_history_contracts": 4
+  },
+  "zero_response_regressions": [
+    {
+      "method": "zhao1",
+      "status": "PASS",
+      "comparison": "exact output/gain/generators/T3 equality"
+    },
+    {
+      "method": "zhao2",
+      "status": "PASS",
+      "comparison": "exact output/gain/generators/T3 equality"
+    },
+    {
+      "method": "ma_strong",
+      "status": "PASS",
+      "comparison": "exact theta result on two intervals"
+    }
+  ],
+  "proof_mutations_rejected": [
+    "ma_wrong_response_column",
+    "ma_missing_rank1_radius",
+    "ma_wrong_common_beta_bound",
+    "ma_invalid_optimal_gain",
+    "ma_fm_projection_tamper",
+    "ma_signed_remainder_tamper",
+    "zhao_missing_response_column",
+    "zhao_double_counted_noise",
+    "zhao_invalid_constant_gain",
+    "zhao_posterior_radius_tamper",
+    "zhao_omitted_isotropic_remainder",
+    "zhao_T3_kappa_tamper"
+  ],
+  "runtime_seconds": 0.5047440002672374,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "source_sha256": {
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\audit_rank1_contracts.py": "008c65bd8e56da14b17021e077ce17e60f70e54281ae65a001eea40eff2ccd5a",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\rank1_reference.py": "0a3131427cc12dc395bd912baea002c5c6e2aedb70c8f96890ff46b0a26e760b",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\audit_rank1_ma.py": "eff7d348c96ecc87027eb7b15309dedb8b97b03dc33aa1702c60272e5284c64a",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\audit\\audit_rank1_zhao.py": "95610e1a715e2631b51995b3f6641db9c3b3b145197ffc1914c0f6763481a1ea",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\rank1_ma.py": "73f54a5e36785a84ebb05ff04db2a4490659c687e387197b6c1d644a30aa78eb",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\zhao_carleman.py": "76082b2c9e27aa94251365c7fb3788a657d5f39135d12ae0317270e1a1eabb5b",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\ma_scalar_certified.py": "4dd331b0dc5ade15adf814e0740d8be8286fe955ceb1a79ec8edd3a204ddcd9a",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\certified_core.py": "71fbd06c63d736b3c2c3f872a19bd9805a9915e06aec8928c80f7f6c8ca820bd",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\implementation\\history_derivatives.py": "205d21ae0df0dfdd3104eb44f668334d85febec540a966083623ee796d7ee1a9",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\theory\\shared_response.py": "6b2453d0d446151015f792f420e4c412793371268a8b690efd82fcaf48b27f2c",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\theory\\response_budget_math.py": "d38a97fc776c367806b0f1017e1f4008663cab8c8788b4ccdd7dba1f1a2c2b59",
+    "E:\\codex_project\\TheFirstOne\\research_task_face_budget_20261013\\protocol\\development\\public_fixtures.json": "db6e5c8174fc8543d4ddd43b834bf9e462a35e5b8fc8948db2c03a9fa1c24134",
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\qa\\audit_zhao_contract.py": "2e8810a824298232679799917275a0a71bd3be228c1dff60c4c83499c4c9d76d",
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\qa\\zhao_reference.py": "c76ae70052222e6d6e7d0479b449c3177d2e6c91a0f19fe387c7a27df23fc65f",
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\qa\\independent_ma_reference.py": "495e43c95288eea09d0c8626facf7271068abaa46201b3965c1ba3d9e2fdeaf2",
+    "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\implementation\\zhao_carleman.py": "06aa33c162910b959b1f254309fcfc4df016a677988f26934c6ec5625576e28a"
+  },
+  "formal_generator_called": false,
+  "formal_suite_read": false,
+  "formal_timing_started": false,
+  "shared_backend_verified": false,
+  "structured_frontend_verified": false,
+  "actual_vehicle_membership_verified": false,
+  "performance_or_novelty_proved": false,
+  "sealed_directories_written": false
+}

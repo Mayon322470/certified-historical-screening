@@ -1,0 +1,589 @@
+{
+  "status": "SESSION_COMPLETED",
+  "source_sha256": "f3ed48bca1d45e7a267f76d6cda0ed34af73e1cda82671c68506992f9fd17047",
+  "stopline_initial_front_clearance_m": 40.0,
+  "master_dt_s": 0.01,
+  "lock_ownership": "Caller must hold simulation.lock throughout context",
+  "route": "External native CarSim -> disabled-physics CARLA pose; live CARLA stopline geometry feedback",
+  "dynamics_authority": "CarSim",
+  "carla_road_force_feedback": false,
+  "collision_impulse_feedback": false,
+  "perception_sensor": false,
+  "realtime_concurrent_controller": false,
+  "geometry_scope": "Declared CARLA proxy envelope; not a validated CarSim body collision silhouette",
+  "continuous_physical_certificate": false,
+  "expected_current_map_suffix": "Town10HD_Opt",
+  "corridor_rule": {
+    "step_m": 2.0,
+    "length_m": 70.0,
+    "max_heading_difference_deg": 1.0,
+    "max_lateral_deviation_m": 0.1,
+    "max_elevation_difference_m": 0.1,
+    "min_lane_width_m": 2.8,
+    "exclude_junctions": false
+  },
+  "road_scope": "Straight geometric corridor, including straight continuation across empty intersections; no traffic-rule or crossing-traffic safety claim",
+  "initial_bbox_bottom_road_clearance_m": 0.02,
+  "cg_body_native_m": [
+    -1.015,
+    0.0,
+    0.54
+  ],
+  "cg_offset_provenance": "Expected source-backend offset; caller/independent audit must verify actual solver echo",
+  "source_mu_override": false,
+  "ground_contact_claim": false,
+  "started_utc": "2026-10-13T05:12:19.871173+00:00",
+  "owned_server_pid": 18924,
+  "server_command": [
+    "E:\\D_Data\\DR_FILE\\CARLA\\Carla-0.10.0-Win64-Shipping\\Carla-0.10.0-Win64-Shipping\\CarlaUnreal\\Binaries\\Win64\\CarlaUnreal-Win64-Shipping.exe",
+    "-RenderOffScreen",
+    "-quality-level=Low",
+    "-ResX=640",
+    "-ResY=360",
+    "-unattended",
+    "-nosound",
+    "-carla-rpc-port=2100",
+    "-carla-streaming-port=2101",
+    "-abslog=E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\cosim_results\\normal_v8__ma_structured\\scene\\server.log",
+    "-UserDir=E:\\codex_project\\TheFirstOne\\vehicle_estimator_closed_loop_20261013\\cosim_results\\normal_v8__ma_structured\\scene\\unreal_user",
+    "-stdout",
+    "-FullStdOutLogOutput"
+  ],
+  "config_sha256": "127471ee840c09026910e59e13bd6f1ea75b31e5942a2a57f1f4e293cb939a86",
+  "executable_path": "E:\\D_Data\\DR_FILE\\CARLA\\Carla-0.10.0-Win64-Shipping\\Carla-0.10.0-Win64-Shipping\\CarlaUnreal\\Binaries\\Win64\\CarlaUnreal-Win64-Shipping.exe",
+  "carla_version": "0.10.0",
+  "map": "Carla/Maps/Town10HD_Opt",
+  "corridor_selected_spawn_index": 1,
+  "corridor_rejected": [
+    {
+      "spawn_index": 0,
+      "reason": "no_geometrically_straight_continuation",
+      "qualified_waypoints": 1
+    }
+  ],
+  "route_waypoints": [
+    {
+      "road_id": 19,
+      "lane_id": -2,
+      "s": 10.821215629577656,
+      "xyz": [
+        -67.2546615600586,
+        27.997167587280273,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 1.5812156295776743,
+      "xyz": [
+        -65.25466918945312,
+        28.002723693847656,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 3.581215629577672,
+      "xyz": [
+        -63.254669189453125,
+        28.008281707763672,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 5.58121562957767,
+      "xyz": [
+        -61.25468063354492,
+        28.013837814331055,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 7.5812156295776685,
+      "xyz": [
+        -59.25468826293945,
+        28.01939582824707,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 9.581215629577667,
+      "xyz": [
+        -57.254695892333984,
+        28.024951934814453,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 11.581215629577665,
+      "xyz": [
+        -55.254703521728516,
+        28.03050994873047,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 13.581215629577663,
+      "xyz": [
+        -53.25471115112305,
+        28.03606605529785,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 15.581215629577661,
+      "xyz": [
+        -51.25471878051758,
+        28.041624069213867,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 17.58121562957766,
+      "xyz": [
+        -49.25472640991211,
+        28.04718017578125,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 19.581215629577656,
+      "xyz": [
+        -47.25473403930664,
+        28.052738189697266,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 21.581215629577652,
+      "xyz": [
+        -45.25474166870117,
+        28.05829429626465,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 23.58121562957765,
+      "xyz": [
+        -43.2547492980957,
+        28.063852310180664,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 25.581215629577645,
+      "xyz": [
+        -41.254756927490234,
+        28.069408416748047,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 27.581215629577642,
+      "xyz": [
+        -39.254764556884766,
+        28.074966430664062,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 29.58121562957764,
+      "xyz": [
+        -37.2547721862793,
+        28.080522537231445,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 31.581215629577635,
+      "xyz": [
+        -35.25477981567383,
+        28.08608055114746,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 33.581215629577635,
+      "xyz": [
+        -33.25478744506836,
+        28.091636657714844,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 35.581215629577635,
+      "xyz": [
+        -31.254796981811523,
+        28.09719467163086,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 255,
+      "lane_id": -2,
+      "s": 37.581215629577635,
+      "xyz": [
+        -29.254804611206055,
+        28.102750778198242,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 20,
+      "lane_id": -2,
+      "s": 1.4712156295776553,
+      "xyz": [
+        -27.254810333251953,
+        28.108306884765625,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 20,
+      "lane_id": -2,
+      "s": 3.471215629577653,
+      "xyz": [
+        -25.254817962646484,
+        28.11386489868164,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 20,
+      "lane_id": -2,
+      "s": 5.471215629577651,
+      "xyz": [
+        -23.254825592041016,
+        28.119421005249023,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 20,
+      "lane_id": -2,
+      "s": 7.4712156295776495,
+      "xyz": [
+        -21.25483512878418,
+        28.12497901916504,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 20,
+      "lane_id": -2,
+      "s": 9.471215629577648,
+      "xyz": [
+        -19.25484275817871,
+        28.130535125732422,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 20,
+      "lane_id": -2,
+      "s": 11.471215629577646,
+      "xyz": [
+        -17.254850387573242,
+        28.136093139648438,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 20,
+      "lane_id": -2,
+      "s": 13.471215629577644,
+      "xyz": [
+        -15.254857063293457,
+        28.14164924621582,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 20,
+      "lane_id": -2,
+      "s": 15.471215629577642,
+      "xyz": [
+        -13.254864692687988,
+        28.147207260131836,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 20,
+      "lane_id": -2,
+      "s": 17.47121562957764,
+      "xyz": [
+        -11.254873275756836,
+        28.15276336669922,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 20,
+      "lane_id": -2,
+      "s": 19.471215629577635,
+      "xyz": [
+        -9.254880905151367,
+        28.158321380615234,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 20,
+      "lane_id": -2,
+      "s": 21.47121562957763,
+      "xyz": [
+        -7.254888534545898,
+        28.163877487182617,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 20,
+      "lane_id": -2,
+      "s": 23.471215629577628,
+      "xyz": [
+        -5.25489616394043,
+        28.169435501098633,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 20,
+      "lane_id": -2,
+      "s": 25.471215629577625,
+      "xyz": [
+        -3.254903554916382,
+        28.174991607666016,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 20,
+      "lane_id": -2,
+      "s": 27.47121562957762,
+      "xyz": [
+        -1.254911184310913,
+        28.18054962158203,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 20,
+      "lane_id": -2,
+      "s": 29.471215629577618,
+      "xyz": [
+        0.7450811862945557,
+        28.186105728149414,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    },
+    {
+      "road_id": 20,
+      "lane_id": -2,
+      "s": 31.471215629577614,
+      "xyz": [
+        2.7450735569000244,
+        28.191661834716797,
+        0.0
+      ],
+      "yaw_deg": 0.15919755399227142,
+      "lane_width_m": 3.5
+    }
+  ],
+  "route_heading_deg": 0.15919755399227142,
+  "road_origin_xyz": [
+    -67.2546615600586,
+    27.997167587280273,
+    0.0
+  ],
+  "ego_actor_id": 25,
+  "proxy_blueprint": "vehicle.lincoln.mkz",
+  "initial_native_cg_xyz": [
+    -1.0135764645848386,
+    0.0,
+    0.5341099514755034
+  ],
+  "map_anchor_cg_xyz": [
+    -67.2546615600586,
+    27.997167587280273,
+    0.5678972792625427
+  ],
+  "fixed_vertical_translation_m": 0.5678972792625427,
+  "initial_front_support_m": 3.4573479308720168,
+  "stopline_s_m": 43.45734793087202,
+  "stopline_world_xyz": [
+    -23.797481378387715,
+    28.117914606530615,
+    0.0
+  ],
+  "stopline_forward_normal": [
+    0.9999961399116807,
+    0.002778517903172892,
+    0.0
+  ],
+  "stopline_draw_endpoints_xyz": [
+    [
+      -23.79192434258137,
+      26.117922326707255,
+      0.05
+    ],
+    [
+      -23.80303841419406,
+      30.117906886353975,
+      0.05
+    ]
+  ],
+  "baseline_world_frame": 19,
+  "baseline_world_elapsed_s": 0.7128922920674086,
+  "bbox_location_xyz": [
+    -0.0062155150808393955,
+    3.5336164739717055e-15,
+    0.7632452249526978
+  ],
+  "bbox_extent_xyz": [
+    2.4459850788116455,
+    0.9178230166435242,
+    0.7620594501495361
+  ],
+  "bbox_rotation_degrees": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "owned_server_stopped": true,
+  "world_csv_sha256": "111b141615b4bf7c31aadefa0b1b8caa9caae582b7d1047c9839f9958d88dedd",
+  "finished_utc": "2026-10-13T05:12:53.111443+00:00",
+  "cleanup_errors": [],
+  "cleanup_complete": true,
+  "last_complete_observation": {
+    "frame": 1219,
+    "native_stamp_s": 12.0,
+    "world_stamp_s": 12.712892023846507,
+    "relative_world_stamp_s": 11.999999731779099,
+    "clock_error_s": 2.682209014892578e-07,
+    "native_x": 22.63633612814603,
+    "native_vx": -6.192996488434281e-06,
+    "cg_route_s": 23.649917488708255,
+    "front_support": 27.108482155889117,
+    "rear_support": 22.210635978215834,
+    "clearance": 16.3488657749829,
+    "front_offset_from_cg_m": 3.4585646671808625,
+    "lateral_support_min_m": -0.9178244621390258,
+    "lateral_support_max_m": 0.9178231346378986,
+    "bbox_bottom_z_m": 0.016309009864926338,
+    "road_anchor_z_m": 0.0,
+    "cg_reconstruction_error_m": 3.552713678800501e-15,
+    "cg_publication_error_m": 4.898066130465395e-06,
+    "pose_translation_error_m": 3.814697265625e-06,
+    "pose_rotation_max_entry_error": 1.3122335076332092e-06,
+    "bbox_world_vertices_json": "[[-45.041561126708984, 27.14105987548828, 0.03528737276792526], [-45.035648345947266, 27.141077041625977, 1.5593948364257812], [-45.046661376953125, 28.976699829101562, 0.03528737276792526], [-45.040748596191406, 28.976715087890625, 1.5593948364257812], [-40.1496467590332, 27.154651641845703, 0.016309009864926338], [-40.143733978271484, 27.1546688079834, 1.5404164791107178], [-40.154747009277344, 28.990291595458984, 0.016309009864926338], [-40.148834228515625, 28.990306854248047, 1.5404164791107178]]",
+    "actual_cg_world_xyz_json": "[-43.60483536001295, 28.062878547887266, 0.568521943188971]",
+    "expected_matrix_json": "[[0.9999886155128479, -0.0027785180136561394, 0.0038781659677624702, -42.59194564819336], [0.0027784970588982105, 0.9999961256980896, 1.0775595910672564e-05, 28.065692901611328], [-0.0038781811017543077, -1.6766363718214958e-17, 0.9999924898147583, 0.024588879197835922], [0.0, 0.0, 0.0, 1.0]]",
+    "actual_matrix_json": "[[0.9999886155128479, -0.0027785180136561394, 0.0038794782012701035, -42.591941833496094], [0.0027784970588982105, 0.9999961256980896, 1.0779242074931972e-05, 28.065692901611328], [-0.003879493335261941, -3.5256899396513e-17, 0.9999924898147583, 0.024588312953710556], [0.0, 0.0, 0.0, 1.0]]"
+  }
+}

@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+restored_raw_data/
+fresh_model_reproduction/
+reproduced_statistics_32/
+*.lock

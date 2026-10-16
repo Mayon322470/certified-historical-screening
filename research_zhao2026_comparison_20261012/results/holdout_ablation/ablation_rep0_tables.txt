@@ -1,0 +1,17 @@
+Auxiliary single-run comparison: full structured main rep0 / sturm / sparse.
+Separate run tags; no confidence intervals or repeat-level timing claims.
+
+Fixed-suite descriptive comparison
+
+All-task cost includes UNKNOWN, late certificates and errors; it is not solve speedup.
+Bootstrap intervals describe case composition of this fixed suite, not a population.
+
+method	cases	all-repeats-within-budget	rate	sum-case-median-cost-s	late-trials	error-trials
+zhao2t3_structured	48	37	0.770833	72.867860	0	0
+zhao2t3_sturm	48	34	0.708333	99.151352	0	0
+zhao2t3_sparse	48	36	0.750000	74.425059	0	0
+
+baseline	candidate	eligible-n	geomean-time-ratio	descriptive-ci95	median-time-ratio	>5pct-slower-n
+zhao2t3_structured	zhao2t3_sturm	32	0.642579365935641	None	0.9883583378599923	13
+zhao2t3_structured	zhao2t3_sparse	34	1.0013439904932309	None	1.015563237225963	8
+zhao2t3_sturm	zhao2t3_sparse	32	1.5517206585132446	None	1.009892565239809	7

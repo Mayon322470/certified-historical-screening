@@ -1,0 +1,70 @@
+{
+  "status": "ADDITIONAL_COMPLETE_QUERY_COST_LEDGER",
+  "source_summary_sha256": "cf2f678c5f689148ca0c1883cbba1f34a217284cc2afd216806f2ebad2a6918d",
+  "methods": {
+    "ma": {
+      "estimate_s": 0.08004470029845834,
+      "prepare_s": 0.0012578004971146584,
+      "guard_s": 0.00017379969358444214,
+      "complete_query_total_s": 0.08147630048915744,
+      "runs": 18,
+      "OK": 18,
+      "UNKNOWN": 0
+    },
+    "ma_structured": {
+      "estimate_s": 0.0187003999017179,
+      "prepare_s": 0.0013619009405374527,
+      "guard_s": 0.0001358003355562687,
+      "complete_query_total_s": 0.020198101177811623,
+      "runs": 18,
+      "OK": 18,
+      "UNKNOWN": 0
+    },
+    "zhao2t3": {
+      "estimate_s": 1.945214199833572,
+      "prepare_s": 0.0013232999481260777,
+      "guard_s": 1.1200550943613052e-05,
+      "complete_query_total_s": 1.9465487003326416,
+      "runs": 18,
+      "OK": 0,
+      "UNKNOWN": 18
+    },
+    "zhao2t3_structured": {
+      "estimate_s": 1.1382159013301134,
+      "prepare_s": 0.0018375995568931103,
+      "guard_s": 0.00019770022481679916,
+      "complete_query_total_s": 1.1402512011118233,
+      "runs": 18,
+      "OK": 15,
+      "UNKNOWN": 3
+    },
+    "exact_range": {
+      "estimate_s": 0.0027334000915288925,
+      "prepare_s": 0.0018609990365803242,
+      "guard_s": 0.0001485990360379219,
+      "complete_query_total_s": 0.004742998164147139,
+      "runs": 18,
+      "OK": 18,
+      "UNKNOWN": 0
+    }
+  },
+  "pairs": [
+    {
+      "baseline": "ma",
+      "structured": "ma_structured",
+      "all_18_query_cost_ratio_including_prepare_guard": 4.033859409450936,
+      "cost_reduction_fraction_including_prepare_guard": 0.7520984500210646,
+      "same_accuracy_claim": true,
+      "include_UNKNOWN": true
+    },
+    {
+      "baseline": "zhao2t3",
+      "structured": "zhao2t3_structured",
+      "all_18_query_cost_ratio_including_prepare_guard": 1.707122692293262,
+      "cost_reduction_fraction_including_prepare_guard": 0.41421902215086204,
+      "same_accuracy_claim": false,
+      "include_UNKNOWN": true
+    }
+  ],
+  "scope": "Offline query data preparation + estimate + common guard; no sensor acquisition, CARLA/native cycle or logging cost. Same interval Ma pairing independently checked; Zhao baseline all UNKNOWN, cost ratio is deadline workload only."
+}

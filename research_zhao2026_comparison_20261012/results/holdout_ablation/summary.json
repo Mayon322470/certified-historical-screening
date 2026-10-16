@@ -1,0 +1,20 @@
+{
+  "zhao2t3_sturm": {
+    "statuses": {
+      "CERTIFIED_SAFE": 24,
+      "UNKNOWN": 14,
+      "CERTIFIED_UNSAFE": 10
+    },
+    "resolved": 34,
+    "elapsed_total": 99.1513523994945
+  },
+  "zhao2t3_sparse": {
+    "statuses": {
+      "CERTIFIED_SAFE": 26,
+      "UNKNOWN": 12,
+      "CERTIFIED_UNSAFE": 10
+    },
+    "resolved": 36,
+    "elapsed_total": 74.42505850130692
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "figures": [
+    {
+      "png": "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\results\\holdout_main\\comparison_overview.png",
+      "png_sha256": "3f31fe5cc5b039e945941a49f5d7abb7df2b7972e412c15b9bbb5fba3dcb9e54",
+      "png_dimensions": [
+        2593,
+        1203
+      ],
+      "pdf": "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\results\\holdout_main\\comparison_overview.pdf",
+      "pdf_sha256": "43499e4bb3de9b0190f048fa26aa523ed87f572c9f476d0717e423578fc43ac1",
+      "pdf_pages": 1,
+      "visual_png_check": "PASS: labels/values/footnotes legible; no overlap or clipping",
+      "pdf_render_check": "PASS: Poppler rendering inspected; pdfinfo one page"
+    },
+    {
+      "png": "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\results\\holdout_main\\comparison_paired_ratios.png",
+      "png_sha256": "842ba69d3daecc81b2ac4c5a3289ed77abc20e5dbef10e6d2f745d66f9a008f6",
+      "png_dimensions": [
+        3653,
+        1515
+      ],
+      "pdf": "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\results\\holdout_main\\comparison_paired_ratios.pdf",
+      "pdf_sha256": "67fc2d6069dbae2a4a9b2bd48410bd2c25d8fab43933beead57f1f06148c2fa0",
+      "pdf_pages": 1,
+      "visual_png_check": "PASS: labels/values/footnotes legible; no overlap or clipping",
+      "pdf_render_check": "PASS: Poppler rendering inspected; pdfinfo one page"
+    },
+    {
+      "png": "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\results\\holdout_main\\comparison_threshold_resolution.png",
+      "png_sha256": "896432dec1070e71455b3fb15a80f4594af3139a71fb4bea3d19609c584221be",
+      "png_dimensions": [
+        1849,
+        1057
+      ],
+      "pdf": "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\results\\holdout_main\\comparison_threshold_resolution.pdf",
+      "pdf_sha256": "53b00e15a0ebeb32440440f93d0d41b104a1b5d07d17cbff0c2574030b22d3dc",
+      "pdf_pages": 1,
+      "visual_png_check": "PASS: labels/values/footnotes legible; no overlap or clipping",
+      "pdf_render_check": "PASS: Poppler rendering inspected; pdfinfo one page"
+    },
+    {
+      "png": "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\results\\holdout_ablation\\ablation_overview.png",
+      "png_sha256": "3a86a2c80ee32032e7bbef172221dca8e585340a0f8a15d089070c9b2ccb00b1",
+      "png_dimensions": [
+        2615,
+        1203
+      ],
+      "pdf": "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\results\\holdout_ablation\\ablation_overview.pdf",
+      "pdf_sha256": "3fcc8f765a963571086d2d0426d814fa4f15a809972fffd606a70f56a8b8c4c4",
+      "pdf_pages": 1,
+      "visual_png_check": "PASS: labels/values/footnotes legible; no overlap or clipping",
+      "pdf_render_check": "PASS: Poppler rendering inspected; pdfinfo one page"
+    },
+    {
+      "png": "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\results\\holdout_ablation\\ablation_paired_ratios.png",
+      "png_sha256": "208a83c546b71f90e26b6e1442025e035c832dd6057a784af1ddd40d511b8307",
+      "png_dimensions": [
+        3653,
+        1213
+      ],
+      "pdf": "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\results\\holdout_ablation\\ablation_paired_ratios.pdf",
+      "pdf_sha256": "a551558905a1c8402b162fcc5166c93b3d999c6edc96bfcf7390a3d37c30ece5",
+      "pdf_pages": 1,
+      "visual_png_check": "PASS: labels/values/footnotes legible; no overlap or clipping",
+      "pdf_render_check": "PASS: Poppler rendering inspected; pdfinfo one page"
+    },
+    {
+      "png": "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\results\\holdout_ablation\\ablation_threshold_resolution.png",
+      "png_sha256": "2da7b33b999789101cce31087f93cff73114d48c3d818bbf2ed684c3210e1bfd",
+      "png_dimensions": [
+        1849,
+        1057
+      ],
+      "pdf": "E:\\codex_project\\TheFirstOne\\research_zhao2026_comparison_20261012\\results\\holdout_ablation\\ablation_threshold_resolution.pdf",
+      "pdf_sha256": "55c55bee53d17f5a23d51948a85fa5a89508f02c8c1c4b39f9a8b4e918833fc8",
+      "pdf_pages": 1,
+      "visual_png_check": "PASS: labels/values/footnotes legible; no overlap or clipping",
+      "pdf_render_check": "PASS: Poppler rendering inspected; pdfinfo one page"
+    }
+  ],
+  "source_sha256": "4fd502a25b2fb9a9a64a78a2f702ce857715cdb3d617fff4295fd15c30950122",
+  "primary_analyzer_sha256": "43295e1e2a21c51e868f6cf3d978fc2a7601d49be1f65b60f1efeaeafa5bcdd1",
+  "repairs": [
+    "Shortened threshold-policy tick labels to remove overlap",
+    "Labeled auxiliary plots explicitly as selected single runs"
+  ],
+  "note": "Plot formatting changes only; frozen primary statistics and production code unchanged."
+}

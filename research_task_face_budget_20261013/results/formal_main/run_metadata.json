@@ -1,0 +1,79 @@
+{
+  "status": "RUNNING",
+  "input_sha256": "bd84c381a517c6ff74d16db15cfa9fb3e99bc75b086f8a8298364e23c38b3ca3",
+  "method_freeze_sha256": "5ef26b9f7cd1e54a82c4c811cc486e2ac8002d2b61940ff59462a5bc450a121b",
+  "generation_manifest_sha256": "2e878aa5b0868cee43ecbdb5e2f07ea5b293ac50a2112c577afa272f48e65bc5",
+  "python": "3.12.7",
+  "executable": "E:\\Applications\\Anaconda\\anaconda\\python.exe",
+  "numpy_version": "1.26.4",
+  "scipy_version": "1.13.1",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+  "logical_cpus": 16,
+  "numerical_threads": 1,
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "mkl",
+      "num_threads": 1,
+      "prefix": "mkl_rt",
+      "filepath": "E:\\Applications\\Anaconda\\anaconda\\Library\\bin\\mkl_rt.2.dll",
+      "version": "2023.1-Product",
+      "threading_layer": "intel"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libiomp",
+      "filepath": "E:\\Applications\\Anaconda\\anaconda\\Library\\bin\\libiomp5md.dll",
+      "version": null
+    }
+  ],
+  "timestamp": "2026-10-13 02:44:23 +0800",
+  "configuration": {
+    "methods": [
+      "ma_rank1",
+      "ma_rank1_structured",
+      "zhao1_rank1",
+      "zhao2t3_rank1",
+      "zhao2t3_rank1_structured"
+    ],
+    "grids": [
+      8,
+      32,
+      128,
+      512
+    ],
+    "time_grids": [
+      32,
+      64,
+      128,
+      256
+    ],
+    "budget_seconds": 5.0,
+    "repeats": 3,
+    "order_seed": 712913,
+    "interval_bits": 96
+  },
+  "expected_records": 480,
+  "hidden_metadata_read": false,
+  "timing_scope": "Parse/quick/all stages/preparation/full certificates included; import/cache clear/disk serialization excluded",
+  "implementation_sha256": {
+    "budget_comparison.py": "69021d578705156709ab741159325b25d3a23bcb8a41e01ea497d82d72bc055d",
+    "certified_core.py": "71fbd06c63d736b3c2c3f872a19bd9805a9915e06aec8928c80f7f6c8ca820bd",
+    "coupling_faces.py": "b95bc67a46e1e92a1428a7c783fb446494b4bd121047fd7a3b3a1b0a832b5a6f",
+    "development_smoke.py": "c2300bd266965ec6c5dba4f902f184881e6864e96a9d65a6eb45e7d4f940f3f6",
+    "history_derivatives.py": "205d21ae0df0dfdd3104eb44f668334d85febec540a966083623ee796d7ee1a9",
+    "ma_scalar_certified.py": "4dd331b0dc5ade15adf814e0740d8be8286fe955ceb1a79ec8edd3a204ddcd9a",
+    "ma_zfo.py": "51e7bcc08a54caa4c753a19813c7edfe01e20f1795cdfe7325df9e19e43737ae",
+    "polynomial_contract.py": "67611c3ecc222c6d722382ec7841d7a56dbc1b959c43e7093c071d5c6b2b371e",
+    "quick_baseline.py": "ad609b57a8a149c9dc81abe4a56685ed7c4a16b2f809824fab0d4e9a3009cf70",
+    "rank1_ma.py": "2fc2d049101596957bd9ac3f23e0de1ed5780b3fea552362d7d92c68b377385d",
+    "refined_core.py": "ea2129a0a5d6090094b27d06aceef7fca06cac5fd1416fa7e5039676936bfa3c",
+    "run_budget_comparison.py": "797bbd2fa1cb8a7f3fa4a64e06a9497befbb106400abbc18a853af61e465112d",
+    "sparse_faces.py": "b6f55b68c7f632b52d05ff095000fdf22ab78f81b549e1f586d99d09a61dc1e7",
+    "taylor_faces.py": "a6082203407888fced6c0405b656aeeaa1a03f70aa0cf0b5e437390be49ea49e",
+    "zhao_carleman.py": "76082b2c9e27aa94251365c7fb3788a657d5f39135d12ae0317270e1a1eabb5b"
+  }
+}

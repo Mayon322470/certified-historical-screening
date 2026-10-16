@@ -1,0 +1,56 @@
+{
+  "ma_strip": {
+    "statuses": {
+      "CERTIFIED_SAFE": 92,
+      "UNKNOWN": 22,
+      "CERTIFIED_UNSAFE": 30
+    },
+    "resolved": 122,
+    "elapsed_total": 158.4263057988137
+  },
+  "ma_strip_structured": {
+    "statuses": {
+      "CERTIFIED_SAFE": 98,
+      "UNKNOWN": 16,
+      "CERTIFIED_UNSAFE": 30
+    },
+    "resolved": 128,
+    "elapsed_total": 115.53331789933145
+  },
+  "zhao1": {
+    "statuses": {
+      "UNKNOWN": 41,
+      "CERTIFIED_SAFE": 73,
+      "CERTIFIED_UNSAFE": 30
+    },
+    "resolved": 103,
+    "elapsed_total": 216.68012290028855
+  },
+  "zhao2": {
+    "statuses": {
+      "CERTIFIED_UNSAFE": 30,
+      "CERTIFIED_SAFE": 67,
+      "UNKNOWN": 47
+    },
+    "resolved": 97,
+    "elapsed_total": 308.5238586985506
+  },
+  "zhao2t3": {
+    "statuses": {
+      "CERTIFIED_SAFE": 63,
+      "UNKNOWN": 54,
+      "CERTIFIED_UNSAFE": 27
+    },
+    "resolved": 90,
+    "elapsed_total": 365.04628499783576
+  },
+  "zhao2t3_structured": {
+    "statuses": {
+      "UNKNOWN": 33,
+      "CERTIFIED_SAFE": 81,
+      "CERTIFIED_UNSAFE": 30
+    },
+    "resolved": 111,
+    "elapsed_total": 221.29495430504903
+  }
+}

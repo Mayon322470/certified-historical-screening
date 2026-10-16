@@ -1,0 +1,108 @@
+第一篇：新共同速度偏置观测与CARLA+CarSim闭环对照的最终独立审查
+2026-10-13；审查者不启动模拟器，不改旧封包、冻结方法、协议或原始数据。
+
+最终结论
+PASS：20条新联仿的完整分母、数字观测包含、估计外包真值、等待流采样包含、
+制动位置prefix、代理车身位置面、停车尾段、时标/命令/清理、有限配对统计
+均通过独立复核。证据等级为限定工况的高保真联仿采样支持；不是连续全域
+成员资格、原生真实传感器感知资格或墙钟实时控制实现。
+
+1. 新接口和冻结
+新接口不使用旧人工cubic beta，不把旧未知tau车辆动力学冒接CarSim。
+唯一共同未知量为数字里程计/速度偏置b；车辆状态来自共同数字观测合同。
+range .04m与odom .02m通过范数1-Lipschitz合成.06m，另1e-6m数值padding；
+当前速度测量误差.01m/s。h_b=(O+s0-L-b*t)^2+c^2，同一个b用于所有历史。
+高层估计器只收原packet、三条固定历史、共同prior和deadline；native真值
+只用于生成数字观测、共同低层tracker、姿态发布与事后审计。起点s0为固定
+注册数据，未把b真值或未来轨迹送入算法。
+
+Ma、Ma+结构、Zhao2T3、Zhao2T3+结构、exact_range共享原信息和任务后端。
+Ma first-order/Hessian/gain及两版共同all-strip强化保留；Zhao完整5/21输出
+lift、每阶统一余项、Eq42/T3保留。它们是独立数字观测适配，不能描述成
+作者原软件或原论文完整递推车辆observer的复现。结构增量是带证据的整cell
+quadratic历史预筛；全部准备/预筛/前端/证书构造均计入估计调用耗时。
+
+四场景×五法共20case在新原生轨迹前冻结。共同period/budget/response均
+100ms，公开nominal命令时间表在计算窗持续，估计结果只决定窗末brake veto；
+guard覆盖下一决策与响应共.2s。该规则是模拟计算窗/截止watchdog模型，
+不声称单线程实现已在真实墙钟中持续推进车辆或完成异步实时控制。
+
+原RUNNER_SOURCE_GATE.json为初次源审查，后来freeze元数据/检查和replay
+协议字段增补使其hash不再匹配最终源。原文件保留；原脚本重跑因文件已存在
+拒绝覆盖，最终另用audit_runner_source_gate_final.py产生FINAL门槛PASS。
+它逐字节绑定已冻结的最终source/protocol；最终门槛之后才启动新主联仿。
+最终plan SHA256：2580b4a3569a5b3025dcb088ab23135b50a0f18e4a7bddf138b8dda580734c09。
+
+2. 完整逐行审计
+正式结果为INDEPENDENT_COSIM_ESTIMATOR_AUDIT_V2.json：20/20，2,691,573
+完整日志检查，0完整性错误。所有冻结依赖byte hashes和原日志hash匹配。
+480,020 native行、24,000 policy行、2,400 sensor行、24,000 timing行、
+24,020 world行和2,400 decision行保留并逐行核查。
+
+全部20数字观测误差在声明域；同一真b满足所有原平方packet，无估计真b
+删除、无未来历史输入。每条结构删除由独立Fraction quadratic极值重建。
+267个ACCEPT/QUICK决策后共107,067 native点直接检查.2s等待位置/速度
+包含，含中途进入emergency的采样点。位置最大超界量<=-0.030718989m，
+速度最大超界量<=-0.038159494m/s，均无违反。它们仍只是采样包含。
+20条原生制动完整prefix均满足虚拟一侧位置包络，最终停稳尾为
+7.1655–8.6010s。实际brake origin速度7.9313–10.1647m/s在0..18范围内；
+这只记录本次有限样本域，不推导完整域/档位/执行器状态的前向闭合证明。
+
+实际CARLA完整8顶点车头最小gap为16.3326–24.4200m；全native固定球形
+车身support的保守最小gap为16.0926–24.1801m。全部0采样越线，动态完整
+bbox均被同一sphere覆盖。世界/原生时标、当前与应用命令、CG映射、brake
+veto生效相位和owned server cleanup全部通过。没有道路力/碰撞冲量的
+双向交换，也没有成像感知证据。
+
+6个UNKNOWN、10个TIMEOUT完整保留。drop故障真正触发新回退3/5；强制迟到
+真正触发新回退4/5。timeout_v8__zhao2t3_structured推进到1.3s后接受注入
+迟到并在1.4s制动；不能把两种Zhao统一概括为所有故障注入前已回退。
+其余无因果故障效果的case属于先前已回退，仍留在计划分母。
+
+首版INDEPENDENT_COSIM_ESTIMATOR_AUDIT.json保留为诊断记录：5个早退case
+的normal acceleration max口径差异由审计误计t=0初始行产生。runner口径
+仅统计推进后的normal子步；V2只修复审计这一计算分母并重新核查，未改任何
+原始轨迹、结果、算法或门槛。五项差异不属于物理/算法成员失败。
+该初次审计源码还原并保存为history/audit_cosim_logs_initial.py，其SHA256
+与首版报告内记录逐字节相同；正式V2使用当前audit_cosim_logs.py。
+
+3. 同输入离线比较的独立统计
+INDEPENDENT_REPLAY_AUDIT.json：416检查PASS。预声明从两条exact_range
+正常轨迹各取最先至多3个估计查询，共6query×5方法×3重复=90运行，
+保持全部UNKNOWN/迟到成本。固定旋转顺序、原公开输入、hash与完整统计匹配；
+没有重计时、后选更有利查询或增加未声明人口推断。
+
+Ma共有18个合格配对：精确Fraction区间端点18/18完全一致，guard结论亦
+18/18相同（15 ACCEPT_NORMAL，3 BACKUP_MARGIN）。结构版中位速度比
+4.9052，所有估计调用总成本降76.6376%，0慢配对。计入数据准备和guard
+后的所记录流水成本降75.2098%。这些是6个同输入query上的描述性结果，
+不能声称普适加速，不能与旧32/48例结果混合，也不等于全控制周期成本降幅。
+
+Zhao基线18 UNKNOWN/18测得迟到/0 OK；结构版15 OK、3 UNKNOWN/迟到。
+全部估计调用成本降41.4863%，完整所记录流水成本降41.4219%，有1个慢配对。
+基线没有合格OK配对，所以1.7090总成本比不能称相同精度求解加速；可报告
+有限100ms工作负载上的可完成性从0/18到15/18及全部成本的描述性变化。
+
+exact_range须作为强基线保留：18/18成功，其0.1460ms估计调用中位耗时
+最低，18个查询重复的完整所记录流水成本亦全部最低。另独审精确Fraction
+端点表明其18次外包严格窄于Ma两版，15次严格窄于成功Zhao结构版。因此
+本车辆quadratic数字观测任务没有证明论文方法总体最优或超越直接精确反演。
+EXACT_RANGE_STRENGTH_AUDIT.json记录上述逐配对包含/严格变窄关系。
+
+4. 论文能用的主张
+可用：共享信息/时间预算/经典位置回退下，结构预筛减少贵观测前端调用；
+有限同输入query上Ma保持同外包同guard而省算，Zhao在100ms预算内完成率
+提高；这些适配方法已真实驱动CarSim新轨迹，CARLA几何反馈参与位置决策。
+旧模型层的Sturm/稀疏Taylor效率增量与本次应用接口证据分层陈述。
+
+不可用：全方法优势、全场景安全、连续车辆成员证明、全域递归可行、真实
+雷达/视觉感知、物理实车资格或实时部署资格。24,000完整循环中4,293次
+超过10ms，每case循环最大81.311–154.186ms，不能只用算法内核预算通过
+替代整个闭环的墙钟实时证据。CARLA+CarSim高保真仿真是本论文应用依据；
+上述准确范围不妨碍组织论文和陈述有限、可复核的改进。
+
+结论依据
+OBSERVATION_GATE_CN.txt、RUNNER_SOURCE_GATE_FINAL.json、
+OBSERVATION_MATH_CHECKS.json、ESTIMATOR_COMPONENT_AUDIT.json、
+INDEPENDENT_COSIM_ESTIMATOR_AUDIT_V2.json、INDEPENDENT_REPLAY_AUDIT.json、
+EXACT_RANGE_STRENGTH_AUDIT.json；及其只读脚本、冻结plan、原始联仿/replay日志。

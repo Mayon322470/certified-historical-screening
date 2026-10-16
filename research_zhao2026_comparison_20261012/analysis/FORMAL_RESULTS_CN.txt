@@ -1,0 +1,112 @@
+Zhao2026新留出正式比较：统计与图形核验结果
+数据：results/holdout_main（864行）与results/holdout_ablation（96行）。
+全部48例保留；主6方法×3重复，辅助2方法×1重复；每次预算5秒。
+冻结主分析源码未改，SHA256：
+43295e1e2a21c51e868f6cf3d978fc2a7601d49be1f65b60f1efeaeafa5bcdd1
+
+一、主表
+以下解决数要求该例3次都在预算内得到非空语义下的认证结论。
+时间成本为48个案例各3次运行中位数之和，包含UNKNOWN与超预算运行，不能称求解加速。
+
+方法                         解决数     比例       全任务成本/秒   普通32例   结构16例
+Ma strip                     40/48     83.3333%     52.372588       28          12
+Ma strip + structure         42/48     87.5000%     38.011885       28          14
+Zhao nu=1                    34/48     70.8333%     72.207219       24          10
+Zhao nu=2                    31/48     64.5833%    102.885457       21          10
+Zhao nu=2 + T3               30/48     62.5000%    121.438163       20          10
+Zhao nu=2 + T3 + structure   37/48     77.0833%     73.206513       23          14
+
+两个共享quick案例在每种方法的全部重复中均由quick解决；配对速度中排除这两例。
+没有单边quick或quick状态变化。
+
+二、同方法结构增量
+配对速度的子集同时满足双方3次都预算内解决、重复状态稳定、相同结论、无认证
+结论冲突且非共同quick。比值=baseline秒/candidate秒，大于1有利于结构方法。
+所有CI是10000次案例bootstrap百分位95%区间，基础seed20261012947；仅对固定
+套件作描述，不是总体推断，也不估计3次计时的重复运行方差。
+
+Ma：预算内解决40→42，无损失；全任务成本下降27.420267%。
+合格n=38，几何平均速度比1.214781，CI[1.091339,1.369079]；中位比1.097358。
+普通组n=26，比1.188700，CI[1.101795,1.291501]，2例变慢超过5%；
+结构组n=12，比1.273272，CI[0.955271,1.757752]，5例变慢超过5%。
+结构组区间含1，不能写成所有分组均稳定加速。
+新增解决：holdout_valley_velocity_1、holdout_valley_position_3。
+全部7个变慢案例：holdout_random_03_N1、holdout_random_17_N4、
+holdout_four_hold_1_1、holdout_four_hold_1_2、holdout_four_hold_1_3、
+holdout_valley_velocity_3、holdout_valley_position_0。
+
+Zhao nu=2+T3：预算内解决30→37，无损失；全任务成本下降39.717045%。
+合格n=28，几何平均速度比3.432901，CI[2.560370,4.587393]；中位比3.524346。
+普通组n=18，比4.044528，CI[2.828857,5.667366]，解决20→23；
+结构组n=10，比2.555579，CI[1.650623,4.005408]，解决10→14。
+新增解决：holdout_random_16_N4、holdout_random_19_N4、holdout_random_29_N8、
+holdout_four_hold_0_2、holdout_four_hold_1_0、holdout_valley_velocity_1、holdout_valley_position_3。
+全部3个变慢案例：holdout_random_31_N8、holdout_four_hold_1_1、holdout_valley_position_0。
+
+三、跨论文与Zhao内部比较
+Ma+structure相对Zhao的合格配对（仍只限上述共同预算内同结论子集）：
+baseline              n    几何比     描述性95%CI             中位比      Ma+结构变慢>5%
+Zhao nu=1             32   2.025440    [1.637078,2.531278]       1.994185         3
+Zhao nu=2             29   7.858940    [6.092491,10.392076]      8.100681         0
+Zhao nu=2+T3          28  16.759794    [12.699365,22.615973]    16.197407         0
+
+不加结构的Ma相对以上三baseline的几何比分别1.712859、6.651783、14.320793，
+合格n分别32、29、28；全部精确数值和CI在paired_summary.json中。
+Zhao1→Zhao2、Zhao1→Zhao2T3、Zhao2→Zhao2T3几何比分别0.249845、0.115793、
+0.454718，合格子集上的candidate全部变慢超过5%（29、28、28例）。
+这是该实现适配、该模型及5秒预算下的结果；不能写成高阶提升或原论文理论普遍无效。
+结构处理也作用于普通组，不能把全部收益归因于特制的结构困难案例。
+
+四、阈值政策（每列12例）
+顺序：B+5%scale；M+1%scale；M+0.01%scale；M−0.1%scale。
+Ma                         12 / 11 / 7 / 10
+Ma+structure               12 / 11 / 9 / 10
+Zhao1                      12 / 10 / 2 / 10
+Zhao2                      11 /  9 / 1 / 10
+Zhao2T3                    11 /  9 / 1 /  9
+Zhao2T3+structure          12 / 10 / 5 / 10
+紧正margin组仍有明显未解决量；M是数值参考而非认证全局最大值，不能用margin
+正负为方法分配安全真值，也不能把这些数字称分类准确率。
+
+五、UNKNOWN、状态变化和预算边界
+主跑213个UNKNOWN试次，0ERROR，0相互矛盾的认证结论，0缺非空见证的SAFE。
+UNKNOWN分类为“已到预算 / 在预算前耗尽预定网格schedule”：
+Ma 14/8；Ma+structure 7/9；Zhao1 32/9；Zhao2 47/0；Zhao2T3 54/0；
+Zhao2T3+structure 24/9。因此UNKNOWN不能一概写成超时。
+辅助：Sturm-only 14/0；sparse-only 9/3。
+
+主跑5个方法×案例的重复状态变化均为SAFE与UNKNOWN之间切换：
+Zhao1 holdout_random_09_N2：[UNKNOWN,UNKNOWN,SAFE]；
+Zhao2 holdout_random_16_N4：[SAFE,UNKNOWN,SAFE]；
+Zhao2 holdout_random_29_N8：[SAFE,SAFE,UNKNOWN]；
+Ma+structure holdout_random_30_N8：[SAFE,SAFE,UNKNOWN]；
+Ma holdout_valley_position_3：[SAFE,UNKNOWN,SAFE]。
+它们不纳入相应配对速度比，全部保留在成本与全重复解决率中。
+3个晚证书：Ma position-valley3 rep0 5.018519399688秒；
+Zhao2 random16 rep0 5.004974400159秒、rep2 5.001545599662秒。
+上述证书仍是证书，但不计预算内解决；全主跑最大超预算0.089036900084秒。
+
+六、辅助消融（严格单次）
+完整结构方法选主跑rep0；Sturm-only、sparse-only选辅助tag唯一rep0。
+三列的解决数37、34、36；全任务成本72.867860、99.151352、74.425059秒。
+完整结构→Sturm-only：合格n32，几何比0.642579，中位比0.988358，13例变慢>5%。
+完整结构→sparse-only：合格n34，几何比1.001344，中位比1.015563，8例变慢>5%。
+Sturm-only→sparse-only：合格n32，几何比1.551721，中位比1.009893，7例变慢>5%。
+完整结构比Sturm-only多解决random29、velocity-valley1、position-valley3；
+比sparse-only多解决velocity-valley1。均无反向新增解决。
+稀疏处理解释了大部分该套件上的收益，但完整组合仍保留一个额外解决案例；
+不能声称两个构件单独普遍提速，不能由单次结果作重复运行或总体置信度结论。
+两个tag分别计时，无法由本消融消除执行顺序/机器状态漂移。
+
+七、交付和图形QA
+主/辅助paired_summary.json、per_case_summary.json、analysis_tables.txt已生成；
+辅助ablation_rep0_summary.json、ablation_rep0_per_case.json、ablation_rep0_tables.txt已生成；
+两tag的unknown_diagnostics.json已生成。
+主表overview、分组paired_ratios、阈值resolution各有独立PNG/PDF；辅助同类三图。
+六个PNG已目视检查；修正了阈值图长标签相互重叠和辅助单次标题措辞。
+六个PDF均经pdfinfo确认单页，Poppler重新渲染并检查；渲染预览保存在
+analysis/pdf_review/formal_figures/，其中pdf_contact_sheet.png是六图审阅拼图。
+analysis/FIGURE_QA.json记录最终六组PNG/PDF的hash、尺寸、单页确认及视觉检查结果。
+主分析10项合成测试已在正式计时前通过；消融2项合成测试在全部计时后通过。
+结果未根据输出改动主分析规则、原始数据、生产实现或冻结主analyzer。
+独立证书/统计审计由另一审计子任务负责，本报告不替代其最终结论。

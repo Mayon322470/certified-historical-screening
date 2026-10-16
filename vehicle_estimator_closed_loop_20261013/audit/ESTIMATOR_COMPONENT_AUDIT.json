@@ -1,0 +1,920 @@
+{
+  "status": "PASS_INDEPENDENT_OBSERVATION_ADAPTER_COMPONENT_AUDIT",
+  "checks": 732,
+  "runs": 75,
+  "estimator_source_sha256": "86e0431327452d48d077008341a5cd77878196bf50428752d3ab44f1a64e94a2",
+  "audit_source_sha256": "b0a41c958bb2051602e9989b8735a40bb12bcb251912d434a52af9adebcb0374",
+  "scope": "Exact rational truth and feasible grid points, independent quadratic deletion range, branch-changing histories and t=0 prior. Finite tests and algebra review; no vehicle or deadline qualification.",
+  "records": [
+    {
+      "pattern": 0,
+      "truth_b": "-4/5",
+      "method": "ma",
+      "status": "OK",
+      "b_interval": [
+        "-4/5",
+        "-191/240"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 7
+    },
+    {
+      "pattern": 0,
+      "truth_b": "-4/5",
+      "method": "ma_structured",
+      "status": "OK",
+      "b_interval": [
+        "-4/5",
+        "-191/240"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 1,
+      "deleted": 7
+    },
+    {
+      "pattern": 0,
+      "truth_b": "-4/5",
+      "method": "zhao2t3",
+      "status": "OK",
+      "b_interval": [
+        "-4/5",
+        "-22678644573107116522173602869060295582903499882031/28544953854119197621165719388989902727654932480000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 7
+    },
+    {
+      "pattern": 0,
+      "truth_b": "-4/5",
+      "method": "zhao2t3_structured",
+      "status": "OK",
+      "b_interval": [
+        "-4/5",
+        "-22678644573107116522173602869060295582903499882031/28544953854119197621165719388989902727654932480000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 1,
+      "deleted": 7
+    },
+    {
+      "pattern": 0,
+      "truth_b": "-4/5",
+      "method": "exact_range",
+      "status": "OK",
+      "b_interval": [
+        "-4/5",
+        "-796419413859/1000000000000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 0,
+      "deleted": 0
+    },
+    {
+      "pattern": 0,
+      "truth_b": "-2/5",
+      "method": "ma",
+      "status": "OK",
+      "b_interval": [
+        "-41/100",
+        "-51/130"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 6
+    },
+    {
+      "pattern": 0,
+      "truth_b": "-2/5",
+      "method": "ma_structured",
+      "status": "OK",
+      "b_interval": [
+        "-41/100",
+        "-51/130"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 2,
+      "deleted": 6
+    },
+    {
+      "pattern": 0,
+      "truth_b": "-2/5",
+      "method": "zhao2t3",
+      "status": "OK",
+      "b_interval": [
+        "-18902712449218555021806347011800539336244339855001/45671926166590716193865151022383844364247891968000",
+        "-5571557673016411699402917690002775793143737393249/14272476927059598810582859694494951363827466240000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 6
+    },
+    {
+      "pattern": 0,
+      "truth_b": "-2/5",
+      "method": "zhao2t3_structured",
+      "status": "OK",
+      "b_interval": [
+        "-18902712449218555021806347011800539336244339855001/45671926166590716193865151022383844364247891968000",
+        "-5571557673016411699402917690002775793143737393249/14272476927059598810582859694494951363827466240000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 2,
+      "deleted": 6
+    },
+    {
+      "pattern": 0,
+      "truth_b": "-2/5",
+      "method": "exact_range",
+      "status": "OK",
+      "b_interval": [
+        "-101781181987/250000000000",
+        "-196419413859/500000000000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 0,
+      "deleted": 0
+    },
+    {
+      "pattern": 0,
+      "truth_b": "-1/10",
+      "method": "ma",
+      "status": "OK",
+      "b_interval": [
+        "-6/55",
+        "-19/220"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 7
+    },
+    {
+      "pattern": 0,
+      "truth_b": "-1/10",
+      "method": "ma_structured",
+      "status": "OK",
+      "b_interval": [
+        "-6/55",
+        "-19/220"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 1,
+      "deleted": 7
+    },
+    {
+      "pattern": 0,
+      "truth_b": "-1/10",
+      "method": "zhao2t3",
+      "status": "OK",
+      "b_interval": [
+        "-12711677976494489420923254379341855894222914860223/114179815416476790484662877555959610910619729920000",
+        "-13728597102422610734926595770414084615485703716248429864347350141037172522633071971326949829056993620122381691356756126659/157608024785577916849116160400574455220318957081861786671793173616982887085988842445657065019539662563226511961227264000000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 7
+    },
+    {
+      "pattern": 0,
+      "truth_b": "-1/10",
+      "method": "zhao2t3_structured",
+      "status": "OK",
+      "b_interval": [
+        "-12711677976494489420923254379341855894222914860223/114179815416476790484662877555959610910619729920000",
+        "-13728597102422610734926595770414084615485703716248429864347350141037172522633071971326949829056993620122381691356756126659/157608024785577916849116160400574455220318957081861786671793173616982887085988842445657065019539662563226511961227264000000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 1,
+      "deleted": 7
+    },
+    {
+      "pattern": 0,
+      "truth_b": "-1/10",
+      "method": "exact_range",
+      "status": "OK",
+      "b_interval": [
+        "-109053650641/1000000000000",
+        "-90871211463/1000000000000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 0,
+      "deleted": 0
+    },
+    {
+      "pattern": 0,
+      "truth_b": "0",
+      "method": "ma",
+      "status": "OK",
+      "b_interval": [
+        "-3/220",
+        "1/90"
+      ],
+      "feasible_reference_points": 3,
+      "frontend_calls": 8,
+      "deleted": 6
+    },
+    {
+      "pattern": 0,
+      "truth_b": "0",
+      "method": "ma_structured",
+      "status": "OK",
+      "b_interval": [
+        "-3/220",
+        "1/90"
+      ],
+      "feasible_reference_points": 3,
+      "frontend_calls": 2,
+      "deleted": 6
+    },
+    {
+      "pattern": 0,
+      "truth_b": "0",
+      "method": "zhao2t3",
+      "status": "OK",
+      "b_interval": [
+        "-65893928357224506128997119636653875345134982807/4567192616659071619386515102238384436424789196800",
+        "80274529051122794304066947394733716072146452727/4567192616659071619386515102238384436424789196800"
+      ],
+      "feasible_reference_points": 3,
+      "frontend_calls": 8,
+      "deleted": 6
+    },
+    {
+      "pattern": 0,
+      "truth_b": "0",
+      "method": "zhao2t3_structured",
+      "status": "OK",
+      "b_interval": [
+        "-65893928357224506128997119636653875345134982807/4567192616659071619386515102238384436424789196800",
+        "80274529051122794304066947394733716072146452727/4567192616659071619386515102238384436424789196800"
+      ],
+      "feasible_reference_points": 3,
+      "frontend_calls": 2,
+      "deleted": 6
+    },
+    {
+      "pattern": 0,
+      "truth_b": "0",
+      "method": "exact_range",
+      "status": "OK",
+      "b_interval": [
+        "-9950493837/1000000000000",
+        "10050506339/1000000000000"
+      ],
+      "feasible_reference_points": 3,
+      "frontend_calls": 0,
+      "deleted": 0
+    },
+    {
+      "pattern": 0,
+      "truth_b": "1/10",
+      "method": "ma",
+      "status": "OK",
+      "b_interval": [
+        "4/45",
+        "9/80"
+      ],
+      "feasible_reference_points": 4,
+      "frontend_calls": 8,
+      "deleted": 7
+    },
+    {
+      "pattern": 0,
+      "truth_b": "1/10",
+      "method": "ma_structured",
+      "status": "OK",
+      "b_interval": [
+        "4/45",
+        "9/80"
+      ],
+      "feasible_reference_points": 4,
+      "frontend_calls": 1,
+      "deleted": 7
+    },
+    {
+      "pattern": 0,
+      "truth_b": "1/10",
+      "method": "zhao2t3",
+      "status": "OK",
+      "b_interval": [
+        "37995471395177050835067344064723249137221536223/456719261665907161938651510223838443642478919680",
+        "513926205622788599780981975713244847514202456311/4567192616659071619386515102238384436424789196800"
+      ],
+      "feasible_reference_points": 4,
+      "frontend_calls": 8,
+      "deleted": 7
+    },
+    {
+      "pattern": 0,
+      "truth_b": "1/10",
+      "method": "zhao2t3_structured",
+      "status": "OK",
+      "b_interval": [
+        "37995471395177050835067344064723249137221536223/456719261665907161938651510223838443642478919680",
+        "513926205622788599780981975713244847514202456311/4567192616659071619386515102238384436424789196800"
+      ],
+      "feasible_reference_points": 4,
+      "frontend_calls": 1,
+      "deleted": 7
+    },
+    {
+      "pattern": 0,
+      "truth_b": "1/10",
+      "method": "exact_range",
+      "status": "OK",
+      "b_interval": [
+        "17791328417/200000000000",
+        "111180558269/1000000000000"
+      ],
+      "feasible_reference_points": 4,
+      "frontend_calls": 0,
+      "deleted": 0
+    },
+    {
+      "pattern": 0,
+      "truth_b": "2/5",
+      "method": "ma",
+      "status": "OK",
+      "b_interval": [
+        "63/160",
+        "33/80"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 6
+    },
+    {
+      "pattern": 0,
+      "truth_b": "2/5",
+      "method": "ma_structured",
+      "status": "OK",
+      "b_interval": [
+        "63/160",
+        "33/80"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 2,
+      "deleted": 6
+    },
+    {
+      "pattern": 0,
+      "truth_b": "2/5",
+      "method": "zhao2t3",
+      "status": "OK",
+      "b_interval": [
+        "22281509316380515523599806652763356376837302947593/57089907708238395242331438777979805455309864960000",
+        "26010623894255790472464902676112158780393650275394416854249511985072796843366635777509628515573944725636516316567329367290653/63043209914231166739646464160229782088127582832744714668717269446793154834395536978262826007815865025290604784490905600000000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 6
+    },
+    {
+      "pattern": 0,
+      "truth_b": "2/5",
+      "method": "zhao2t3_structured",
+      "status": "OK",
+      "b_interval": [
+        "22281509316380515523599806652763356376837302947593/57089907708238395242331438777979805455309864960000",
+        "26010623894255790472464902676112158780393650275394416854249511985072796843366635777509628515573944725636516316567329367290653/63043209914231166739646464160229782088127582832744714668717269446793154834395536978262826007815865025290604784490905600000000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 2,
+      "deleted": 6
+    },
+    {
+      "pattern": 0,
+      "truth_b": "2/5",
+      "method": "exact_range",
+      "status": "OK",
+      "b_interval": [
+        "789949493661/2000000000000",
+        "809950493837/2000000000000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 0,
+      "deleted": 0
+    },
+    {
+      "pattern": 0,
+      "truth_b": "4/5",
+      "method": "ma",
+      "status": "OK",
+      "b_interval": [
+        "51/64",
+        "4/5"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 7
+    },
+    {
+      "pattern": 0,
+      "truth_b": "4/5",
+      "method": "ma_structured",
+      "status": "OK",
+      "b_interval": [
+        "51/64",
+        "4/5"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 1,
+      "deleted": 7
+    },
+    {
+      "pattern": 0,
+      "truth_b": "4/5",
+      "method": "zhao2t3",
+      "status": "OK",
+      "b_interval": [
+        "22704036273430732182691573563023600243636368306831/28544953854119197621165719388989902727654932480000",
+        "4/5"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 7
+    },
+    {
+      "pattern": 0,
+      "truth_b": "4/5",
+      "method": "zhao2t3_structured",
+      "status": "OK",
+      "b_interval": [
+        "22704036273430732182691573563023600243636368306831/28544953854119197621165719388989902727654932480000",
+        "4/5"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 1,
+      "deleted": 7
+    },
+    {
+      "pattern": 0,
+      "truth_b": "4/5",
+      "method": "exact_range",
+      "status": "OK",
+      "b_interval": [
+        "398608961123/500000000000",
+        "4/5"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 0,
+      "deleted": 0
+    },
+    {
+      "pattern": 1,
+      "truth_b": "-4/5",
+      "method": "ma",
+      "status": "OK",
+      "b_interval": [
+        "-4/5",
+        "-923/1160"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 7
+    },
+    {
+      "pattern": 1,
+      "truth_b": "-4/5",
+      "method": "ma_structured",
+      "status": "OK",
+      "b_interval": [
+        "-4/5",
+        "-923/1160"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 1,
+      "deleted": 7
+    },
+    {
+      "pattern": 1,
+      "truth_b": "-4/5",
+      "method": "zhao2t3",
+      "status": "OK",
+      "b_interval": [
+        "-4/5",
+        "-906420448711990233538768057534547048271897000527/1141798154164767904846628775559596109106197299200"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 7
+    },
+    {
+      "pattern": 1,
+      "truth_b": "-4/5",
+      "method": "zhao2t3_structured",
+      "status": "OK",
+      "b_interval": [
+        "-4/5",
+        "-906420448711990233538768057534547048271897000527/1141798154164767904846628775559596109106197299200"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 1,
+      "deleted": 7
+    },
+    {
+      "pattern": 1,
+      "truth_b": "-4/5",
+      "method": "exact_range",
+      "status": "OK",
+      "b_interval": [
+        "-4/5",
+        "-397981241687/500000000000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 0,
+      "deleted": 0
+    },
+    {
+      "pattern": 1,
+      "truth_b": "-2/5",
+      "method": "ma",
+      "status": "OK",
+      "b_interval": [
+        "-409/1000",
+        "-331/840"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 6
+    },
+    {
+      "pattern": 1,
+      "truth_b": "-2/5",
+      "method": "ma_structured",
+      "status": "OK",
+      "b_interval": [
+        "-409/1000",
+        "-331/840"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 2,
+      "deleted": 6
+    },
+    {
+      "pattern": 1,
+      "truth_b": "-2/5",
+      "method": "zhao2t3",
+      "status": "OK",
+      "b_interval": [
+        "-1645366156937320135392675701941536497975298084276789900479819999/4017345110647475688854905230852906506305507484456982088253440000",
+        "-178898066138166190471357009067277559004312319903/456719261665907161938651510223838443642478919680"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 6
+    },
+    {
+      "pattern": 1,
+      "truth_b": "-2/5",
+      "method": "zhao2t3_structured",
+      "status": "OK",
+      "b_interval": [
+        "-1645366156937320135392675701941536497975298084276789900479819999/4017345110647475688854905230852906506305507484456982088253440000",
+        "-178898066138166190471357009067277559004312319903/456719261665907161938651510223838443642478919680"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 2,
+      "deleted": 6
+    },
+    {
+      "pattern": 1,
+      "truth_b": "-2/5",
+      "method": "exact_range",
+      "status": "OK",
+      "b_interval": [
+        "-1621688003317/4000000000000",
+        "-1578209256903/4000000000000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 0,
+      "deleted": 0
+    },
+    {
+      "pattern": 1,
+      "truth_b": "-1/10",
+      "method": "ma",
+      "status": "OK",
+      "b_interval": [
+        "-73/680",
+        "-769/8580"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 7
+    },
+    {
+      "pattern": 1,
+      "truth_b": "-1/10",
+      "method": "ma_structured",
+      "status": "OK",
+      "b_interval": [
+        "-73/680",
+        "-769/8580"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 1,
+      "deleted": 7
+    },
+    {
+      "pattern": 1,
+      "truth_b": "-1/10",
+      "method": "zhao2t3",
+      "status": "OK",
+      "b_interval": [
+        "-62504922902630234893065578283386881066517801821/570899077082383952423314387779798054553098649600",
+        "-1070875004068104036164605515625089989175311401209001977774311465869031276526431128213015362919980307673416053525849/12024538023802026126794140655561405580163494650410597738021329774244910208586795230534138871730015759523507077120000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 7
+    },
+    {
+      "pattern": 1,
+      "truth_b": "-1/10",
+      "method": "zhao2t3_structured",
+      "status": "OK",
+      "b_interval": [
+        "-62504922902630234893065578283386881066517801821/570899077082383952423314387779798054553098649600",
+        "-1070875004068104036164605515625089989175311401209001977774311465869031276526431128213015362919980307673416053525849/12024538023802026126794140655561405580163494650410597738021329774244910208586795230534138871730015759523507077120000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 1,
+      "deleted": 7
+    },
+    {
+      "pattern": 1,
+      "truth_b": "-1/10",
+      "method": "exact_range",
+      "status": "OK",
+      "b_interval": [
+        "-429285639897/4000000000000",
+        "-37045990927/400000000000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 0,
+      "deleted": 0
+    },
+    {
+      "pattern": 1,
+      "truth_b": "0",
+      "method": "ma",
+      "status": "OK",
+      "b_interval": [
+        "-89/8580",
+        "1/104"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 6
+    },
+    {
+      "pattern": 1,
+      "truth_b": "0",
+      "method": "ma_structured",
+      "status": "OK",
+      "b_interval": [
+        "-89/8580",
+        "1/104"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 2,
+      "deleted": 6
+    },
+    {
+      "pattern": 1,
+      "truth_b": "0",
+      "method": "zhao2t3",
+      "status": "OK",
+      "b_interval": [
+        "-2511046199341720795874653940864010250494533881724606994726945132202102690761845616797090189040647851983660884168921/192392608380832418028706250488982489282615914406569563808341276387918563337388723688546221947680252152376113233920000",
+        "3342559444923873240769675970809657382448981699/285449538541191976211657193889899027276549324800"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 6
+    },
+    {
+      "pattern": 1,
+      "truth_b": "0",
+      "method": "zhao2t3_structured",
+      "status": "OK",
+      "b_interval": [
+        "-2511046199341720795874653940864010250494533881724606994726945132202102690761845616797090189040647851983660884168921/192392608380832418028706250488982489282615914406569563808341276387918563337388723688546221947680252152376113233920000",
+        "3342559444923873240769675970809657382448981699/285449538541191976211657193889899027276549324800"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 2,
+      "deleted": 6
+    },
+    {
+      "pattern": 1,
+      "truth_b": "0",
+      "method": "exact_range",
+      "status": "OK",
+      "b_interval": [
+        "-33150177621/4000000000000",
+        "16760302581/2000000000000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 0,
+      "deleted": 0
+    },
+    {
+      "pattern": 1,
+      "truth_b": "1/10",
+      "method": "ma",
+      "status": "OK",
+      "b_interval": [
+        "47/520",
+        "911/8220"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 7
+    },
+    {
+      "pattern": 1,
+      "truth_b": "1/10",
+      "method": "ma_structured",
+      "status": "OK",
+      "b_interval": [
+        "47/520",
+        "911/8220"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 1,
+      "deleted": 7
+    },
+    {
+      "pattern": 1,
+      "truth_b": "1/10",
+      "method": "zhao2t3",
+      "status": "OK",
+      "b_interval": [
+        "50664367001484429595699157380523980352965002787/570899077082383952423314387779798054553098649600",
+        "278042514593718525775994700739024921125640886219371999624704192536289511416079377434423572636046968650312795826420209/2462625387274654950767440006258975862817483704404090416746768337765357610718575663213391640930307227550414249394176000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 8,
+      "deleted": 7
+    },
+    {
+      "pattern": 1,
+      "truth_b": "1/10",
+      "method": "zhao2t3_structured",
+      "status": "OK",
+      "b_interval": [
+        "50664367001484429595699157380523980352965002787/570899077082383952423314387779798054553098649600",
+        "278042514593718525775994700739024921125640886219371999624704192536289511416079377434423572636046968650312795826420209/2462625387274654950767440006258975862817483704404090416746768337765357610718575663213391640930307227550414249394176000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 1,
+      "deleted": 7
+    },
+    {
+      "pattern": 1,
+      "truth_b": "1/10",
+      "method": "exact_range",
+      "status": "OK",
+      "b_interval": [
+        "72363761669/800000000000",
+        "438750305027/4000000000000"
+      ],
+      "feasible_reference_points": 2,
+      "frontend_calls": 0,
+      "deleted": 0
+    },
+    {
+      "pattern": 1,
+      "truth_b": "2/5",
+      "method": "ma",
+      "status": "OK",
+      "b_interval": [
+        "611/1572",
+        "154/375"
+      ],
+      "feasible_reference_points": 4,
+      "frontend_calls": 8,
+      "deleted": 6
+    },
+    {
+      "pattern": 1,
+      "truth_b": "2/5",
+      "method": "ma_structured",
+      "status": "OK",
+      "b_interval": [
+        "611/1572",
+        "154/375"
+      ],
+      "feasible_reference_points": 4,
+      "frontend_calls": 2,
+      "deleted": 6
+    },
+    {
+      "pattern": 1,
+      "truth_b": "2/5",
+      "method": "zhao2t3",
+      "status": "OK",
+      "b_interval": [
+        "873548326451890920449925253745906113498644956599/2283596308329535809693257551119192218212394598400",
+        "29944020759787879/72057594037927936"
+      ],
+      "feasible_reference_points": 4,
+      "frontend_calls": 8,
+      "deleted": 6
+    },
+    {
+      "pattern": 1,
+      "truth_b": "2/5",
+      "method": "zhao2t3_structured",
+      "status": "OK",
+      "b_interval": [
+        "873548326451890920449925253745906113498644956599/2283596308329535809693257551119192218212394598400",
+        "29944020759787879/72057594037927936"
+      ],
+      "feasible_reference_points": 4,
+      "frontend_calls": 2,
+      "deleted": 6
+    },
+    {
+      "pattern": 1,
+      "truth_b": "2/5",
+      "method": "exact_range",
+      "status": "OK",
+      "b_interval": [
+        "584394027061/1500000000000",
+        "51303676683/125000000000"
+      ],
+      "feasible_reference_points": 4,
+      "frontend_calls": 0,
+      "deleted": 0
+    },
+    {
+      "pattern": 1,
+      "truth_b": "4/5",
+      "method": "ma",
+      "status": "OK",
+      "b_interval": [
+        "5623/7140",
+        "4/5"
+      ],
+      "feasible_reference_points": 3,
+      "frontend_calls": 8,
+      "deleted": 7
+    },
+    {
+      "pattern": 1,
+      "truth_b": "4/5",
+      "method": "ma_structured",
+      "status": "OK",
+      "b_interval": [
+        "5623/7140",
+        "4/5"
+      ],
+      "feasible_reference_points": 3,
+      "frontend_calls": 1,
+      "deleted": 7
+    },
+    {
+      "pattern": 1,
+      "truth_b": "4/5",
+      "method": "zhao2t3",
+      "status": "OK",
+      "b_interval": [
+        "7152183400250491767002122069176477248875414186317/9134385233318143238773030204476768872849578393600",
+        "4/5"
+      ],
+      "feasible_reference_points": 3,
+      "frontend_calls": 8,
+      "deleted": 7
+    },
+    {
+      "pattern": 1,
+      "truth_b": "4/5",
+      "method": "zhao2t3_structured",
+      "status": "OK",
+      "b_interval": [
+        "7152183400250491767002122069176477248875414186317/9134385233318143238773030204476768872849578393600",
+        "4/5"
+      ],
+      "feasible_reference_points": 3,
+      "frontend_calls": 1,
+      "deleted": 7
+    },
+    {
+      "pattern": 1,
+      "truth_b": "4/5",
+      "method": "exact_range",
+      "status": "OK",
+      "b_interval": [
+        "11827841711/15000000000",
+        "4/5"
+      ],
+      "feasible_reference_points": 3,
+      "frontend_calls": 0,
+      "deleted": 0
+    }
+  ]
+}

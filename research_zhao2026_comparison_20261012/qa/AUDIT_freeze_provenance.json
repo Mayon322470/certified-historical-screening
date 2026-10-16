@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "input_sha256": "bfd1fe58dfa49e24e21d7e01f2be8ee758757bcf96d7170a63bf0380534f9d66",
+  "frozen_files_verified": 17,
+  "public_input_fields": [
+    "H",
+    "future",
+    "group",
+    "initial",
+    "limit",
+    "name",
+    "packet",
+    "past",
+    "prior",
+    "rho"
+  ],
+  "separately_frozen_analysis_files_verified": 2,
+  "solver_local_import_closure": [
+    "certified_core",
+    "comparison_core",
+    "history_derivatives",
+    "ma_scalar_certified",
+    "polynomial_contract",
+    "quick_baseline",
+    "run_comparison",
+    "sparse_faces",
+    "taylor_faces",
+    "zhao_carleman"
+  ],
+  "reused_development_physical_cases": 0,
+  "runs": {
+    "holdout_main": {
+      "expected_records": 864,
+      "metadata_sha256": "1fa7dcbdecf0ddbdcf540f97ee1da9b8674c9d8ec314a7527a506341dcfc00d3",
+      "certificate_audit_sha256": "80624a742cdd65cb88f4c853666dac335d3353fedcfb5a96130d1827634024f6",
+      "methods": [
+        "ma_strip",
+        "ma_strip_structured",
+        "zhao1",
+        "zhao2",
+        "zhao2t3",
+        "zhao2t3_structured"
+      ],
+      "repetitions": 3
+    },
+    "holdout_ablation": {
+      "expected_records": 96,
+      "metadata_sha256": "39383887bba325ddb89fce8a0d9da8a7587ac721d96a75f7179c6eedbe9b995e",
+      "certificate_audit_sha256": "c051e91fbc587321e769470ae4193df52636ab8ced77f756785e100bf0c44a17",
+      "methods": [
+        "zhao2t3_sturm",
+        "zhao2t3_sparse"
+      ],
+      "repetitions": 1
+    }
+  },
+  "scope": "Checks recorded hash binding, exact input schema, no old physical case reuse, static solver import closure, method/grid/budget/thread metadata and certified record counts. Does not independently prove historical chronology or measured wall-clock accuracy.",
+  "checker_sha256": "aefd0576c2c6f14d00e49a57a25e7f157700290789a994e2ff67424fad2823ba"
+}

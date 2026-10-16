@@ -1,0 +1,65 @@
+{
+  "version": "zhao2026-new-holdout-v1",
+  "status": "PREGENERATION_ONLY_NO_CASES_CREATED",
+  "seed": 202610120947,
+  "count": 48,
+  "groups": {
+    "holdout_random": 32,
+    "holdout_four_hold": 8,
+    "holdout_valley_velocity": 4,
+    "holdout_valley_position": 4
+  },
+  "generator": "implementation/generate_new_holdout.py",
+  "generator_sha256": "2959998d22b4a057be155dffa88b60041aa534ad2c966d5b2241d58a6c7a1876",
+  "full_protocol": "analysis/NEW_HOLDOUT_PROTOCOL_CN.txt",
+  "full_protocol_sha256": "d1efc844c44e7ea2b0140e0a7420616cde1f5c2c4d0a6811dcdd756a079f34cc",
+  "new_inputs": "New random seed and new structural duration/base/amplitude/root parameters; no previous physical cases copied.",
+  "numerical_reference": {
+    "domain": "entire prior in q=1/theta, restricted by numerical reconstruction of all six historical packet faces",
+    "history_decimal_digits": 90,
+    "derivatives": "independent analytic first q sensitivities",
+    "q_grid_intervals": [512, 1024],
+    "brent_xtol": 1e-13,
+    "brent_rtol": 1e-14,
+    "brent_maxiter": 150,
+    "normalized_feasibility_tolerance": 1e-24,
+    "branch_peak_samples": 17,
+    "peak_optimizer": "bounded minimize_scalar on branch and sampled local-peak brackets",
+    "peak_xatol": 1e-12,
+    "peak_maxiter": 300,
+    "time_maximum": "all per-hold velocity roots, after splitting at the possible acceleration zero",
+    "final_peak_decimal_digits": [120, 160],
+    "coarse_fine_disagreement_scale": 1e-7,
+    "certified_global_maximum": false,
+    "possible_missed_components_and_isolated_points": true,
+    "search_failure": "Retain case, mark failure, use predeclared public rational envelope as threshold reference.",
+    "solver_calls": 0
+  },
+  "thresholds": {
+    "count_each": 12,
+    "policies": [
+      "public_B+(1+abs(B))/20",
+      "numerical_compatible_reference_M+(1+abs(M))/100",
+      "numerical_compatible_reference_M+(1+abs(M))/10000",
+      "numerical_compatible_reference_M-(1+abs(M))/1000"
+    ],
+    "assignment": "index mod 4, rotation 2 for second four-hold profile, 1 for velocity valley, 3 for position valley",
+    "signed_margin_is_safety_truth_label": false
+  },
+  "hidden_information": {
+    "public_inputs": "inputs/holdout_48.json",
+    "generation_details": "qa/holdout_generation_private.json",
+    "truth_in_solver_inputs": false,
+    "generated_point_history_containment": "independent rational interval proof",
+    "reference_point_history_containment": "checked and recorded; failure does not delete the case"
+  },
+  "selection": "All 48 cases retained including numerical search failures and unresolved references; no outcome-dependent filtering or redrawing.",
+  "freeze": "Generate only after methods/parameters/budget/statistics are frozen to an existing JSON; refuse to overwrite outputs.",
+  "checks": "Analytic interval kernels and independent sensitivity checks passed; no holdout cases instantiated.",
+  "checked_environment": {
+    "python": "E:/Applications/Anaconda/anaconda/python.exe",
+    "mpmath": "1.3.0",
+    "scipy": "1.13.1",
+    "dependencies_modified": false
+  }
+}

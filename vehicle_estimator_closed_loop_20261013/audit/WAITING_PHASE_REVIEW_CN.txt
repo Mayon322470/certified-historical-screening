@@ -1,0 +1,62 @@
+独立只读接口/相位审查（2026-10-13，尚未运行车辆）
+
+已读source/sensor_estimators.py、integration/run_estimator_closed_loop.py、
+inputs/PROTOCOL_DRAFT.json及旧position_backup.py。未修改估计器/runner、
+旧物理预算或时钟模型；取消重复24query测试，沿用其他独审的组件门。
+
+1. 相位与公式相容（条件数学PASS）
+
+decision period Δ=.1s；拒绝query在t设置pending=t+δ，δ=.1s。
+pending到期检查位于新decision前，故t+δ先施加紧急动作，不重新接纳
+正常命令。已拒绝后仍保持共同tracker到pending到期；所有法一致。
+
+已有next_period_required(v,Δ,deadline_delay=δ)计算
+  vΔ+AΔ²/2+stopping_reserve(v+AΔ,extra_delay=δ)+geometry_pad。
+stopping_reserve的virtual delay为τ+δ，其中τ=.30s、A=2.5、B=2，
+合并后等于以初始v、virtual delay τ+Δ+δ计算的停车位移＋pad。
+因此它覆盖上一次ACCEPT至下一decision的Δ，及下一拒绝至紧急动作的δ，
+合计Δ+δ=.2s等待，再接原制动包络τ=.30s。当前query即拒绝只等待δ，
+上述上一次ACCEPT守卫更保守。此代数没有假设B为native最小减速度。
+
+该结论要求等待期间A上包、末态回退域与位置成员合同成立。只读runner
+内record normal_acceleration_max不是上述条件已经成立的数学证明；
+新数据还要独立检查等待位置/速度上包与紧急prefix成员及停车尾段。
+
+2. common quick与截止
+
+目前runner在新鲜观测下首先使用完整固定prior得到当前s/v上界，调用
+同一waiting-and-backup守卫。QUICK_PRIOR_ACCEPT及ACCEPT_NORMAL是仅有
+的正常接纳status；quick失败后才调用选定估计器。所有方法相同且
+guard_start在sensor生成前，quick/estimate/guard的成本均计入截止。
+measured>.1s及reported=.15s故障都覆盖此前正常status并设置pending。
+
+.1s compute budget是墙钟结果截止；.1s response delay是预声明模拟
+相位。serial运行时solver在计算期间不推进，迟到后仍在模拟t+.1施加
+紧急动作，因此只能称deadline故障的模拟闭环处理，不能称墙钟实时
+调度保证。完整loop延迟/超期必须保留。
+
+3. 信息隔离与历史选择
+
+估计器只收到3个sanitized quadratic rows、共同prior与deadline。
+guard_bounds只使用当前数字O/z_v、其stamp/s0及偏置outer。true b、
+native vx及actual CARLA cg_route_s只见于Sensor生成、共同底层tracker
+和审计日志，不构成文献算法额外输入。
+selected_history_rows在n>=3取三个不同历史decision stamp；n<3启动
+重复最早packet，各方法相同且没有future。drop场景当前packet缺失后
+沿用上一个packet，age=.1超过.02，触发STALE_OBSERVATION并回退。
+草稿顶部fault.stale_age_s=.2未被当前drop场景使用，不能据此报告实际
+注入.2s stale；真实drop及观测age必须以运行decision日志为准。
+
+4. 观测角色与范围
+
+当前source c²固定为landmark.lateral²，并由CARLA CG纵坐标生成
+横向补偿lane range；不是原始3D欧氏雷达、相机或实际轮速传感器。
+数字速度/累计里程共享一个固定b，在完整运行中不变。平方packet
+eta=.060001m是range .04＋odom .02＋numeric .000001，当前s/v上界
+各另加1e-8最终float pad。CARLA-native CG出版差由几何pad单独覆盖。
+
+理论文档已同步这些最终实现约定及budget=.1s。先前50ms纯数字开发
+计时不是冻结车辆留出结果，不升级lag/cubic车辆成员资格。
+
+审查范围：接口与相位代数；尚无新的车辆数据、连续安全证明或实时
+保证。运行后的全部成员、停止线、尾段与timing审计仍需另行完成。

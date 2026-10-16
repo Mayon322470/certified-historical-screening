@@ -1,0 +1,16 @@
+{
+  "carla_root": "SET_LOCAL_CARLA_0_10_0_INSTALLATION",
+  "carla_executable_relative": "CarlaUnreal/Binaries/Win64/CarlaUnreal-Win64-Shipping.exe",
+  "expected_carla_version": "0.10.0",
+  "python": "SET_LOCAL_PYTHON_EXECUTABLE",
+  "host": "127.0.0.1",
+  "rpc_port": 2100,
+  "world_step_s": 0.01,
+  "carsim_expected_internal_step_s": 0.0005,
+  "road_source": "CARLA geometry; CarSim flat-road vehicle forces",
+  "blueprint_preference": "vehicle.lincoln.mkz",
+  "carsim_installation": "SET_LOCAL_CARSIM_2024_1_INSTALLATION",
+  "carsim_archive_relative": "Resources/CPAR_Archives/SDK_External_Control.cpar",
+  "carsim_archive_member": "Results/Run_5f3d2edd-31c1-4bd2-8d7d-422ce1ab2a71/Run_all.par",
+  "scope": "Public setup example, not the original hash-bound machine configuration. Requires licensed external software."
+}

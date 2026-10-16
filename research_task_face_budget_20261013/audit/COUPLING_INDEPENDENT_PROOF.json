@@ -1,0 +1,114 @@
+{
+  "case": {
+    "name": "independent_joint_inconsistency",
+    "initial": [
+      "0",
+      "0",
+      "0"
+    ],
+    "past": [
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "prior": [
+      "1/2",
+      "2"
+    ],
+    "future": [
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "H": "1",
+    "rho": "0",
+    "limit": "100",
+    "response": {
+      "kind": "normalized_global_cubic_v1",
+      "epsilon_x": "10",
+      "L": "2"
+    },
+    "packet": [
+      [
+        "9/10",
+        "11/10"
+      ],
+      [
+        "-11/10",
+        "-9/10"
+      ],
+      [
+        "-10",
+        "10"
+      ]
+    ]
+  },
+  "certificate": {
+    "face_index": 6,
+    "face_name": "x_lower_vs_v_upper",
+    "face_family": "same_beta",
+    "theta_interval": [
+      "1/2",
+      "2"
+    ],
+    "q_interval": [
+      "1/2",
+      "2"
+    ],
+    "face_scale": "q_squared_positive",
+    "expression": {
+      "name": "x_lower_vs_v_upper",
+      "family": "same_beta",
+      "lower_coordinate": 0,
+      "upper_coordinate": 1,
+      "poly": [
+        "0",
+        "0",
+        "9/20"
+      ],
+      "terms": []
+    },
+    "source": {
+      "initial": [
+        "0",
+        "0",
+        "0"
+      ],
+      "past": [
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "original_packet": [
+        [
+          "9/10",
+          "11/10"
+        ],
+        [
+          "-11/10",
+          "-9/10"
+        ],
+        [
+          "-10",
+          "10"
+        ]
+      ],
+      "H": "1",
+      "rho": "0",
+      "response": {
+        "kind": "normalized_global_cubic_v1",
+        "epsilon_x": "10",
+        "L": "2"
+      }
+    },
+    "kind": "natural",
+    "certified_lower": "2228292070713684494818423603/19807040628566084398385987584",
+    "function_range": [
+      "2228292070713684494818423603/19807040628566084398385987584",
+      "142610692525675807668379110605/79228162514264337593543950336"
+    ]
+  }
+}
